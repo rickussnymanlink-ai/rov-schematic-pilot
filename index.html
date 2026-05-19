@@ -1473,9 +1473,14 @@ body {
 <script>
 // ── MODULE MANAGEMENT ──
 function showModule(n) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  // Only hide module panels, not the parent screen-tutorial
+  [0,1,2,3,4,5].forEach(i => {
+    const el = document.getElementById('mod-' + i);
+    if(el) el.classList.remove('active');
+  });
   document.querySelectorAll('.mod-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('mod-' + n).classList.add('active');
+  const target = document.getElementById('mod-' + n);
+  if(target) target.classList.add('active');
   document.querySelectorAll('.mod-tab')[n].classList.add('active');
   window.scrollTo(0, 0);
 }
@@ -2039,7 +2044,19 @@ function confirmQuit(){if(confirm('Surface and quit this mission?')){clearInterv
 })();
 
 // ===== TUTORIAL =====
-function showTutorial(){showScreen('screen-tutorial');tutTab(0);}
+function showTutorial(){
+  showScreen('screen-tutorial');
+  // Make sure mod-0 is active when entering study mode
+  [0,1,2,3,4,5].forEach(i => {
+    const el = document.getElementById('mod-' + i);
+    if(el) el.classList.remove('active');
+  });
+  const m0 = document.getElementById('mod-0');
+  if(m0) m0.classList.add('active');
+  document.querySelectorAll('.mod-tab').forEach((t,i) => {
+    t.classList.toggle('active', i === 0);
+  });
+}
 
 function tutTab(n){
   [0,1,2,3].forEach(i=>{
