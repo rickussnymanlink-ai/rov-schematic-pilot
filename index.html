@@ -3724,18 +3724,7 @@ function initM7() {
 
 function openPDF(drawingRef) {
   const key = drawingRef.split(' ')[0].toUpperCase();
-  const data = PDF_DATA[key];
-  if (!data) { alert('PDF not available: ' + drawingRef); return; }
-  const blob = (()=>{
-    const byteStr = atob(data.split(',')[1]);
-    const ab = new ArrayBuffer(byteStr.length);
-    const ia = new Uint8Array(ab);
-    for(let i=0;i<byteStr.length;i++) ia[i]=byteStr.charCodeAt(i);
-    return new Blob([ab],{type:'application/pdf'});
-  })();
-  const url = URL.createObjectURL(blob);
-  window.open(url,'_blank');
-}
+  
 </script>
 </body>
 </html>
