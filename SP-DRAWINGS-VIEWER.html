@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCHEMATIC PILOT — Engineering Drawings SP-001 to SP-005</title>
+<title>SCHEMATIC PILOT — Engineering Drawings SP-001 to SP-006</title>
 <style>
 :root {
   --bg: #040d14;
@@ -428,6 +428,7 @@ body {
   <button class="drw-btn" onclick="loadDrawing(2)">SP-003 · UMBILICAL AG8200</button>
   <button class="drw-btn" onclick="loadDrawing(3)">SP-004 · Q CORE POD</button>
   <button class="drw-btn" onclick="loadDrawing(4)">SP-005 · HOW TO READ</button>
+  <button class="drw-btn" onclick="loadDrawing(5)">SP-006 · iTCU BURTON</button>
 </div>
 
 <!-- LEGEND -->
@@ -950,11 +951,200 @@ const DRAWINGS = [
     {x:'1%',y:'91%',w:'98%',h:'7%',id:'symbols',label:'TERMINAL SYMBOLS GUIDE'},
   ]
 }
+,
+{
+  id: 'SP-006',
+  title: 'iTCU BURTON — 7 STATION ASSEMBLY · ELECTRICAL & HYDRAULIC',
+  sheet: '2 OF 2',
+  ref: 'REF: AD6358 · AB7520 · PK4444',
+  svg: `<svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arr-hv" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff4444"/></marker>
+      <marker id="arr-lv" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ffb300"/></marker>
+      <marker id="arr-ctrl" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#00e5ff"/></marker>
+    </defs>
+
+    <!-- SHEET LABEL -->
+    <text x="250" y="14" fill="#5a8fa8" font-family="monospace" font-size="8" text-anchor="middle" letter-spacing="1">ASSEMBLY 7 STATION iTCU BURTON · AD6358</text>
+
+    <!-- ── E1 CONNECTOR — MAIN INPUT ── -->
+    <rect x="5" y="22" width="90" height="120" rx="3" fill="rgba(0,229,255,0.06)" stroke="#00e5ff" stroke-width="1.5"/>
+    <text x="50" y="34" fill="#00e5ff" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">E1 CONNECTOR</text>
+    <text x="50" y="44" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">Main Input · 8-pin</text>
+    <text x="10" y="58" fill="#c8e6f5" font-family="monospace" font-size="6.5">1 CONTROL</text>
+    <text x="10" y="68" fill="#ffb300" font-family="monospace" font-size="6.5">2 +24V</text>
+    <text x="10" y="78" fill="#c8e6f5" font-family="monospace" font-size="6.5">3 0V</text>
+    <text x="10" y="88" fill="#5a8fa8" font-family="monospace" font-size="6.5">4 SCN</text>
+    <text x="10" y="98" fill="#00e5ff" font-family="monospace" font-size="6.5">5 RS485+</text>
+    <text x="10" y="108" fill="#00e5ff" font-family="monospace" font-size="6.5">6 RS485−</text>
+    <text x="10" y="118" fill="#00e676" font-family="monospace" font-size="6.5">7 EARTH</text>
+    <text x="10" y="128" fill="#5a8fa8" font-family="monospace" font-size="6.5">8 N/C</text>
+
+    <!-- ── TCU CONTROLLER ── -->
+    <rect x="110" y="22" width="130" height="80" rx="3" fill="rgba(255,179,0,0.08)" stroke="#ffb300" stroke-width="2"/>
+    <text x="175" y="38" fill="#ffb300" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">TCU CONTROLLER</text>
+    <text x="175" y="50" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">AD6358</text>
+    <text x="175" y="63" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">J1 · J2 · J3 · J4</text>
+    <text x="175" y="73" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">J5 · J6 · J7 · J8</text>
+    <text x="175" y="85" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">7-Station RS485 Control</text>
+    <text x="175" y="95" fill="#5a8fa8" font-family="monospace" font-size="6" text-anchor="middle">120Ω termination on J2</text>
+
+    <!-- ── PSU ── -->
+    <rect x="255" y="22" width="90" height="55" rx="3" fill="rgba(0,229,255,0.06)" stroke="#00e5ff" stroke-width="1.5"/>
+    <text x="300" y="36" fill="#00e5ff" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">PSU AB7520</text>
+    <text x="300" y="48" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">+12V (J6 pin1)</text>
+    <text x="300" y="58" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">−12V (J6 pin2)</text>
+    <text x="300" y="68" fill="#5a8fa8" font-family="monospace" font-size="6" text-anchor="middle">16AWG/WE supply</text>
+
+    <!-- ── J1 OUTPUT ── -->
+    <rect x="360" y="22" width="130" height="55" rx="3" fill="rgba(0,229,255,0.06)" stroke="#00e5ff" stroke-width="1.5"/>
+    <text x="425" y="36" fill="#00e5ff" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">J1 OUTPUT</text>
+    <text x="425" y="48" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">1 TCU V.T. CONTROL</text>
+    <text x="425" y="58" fill="#ffb300" font-family="monospace" font-size="6.5" text-anchor="middle">2 +24V UNREG</text>
+    <text x="425" y="68" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">3 0V UNREG</text>
+
+    <!-- ── J2 RS485 ── -->
+    <rect x="360" y="85" width="130" height="45" rx="3" fill="rgba(199,125,255,0.07)" stroke="#c77dff" stroke-width="1.5"/>
+    <text x="425" y="98" fill="#c77dff" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">J2 RS485 BUS</text>
+    <text x="425" y="110" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">1 RS485+  2 RS485−</text>
+    <text x="425" y="120" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">3 SCREEN · 120Ω term</text>
+
+    <!-- ── SENSORS ── -->
+    <rect x="255" y="85" width="90" height="55" rx="3" fill="rgba(0,230,118,0.07)" stroke="#00e676" stroke-width="1.5"/>
+    <text x="300" y="98" fill="#00e676" font-family="monospace" font-size="7" font-weight="bold" text-anchor="middle">SENSORS</text>
+    <text x="300" y="110" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">J3: Moisture AA9979</text>
+    <text x="300" y="120" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">J4: Temp PRT100</text>
+    <text x="300" y="130" fill="#5a8fa8" font-family="monospace" font-size="6" text-anchor="middle">DC9301/DI3412</text>
+
+    <!-- ── J5 PRESSURE SENSOR ── -->
+    <rect x="5" y="155" width="90" height="75" rx="3" fill="rgba(255,68,68,0.06)" stroke="#ff4444" stroke-width="1.5"/>
+    <text x="50" y="168" fill="#ff4444" font-family="monospace" font-size="7" font-weight="bold" text-anchor="middle">J5 · PRESSURE</text>
+    <text x="50" y="178" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">TXOR PK4444</text>
+    <text x="10" y="192" fill="#ffb300" font-family="monospace" font-size="6.5">1,4,7,10 +24V</text>
+    <text x="10" y="202" fill="#00e5ff" font-family="monospace" font-size="6.5">2,5,8,11 SIG</text>
+    <text x="10" y="212" fill="#c8e6f5" font-family="monospace" font-size="6.5">3,6,9,12 0V</text>
+    <text x="10" y="222" fill="#5a8fa8" font-family="monospace" font-size="6">4 sensors × 3 pins</text>
+
+    <!-- ── STATION CONNECTORS E2/E3/E4 ── -->
+    <rect x="110" y="115" width="235" height="110" rx="3" fill="rgba(255,179,0,0.05)" stroke="#ffb300" stroke-width="1.5"/>
+    <text x="227" y="128" fill="#ffb300" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">STATION CONNECTORS E2 · E3 · E4</text>
+    <text x="227" y="140" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">Each 8-pin · Same pinout</text>
+    <text x="125" y="154" fill="#c8e6f5" font-family="monospace" font-size="6.5">Pin 1-3: N/C</text>
+    <text x="125" y="164" fill="#ffb300" font-family="monospace" font-size="6.5">Pin 4: +24V</text>
+    <text x="125" y="174" fill="#c8e6f5" font-family="monospace" font-size="6.5">Pin 5: 0V</text>
+    <text x="125" y="184" fill="#5a8fa8" font-family="monospace" font-size="6.5">Pin 6: SCN</text>
+    <text x="125" y="194" fill="#00e5ff" font-family="monospace" font-size="6.5">Pin 7: SIGNAL</text>
+    <text x="125" y="204" fill="#5a8fa8" font-family="monospace" font-size="6.5">Pin 8: N/C</text>
+    <text x="270" y="154" fill="#5a8fa8" font-family="monospace" font-size="6.5">E2 → Stations 1,3</text>
+    <text x="270" y="164" fill="#5a8fa8" font-family="monospace" font-size="6.5">E3 → Stations 4,9</text>
+    <text x="270" y="174" fill="#5a8fa8" font-family="monospace" font-size="6.5">E4 → Stations 5,6,8</text>
+    <text x="270" y="188" fill="#FFB300" font-family="monospace" font-size="6.5" font-weight="bold">E5: HEAT SHRINK TAILS</text>
+    <text x="270" y="198" fill="#5a8fa8" font-family="monospace" font-size="6.5">All pins N/C — tie back</text>
+
+    <!-- ── J7/J8 THRUSTER OUTPUTS ── -->
+    <rect x="360" y="140" width="130" height="90" rx="3" fill="rgba(255,68,68,0.08)" stroke="#ff4444" stroke-width="1.5"/>
+    <text x="425" y="153" fill="#ff4444" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">J7 / J8 OUTPUTS</text>
+    <text x="365" y="166" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-1/2 → STN 1 PORT REAR HORIZ</text>
+    <text x="365" y="176" fill="#5a8fa8" font-family="monospace" font-size="6.5">J7-3/4 → STN 2 PORT REAR VERT NF</text>
+    <text x="365" y="186" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-5/6 → STN 3 PORT VERTICAL</text>
+    <text x="365" y="196" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-7/8 → STN 4 PORT FRONT HORIZ</text>
+    <text x="365" y="206" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-9/10 → STN 5 STBD FRONT HORIZ</text>
+    <text x="365" y="216" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-11/12 → STN 6 STBD VERTICAL</text>
+    <text x="365" y="226" fill="#5a8fa8" font-family="monospace" font-size="6.5">J8-1/2 → STN 7 STBD REAR VERT NF</text>
+
+    <!-- ── THRUSTER MAP ── -->
+    <rect x="5" y="245" width="220" height="165" rx="3" fill="rgba(0,229,255,0.04)" stroke="#00e5ff" stroke-width="1.5"/>
+    <text x="115" y="260" fill="#00e5ff" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle" letter-spacing="1">STATION MAPPING — WR CLASS ROV</text>
+    <text x="115" y="272" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">Uses stations 1,3,4,5,6,8,9</text>
+
+    <!-- Station map grid -->
+    <text x="50" y="292" fill="#c8e6f5" font-family="monospace" font-size="7" text-anchor="middle">PORT FRONT HORIZ</text>
+    <circle cx="50" cy="305" r="10" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <text x="50" y="309" fill="#ffb300" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">4</text>
+
+    <text x="180" y="292" fill="#c8e6f5" font-family="monospace" font-size="7" text-anchor="middle">STBD FRONT HORIZ</text>
+    <circle cx="180" cy="305" r="10" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <text x="180" y="309" fill="#ffb300" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">5</text>
+
+    <text x="50" y="330" fill="#c8e6f5" font-family="monospace" font-size="7" text-anchor="middle">PORT VERTICAL</text>
+    <circle cx="50" cy="343" r="10" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <text x="50" y="347" fill="#ffb300" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">3</text>
+
+    <text x="180" y="330" fill="#c8e6f5" font-family="monospace" font-size="7" text-anchor="middle">STBD VERTICAL</text>
+    <circle cx="180" cy="343" r="10" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+    <text x="180" y="347" fill="#ffb300" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">6</text>
+
+    <text x="30" y="368" fill="#c8e6f5" font-family="monospace" font-size="7" text-anchor="middle">PORT REAR</text>
+    <text x="30" y="376" fill="#c8e6f5" font-family="monospace" font-size="7" text-anchor="middle">HORIZ</text>
+    <circle cx="30" cy="388" r="10" fill="none" stroke="#ff4444" stroke-width="1.5"/>
+    <text x="30" y="392" fill="#ffb300" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">1</text>
+
+    <circle cx="115" cy="388" r="10" fill="none" stroke="#ff4444" stroke-width="1.5"/>
+    <text x="115" y="392" fill="#ffb300" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">9</text>
+    <text x="115" y="405" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">REAR VERTICAL</text>
+
+    <text x="200" y="368" fill="#c8e6f5" font-family="monospace" font-size="7" text-anchor="middle">STBD REAR</text>
+    <text x="200" y="376" fill="#c8e6f5" font-family="monospace" font-size="7" text-anchor="middle">HORIZ</text>
+    <circle cx="200" cy="388" r="10" fill="none" stroke="#ff4444" stroke-width="1.5"/>
+    <text x="200" y="392" fill="#ffb300" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">8</text>
+
+    <!-- ── HYDRAULIC VALVE BLOCK SUMMARY ── -->
+    <rect x="240" y="245" width="255" height="165" rx="3" fill="rgba(255,68,68,0.05)" stroke="#ff4444" stroke-width="1.5"/>
+    <text x="367" y="260" fill="#ff4444" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle" letter-spacing="1">HYDRAULIC VALVE BLOCK</text>
+    <text x="367" y="272" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">7 Stations · P/T/A/B per station</text>
+
+    <text x="248" y="288" fill="#c8e6f5" font-family="monospace" font-size="6.5">P1/P2 PRESSURE  1-5/16" UNF SAE</text>
+    <text x="248" y="299" fill="#c8e6f5" font-family="monospace" font-size="6.5">T1/T2 RETURN    1-5/16" UNF SAE</text>
+    <text x="248" y="310" fill="#c8e6f5" font-family="monospace" font-size="6.5">1A-7B SERVICE   3/4" UNF SAE</text>
+    <text x="248" y="321" fill="#c8e6f5" font-family="monospace" font-size="6.5">COMP            9/16" UNF SAE</text>
+    <text x="248" y="332" fill="#c8e6f5" font-family="monospace" font-size="6.5">TP1 TEST POINT  1/4" BSPP</text>
+    <text x="248" y="343" fill="#c8e6f5" font-family="monospace" font-size="6.5">PC PUMP CTRL    7/16" UNF SAE</text>
+    <text x="248" y="354" fill="#c8e6f5" font-family="monospace" font-size="6.5">V PACK RELIEF   1" NPT · 15 PSI</text>
+
+    <line x1="248" y1="362" x2="487" y2="362" stroke="#0d3555" stroke-width="0.5"/>
+    <text x="248" y="374" fill="#ffb300" font-family="monospace" font-size="6.5" font-weight="bold">ACTIVE STATIONS: 1 · 3 · 4 · 5 · 6 · 8 · 9</text>
+    <text x="248" y="385" fill="#5a8fa8" font-family="monospace" font-size="6.5">Station 2 (Port Rear Vert): NOT FITTED</text>
+    <text x="248" y="396" fill="#5a8fa8" font-family="monospace" font-size="6.5">Station 7 (Stbd Rear Vert): NOT FITTED</text>
+    <text x="248" y="407" fill="#ff4444" font-family="monospace" font-size="6.5">J8-9/10 → Proportional Valve Pressure Ctrl</text>
+
+    <!-- Flow lines -->
+    <line x1="95" y1="62" x2="110" y2="62" stroke="#00e5ff" stroke-width="1.5" marker-end="url(#arr-ctrl)"/>
+    <line x1="95" y1="82" x2="110" y2="82" stroke="#00e5ff" stroke-width="1.5" marker-end="url(#arr-ctrl)"/>
+    <line x1="240" y1="42" x2="255" y2="42" stroke="#ffb300" stroke-width="1.5" marker-end="url(#arr-lv)"/>
+    <line x1="240" y1="62" x2="360" y2="42" stroke="#00e5ff" stroke-width="1" marker-end="url(#arr-ctrl)"/>
+    <line x1="240" y1="72" x2="360" y2="98" stroke="#c77dff" stroke-width="1" marker-end="url(#arr-ctrl)"/>
+    <line x1="110" y1="155" x2="95" y2="185" stroke="#ff4444" stroke-width="1.5" marker-end="url(#arr-hv)"/>
+    <line x1="240" y1="155" x2="360" y2="175" stroke="#ffb300" stroke-width="1.5" marker-end="url(#arr-lv)"/>
+  </svg>`,
+  hotspots: [
+    {x:'1%',y:'5%',w:'18%',h:'29%',id:'e1-conn',label:'E1 MAIN INPUT CONNECTOR'},
+    {x:'22%',y:'5%',w:'26%',h:'19%',id:'tcu-ctrl',label:'TCU CONTROLLER AD6358'},
+    {x:'51%',y:'5%',w:'18%',h:'13%',id:'psu-itcu',label:'PSU AB7520 ±12V'},
+    {x:'72%',y:'5%',w:'26%',h:'13%',id:'j1-out',label:'J1 OUTPUT — VT CONTROL + 24V'},
+    {x:'72%',y:'20%',w:'26%',h:'11%',id:'j2-rs485',label:'J2 RS485 BUS · 120Ω'},
+    {x:'51%',y:'20%',w:'18%',h:'13%',id:'sensors-itcu',label:'J3 MOISTURE · J4 TEMP SENSOR'},
+    {x:'1%',y:'37%',w:'18%',h:'18%',id:'j5-pressure',label:'J5 PRESSURE SENSOR PK4444'},
+    {x:'22%',y:'27%',w:'47%',h:'26%',id:'stations-e2-e4',label:'STATION CONNECTORS E2/E3/E4'},
+    {x:'72%',y:'33%',w:'26%',h:'21%',id:'j7-j8',label:'J7/J8 THRUSTER OUTPUTS'},
+    {x:'1%',y:'58%',w:'44%',h:'40%',id:'stn-map',label:'STATION MAPPING DIAGRAM'},
+    {x:'48%',y:'58%',w:'51%',h:'40%',id:'hyd-valve',label:'HYDRAULIC VALVE BLOCK'},
+  ]
+}
 ];
 
 // ── COMPONENT INFO DATABASE ───────────────────────────────────────────────────
 const COMPONENT_INFO = {
-  'ships-supply': {ref:'SHIPS SUPPLY',name:"Ship's 440V 3-Phase Supply",body:"The vessel's main switchboard supplies 440V 3-phase 50/60Hz AC power to the ROV control cabin. Changeover switch SW1 selects between ship's supply and customer generator (MA Set).",specs:[['Voltage','440V 3-Phase'],['Frequency','50/60Hz'],['Standard','IEC 60364'],['Changeover','SW1 · ACK380']],tip:"When ship's supply is unavailable, SW1 switches to generator. Always verify phase sequence with VMR before energising."},
+  'e1-conn': {ref:'E1 Connector',name:"E1 — Main Input Connector (8-pin)",body:"The E1 connector is the primary input to each iTCU station. Pin 1=CONTROL, 2=+24V, 3=0V, 4=SCN screen, 5=RS485+, 6=RS485−, 7=EARTH (same point as pin 7 green wire), 8=N/C.",specs:[['Pins','8'],['Pin 1','CONTROL signal'],['Pin 2','+24V supply'],['Pin 5/6','RS485+ / RS485−'],['Pin 7','EARTH — same as green wire']],tip:"Earth MUST be connected to the same earth point as pin 7 green wire. Floating earth causes RS485 communication errors on all stations."},
+  'tcu-ctrl': {ref:'AD6358',name:"TCU Controller AD6358",body:"The TCU Controller (AD6358) is the brain of the iTCU manifold. It receives RS485 commands from the topside PLC via J2, controls all 7 hydraulic valve stations, and monitors pressure/temperature sensors.",specs:[['Ref','AD6358'],['Control','RS485 from Beckhoff'],['Stations','7 (1,3,4,5,6,8,9 active)'],['Jumpers','JP1 Node 3 · JP2 address'],['Connectors','J1-J8']],tip:"JP1 jumper sets node address. For WR Class ROV node 3 is selected. JP2 sets the RS485 address. If iTCU doesn't respond, check JP1/JP2 settings match the topside configuration."},
+  'psu-itcu': {ref:'AB7520',name:"PSU AB7520 — ±12V Supply",body:"The internal PSU (AB7520) generates ±12V rails for the TCU controller electronics from the 24V input supply. 16AWG/WE wiring. Output on J6 pin 1 (+12V) and pin 2 (−12V).",specs:[['Ref','AB7520'],['Input','24V from E1 pin 2'],['Output','+12V J6 pin1'],['Output','−12V J6 pin2'],['Wire','16AWG/WE']],tip:"If TCU shows no response but 24V is present at E1, check ±12V at J6. PSU failure causes total controller lockout."},
+  'j1-out': {ref:'J1',name:"J1 — VT Control Output",body:"J1 carries the TCU Variable Thrust control signal back to the topside system and the 24V unreg supply. Pin 1=TCU V.T. CONTROL, pin 2=+24V UNREG, pin 3=0V UNREG.",specs:[['Pin 1','TCU V.T. CONTROL'],['Pin 2','+24V UNREG'],['Pin 3','0V UNREG']],tip:"The V.T. Control signal on J1 pin 1 is the variable thrust feedback. If thruster speed control is lost but on/off works, check J1 pin 1 continuity."},
+  'j2-rs485': {ref:'J2',name:"J2 — RS485 Communications Bus",body:"J2 is the RS485 communications connector. Pin 1=RS485+, pin 2=RS485−, pin 3=SCREEN. A 120Ω termination resistor is fitted at J2 as this is the end of the RS485 bus.",specs:[['Pin 1','RS485+'],['Pin 2','RS485−'],['Pin 3','SCREEN'],['Termination','120Ω at J2']],tip:"120Ω termination is critical. Without it, RS485 reflections cause communication errors. If you're getting intermittent comms, check the termination resistor hasn't been removed during maintenance."},
+  'sensors-itcu': {ref:'J3/J4',name:"J3 Moisture & J4 Temperature Sensors",body:"J3 connects two moisture sensors (AA9979 ×2) monitoring +VE/−VE. J4 connects the PRT100 temperature sensor (DC9301/DI3412) via RTD+ and RTD− for internal temperature monitoring.",specs:[['J3','Moisture sensor AA9979 ×2'],['J3 Pin 1','+VE'],['J3 Pin 2','−VE'],['J4','Temp sensor PRT100'],['J4 Ref','DC9301 / DI3412']],tip:"Moisture alarms from J3 during a dive = water ingress in the iTCU enclosure. Recover immediately. Temperature alarms from J4 may indicate blocked cooling or stalled HPU."},
+  'j5-pressure': {ref:'J5 PK4444',name:"J5 — Pressure Sensor Connector PK4444",body:"J5 carries the pressure and temperature sensor signals from the HPU manifold. 12-pin connector — groups of 3 pins per sensor: 24V supply, signal, 0V. Sensors on pins 1-3, 4-6, 7-9, 10-12.",specs:[['Pins','12 total'],['Pattern','24V · SIG · 0V per sensor'],['Sensor','PK4444 pressure transducer'],['Locations','COMP · D4/D5 · T3 ports']],tip:"Each sensor group needs 24V and a clean 0V return. If pressure reading is erratic, check 0V connections first — a shared 0V with noise causes sensor instability."},
+  'stations-e2-e4': {ref:'E2/E3/E4',name:"Station Connectors E2, E3, E4",body:"E2, E3, E4 are the valve station connectors — same 8-pin pinout on each. Pin 4=+24V, pin 5=0V, pin 6=SCN, pin 7=SIGNAL. Pins 1-3 and pin 8 are N/C. E5 has heat-shrink tails — all N/C, tie back securely.",specs:[['Pin 4','+24V supply'],['Pin 5','0V return'],['Pin 6','SCN screen'],['Pin 7','SIGNAL (PWM control)'],['E5','Heat shrink tails — tie back']],tip:"E5 tails MUST be tied back securely. Loose tails can short against the manifold body causing intermittent faults. If a station loses control but 24V is present, check pin 7 SIGNAL continuity."},
+  'j7-j8': {ref:'J7/J8',name:"J7/J8 — Thruster Output Connectors",body:"J7 and J8 carry the individual thruster outputs. J7 covers stations 1-6, J8 covers stations 7-9 plus the proportional valve. Stations 2 and 7 are NOT FITTED on the WR Class ROV.",specs:[['J7-1/2','Station 1 Port Rear Horizontal'],['J7-5/6','Station 3 Port Vertical'],['J7-7/8','Station 4 Port Front Horizontal'],['J7-9/10','Station 5 Stbd Front Horizontal'],['J7-11/12','Station 6 Stbd Vertical'],['J8-3/4','Station 8 Stbd Rear Horizontal'],['J8-5/6','Station 9 Rear Vertical'],['J8-9/10','Proportional Valve Pressure']],tip:"Stations 2 and 7 are NOT FITTED — J7-3/4 and J8-1/2 will show no thruster response. This is normal. Don't waste time fault-finding unpopulated stations."},
+  'stn-map': {ref:'Station Map',name:"Thruster Station Mapping — WR Class ROV",body:"Standard thruster mapping for the WR Class ROV 150HP using stations 1,3,4,5,6,8,9. Port side left, Starboard right when viewed from above.",specs:[['Station 1','Port Rear Horizontal'],['Station 3','Port Vertical'],['Station 4','Port Front Horizontal'],['Station 5','Stbd Front Horizontal'],['Station 6','Stbd Vertical'],['Station 8','Stbd Rear Horizontal'],['Station 9','Rear Vertical']],tip:"When a thruster is lost, identify the station number first using this map. Then trace: Topside joystick → PLC → Fibre → Beckhoff → E1/E2/E3/E4 connector → TCU AD6358 → J7/J8 → thruster motor."},
+  'hyd-valve': {ref:'Hydraulic Block',name:"Hydraulic Valve Block — 7 Station Manifold",body:"The 7-station hydraulic manifold distributes HPU pressure to all thrusters via directional control valves. Each station has P/T supply-return and A/B actuator ports. Pack relief valve V set at 15 PSI.",specs:[['P1/P2','Pressure ports 1-5/16 UNF SAE'],['T1/T2','Return ports 1-5/16 UNF SAE'],['1A-7B','Service ports 3/4 UNF SAE'],['COMP','Compensation 9/16 UNF SAE'],['V','Pack relief 1 NPT · 15 PSI'],['PC','Pump control 7/16 UNF SAE']],tip:"If system pressure is normal but a specific thruster has no movement, check that station's A/B service ports for blockage. Proportional valve at J8-9/10 controls overall system pressure — if all thrusters are weak, check this valve signal first."},,name:"Ship's 440V 3-Phase Supply",body:"The vessel's main switchboard supplies 440V 3-phase 50/60Hz AC power to the ROV control cabin. Changeover switch SW1 selects between ship's supply and customer generator (MA Set).",specs:[['Voltage','440V 3-Phase'],['Frequency','50/60Hz'],['Standard','IEC 60364'],['Changeover','SW1 · ACK380']],tip:"When ship's supply is unavailable, SW1 switches to generator. Always verify phase sequence with VMR before energising."},
   'lv-pdu': {ref:'AH2645',name:"LV PDU — Low Voltage Power Distribution Unit",body:"The LV PDU receives 440V ship's supply and distributes it to contactors, PSUs, and the HV PDU. Contains KM1/KM2 contactors, VMR voltage monitor, LIM unit, and 24VDC power supplies.",specs:[['Drawing','AH2645'],['Input','440V 3-Phase'],['KM2 Rating','100A ROV Motor'],['KM1 Rating','7.5A ROV Pod'],['24V PSU','PSU1 AA6872 400W']],tip:"Drawing ref AH2645 Sheet 2 covers incoming supply. Sheet 3 covers 24V PSU distribution. Always check VMR status before energising HV."},
   'hv-pdu': {ref:'AH2646',name:"HV PDU — High Voltage Power Distribution Unit",body:"Steps 440V up to 3000-3500V via transformers TX1-TX4. TX2 (256kVA) feeds the 112kW HPU motor. TX1 (7.5kVA) feeds the ROV pod. HT couplers provide galvanic isolation between LV and HV sides.",specs:[['Drawing','AH2646'],['TX2 Rating','256kVA ROV Motor'],['TX1 Rating','7.5kVA ROV Pod'],['TX3 Rating','28kVA TMS Motor'],['HV Output','3000-3200V AC'],['HT Coupler','PB943 4000V 5Ω']],tip:"Transformer tap settings are on AH2713 (Cabin Settings). TX2 tap must match vessel supply voltage — incorrect tap = wrong HV output."},
   'deck-cable': {ref:'AC1762 / AG1081',name:"Deck Cable & Static Junction Box",body:"The deck cable (AC1762) runs from the HV PDU to the static junction box (AG1081) at the winch. It carries all HV power conductors, control wiring, and fibre optics before the slip ring.",specs:[['Cable Ref','AC1762'],['Static JB','AG1081'],['Conductors','18 power + control'],['Fibres','6 × SM 9/125µm'],['Fuses','30A AA1177+PK3777']],tip:"Static JB is the last accessible termination point before the rotating slip ring. Connector condition here is critical — check for corrosion and water ingress during inspections."},
@@ -1133,8 +1323,31 @@ function printDrawing() {
   window.print();
 }
 
+// Handle URL parameters — ?tab=N jumps to drawing N
+const urlParams = new URLSearchParams(window.location.search);
+const tabParam = urlParams.get('tab');
+const refParam = urlParams.get('ref');
+if (tabParam !== null) {
+  const tabIdx = parseInt(tabParam);
+  if (tabIdx >= 0 && tabIdx < DRAWINGS.length) {
+    currentDrawing = tabIdx;
+  }
+}
+
 // Start
 init();
+
+// Show ref badge if provided
+if (refParam) {
+  setTimeout(() => {
+    const badge = document.createElement('div');
+    badge.style.cssText = 'position:fixed;top:70px;right:16px;background:rgba(255,179,0,0.15);border:1px solid #ffb300;padding:6px 12px;font-family:monospace;font-size:10px;color:#ffb300;border-radius:4px;letter-spacing:1px;z-index:200;';
+    badge.textContent = '📎 REF: ' + decodeURIComponent(refParam);
+    document.body.appendChild(badge);
+    setTimeout(() => badge.remove(), 5000);
+  }, 500);
+}
 </script>
 </body>
 </html>
+<!-- SP-006 ADDITION - append to DRAWINGS array -->
