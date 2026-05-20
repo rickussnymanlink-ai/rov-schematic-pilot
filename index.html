@@ -2515,7 +2515,7 @@ explanation:'Cavitation: vapour bubbles form in low-pressure zones and implode v
 
 
 const QLEVEL={};
-for(let l=1;l<=20;l++){const t=Math.ceil(l/5);const tqs=QP.filter(q=>q.tier===t);QLEVEL[l]=tqs;}
+for(let l=1;l<=30;l++){const t=Math.ceil(l/5);const tqs=QP.filter(q=>q.tier===t);QLEVEL[l]=tqs;}
 
 function getLQ(level){
   const t=Math.ceil(level/5);
@@ -2544,9 +2544,10 @@ function showAbilitiesScreen(){renderAbilitiesScreen();showScreen('screen-abilit
 
 function renderMap(){
   const grids=['grid-t1','grid-t2','grid-t3','grid-t4'];
+  const tierSizes=[5,5,5,15];
   [1,2,3,4].forEach((tier,ti)=>{
     const g=document.getElementById(grids[ti]);g.innerHTML='';
-    for(let i=0;i<5;i++){const lvl=(tier-1)*5+i+1;
+    for(let i=0;i<tierSizes[ti];i++){const lvl=(tier===4?15:( tier-1)*5)+i+1;
       const n=document.createElement('div');
       const comp=state.levelStars[lvl]>0,unl=lvl<=state.unlockedLevel,cur=lvl===state.currentLevel;
       n.className='level-node '+(comp?'completed':unl?(cur?'current':'unlocked'):'locked');
@@ -2556,7 +2557,7 @@ function renderMap(){
       g.appendChild(n);}
   });
   const tot=Object.keys(state.levelStars).length;
-  document.getElementById('map-progress-text').textContent=`${tot}/20 LEVELS COMPLETE · ${state.totalXP} XP`;
+  document.getElementById('map-progress-text').textContent=`${tot}/30 LEVELS COMPLETE · ${state.totalXP} XP`;
 }
 
 function renderAbilitiesScreen(){
