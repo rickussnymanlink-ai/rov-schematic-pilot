@@ -1004,7 +1004,7 @@ body {
 
 <!-- TUTORIAL -->
 
-<!-- STUDY MODE (SMD DRAWINGS) -->
+<!-- STUDY MODE (DRAWINGS) -->
 <div id="screen-tutorial" class="screen" style="padding:0;min-height:100vh">
 
 <!-- HEADER -->
@@ -1197,7 +1197,7 @@ body {
       The key insight: power enters at low voltage (440V), gets stepped UP by transformers in the HV PDU to 3000–3500V, travels down the umbilical, then gets stepped back DOWN inside the subsea termination box.<br><br>
       Select a module above to drill into each section with step-by-step animated walkthroughs.
     </div>
-    <div class="step-tip">≡ƒÆí ROV PILOT TIP: When you lose a thruster, trace backwards — Pod → Subsea Term → Umbilical → HV PDU. The drawing references (AH2742, AG8200, AH2646) tell you exactly which sheet to look at.</div>
+    <div class="step-tip">💡 ROV PILOT TIP: When you lose a thruster, trace backwards — Pod → Subsea Term → Umbilical → HV PDU. The drawing references (AH2742, AG8200, AH2646) tell you exactly which sheet to look at.</div>
   </div>
 </div>
 
@@ -1349,7 +1349,7 @@ body {
         Power enters from the vessel's main switchboard at <strong>440V 3-phase</strong> through contactor <span class="wire-ref">PH2</span> and changeover switch <span class="wire-ref">SW2</span>.<br><br>
         The <strong>Changeover Switch (SW1)</strong> selects between Ship's Supply and Customer's Generator (MA Set) — you'll see this on the LV PDU front panel.
       </div>
-      <div class="step-tip" id="m1-step-tip">≡ƒÆí Drawing reference: LV PDU AH2645 Sheet 2, Zone A1–A2. Wire colours: L1=Brown, L2=Black, L3=Grey, N=Blue</div>
+      <div class="step-tip" id="m1-step-tip">💡 Drawing reference: LV PDU AH2645 Sheet 2, Zone A1–A2. Wire colours: L1=Brown, L2=Black, L3=Grey, N=Blue</div>
     </div>
   </div>
 
@@ -1379,7 +1379,7 @@ body {
           <div class="comp-ref">ROV Pod · 7.5A</div>
         </div>
         <div class="comp-card" onclick="showCompDetail('ydstarter')">
-          <div class="comp-icon">≡ƒöä</div>
+          <div class="comp-icon">⚡ä</div>
           <div class="comp-name">Y-╬ö STARTER</div>
           <div class="comp-ref">TX7 · 500V SEL</div>
         </div>
@@ -1389,7 +1389,7 @@ body {
           <div class="comp-ref">Line Isolation Monitor</div>
         </div>
         <div class="comp-card" onclick="showCompDetail('mpr')">
-          <div class="comp-icon">≡ƒöÆ</div>
+          <div class="comp-icon">⚡Æ</div>
           <div class="comp-name">MPR1</div>
           <div class="comp-ref">Motor Protection Relay</div>
         </div>
@@ -1413,7 +1413,7 @@ body {
 <div id="mod-2" class="screen">
   <div class="mod-header">
     <div class="mod-title">HV POWER SYSTEM</div>
-    <div class="mod-desc">Drawing AH2646 · Sheets 2 &amp; 3 — How 440V becomes 3000–3500V and why. The heart of the SMD power system.</div>
+    <div class="mod-desc">Drawing AH2646 · Sheets 2 &amp; 3 — How 440V becomes 3000–3500V and why. The heart of the ROV power system.</div>
   </div>
 
   <div class="mode-toggle">
@@ -1521,7 +1521,7 @@ body {
         The umbilical can be <strong>over 300m long</strong>. At 440V, the cable resistance would cause huge voltage drop and power loss by the time it reaches the seabed.<br><br>
         By stepping up to <strong>3000–3500V</strong>, the same power travels on much less current — so the cable can be thinner and losses are minimal. This is the same principle used in power grid transmission lines.
       </div>
-      <div class="step-tip" id="m2-step-tip">≡ƒÆí P = V ├ù I — same power, higher voltage = lower current = less heat loss in the cable (P_loss = I┬▓ ├ù R)</div>
+      <div class="step-tip" id="m2-step-tip">💡 P = V ├ù I — same power, higher voltage = lower current = less heat loss in the cable (P_loss = I┬▓ ├ù R)</div>
     </div>
   </div>
 
@@ -1530,17 +1530,17 @@ body {
       <div class="explore-title">TAP ANY COMPONENT TO LEARN</div>
       <div class="component-grid">
         <div class="comp-card" onclick="showCompDetail('tx2')">
-          <div class="comp-icon">≡ƒöü</div>
+          <div class="comp-icon">⚡ü</div>
           <div class="comp-name">TX2 — ROV MOTOR</div>
           <div class="comp-ref">256kVA · 3000–3200V SEC</div>
         </div>
         <div class="comp-card" onclick="showCompDetail('tx1')">
-          <div class="comp-icon">≡ƒöü</div>
+          <div class="comp-icon">⚡ü</div>
           <div class="comp-name">TX1 — ROV POD</div>
           <div class="comp-ref">7.5kVA · 3000–3100V SEC</div>
         </div>
         <div class="comp-card" onclick="showCompDetail('htcoupler')">
-          <div class="comp-icon">≡ƒöù</div>
+          <div class="comp-icon">⚡ù</div>
           <div class="comp-name">HT COUPLER</div>
           <div class="comp-ref">PB943 · 4000V · 5╬⌐</div>
         </div>
@@ -1714,7 +1714,7 @@ body {
       Read it left to right — each column is a connection point. The conductor label (e.g. <span class="wire-ref">U1</span>) stays the same all the way through. The terminal number changes at each junction box.<br><br>
       <strong>As an ROV pilot</strong>, when you lose ROV pod power, check: Is L1/L2 present at the HV PDU terminals? Is it getting through the slip ring? This drawing tells you where to look.
     </div>
-    <div class="step-tip">≡ƒÆí The slip ring (AF6768) is the most common cause of intermittent faults — it's the rotating interface between the static deck cable and the rotating umbilical drum. Wear and contamination here causes signal dropout.</div>
+    <div class="step-tip">💡 The slip ring (AF6768) is the most common cause of intermittent faults — it's the rotating interface between the static deck cable and the rotating umbilical drum. Wear and contamination here causes signal dropout.</div>
   </div>
 </div>
 
@@ -1837,16 +1837,16 @@ body {
       <strong>Beckhoff EtherCAT I/O modules</strong> handle all digital and analogue I/O — thrusters, valves, sensors. These communicate back to the topside PLC over the fibre link via the <strong>Focal Fibre Interface Rack</strong>.<br><br>
       The <strong>LIM (Line Isolation Monitor)</strong> watches for earth faults on the HV system subsea — if seawater gets into a connector and creates a path to earth, the LIM alarms before it becomes a trip.
     </div>
-    <div class="step-tip">≡ƒÆí When you see "SHT.14" on a wire reference, that means the wire continues on Sheet 14 of AH2742. Always check the sheet index on the front sheet to find which page covers which system.</div>
+    <div class="step-tip">💡 When you see "SHT.14" on a wire reference, that means the wire continues on Sheet 14 of AH2742. Always check the sheet index on the front sheet to find which page covers which system.</div>
   </div>
 </div>
 
 <!-- ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
-     MODULE 5 — HOW TO READ SMD DRAWINGS
+     MODULE 5 — HOW TO READ ROV DRAWINGS
 ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ -->
 <div id="mod-5" class="screen">
   <div class="mod-header">
-    <div class="mod-title">HOW TO READ SMD DRAWINGS</div>
+    <div class="mod-title">HOW TO READ ROV DRAWINGS</div>
     <div class="mod-desc">The conventions, notation, and shortcuts that make SMD AutoCAD drawings readable once you know the system.</div>
   </div>
 
@@ -1919,13 +1919,13 @@ body {
 
   <div class="step-panel">
     <div class="step-number">MODULE 5 — READING CONVENTIONS</div>
-    <div class="step-title">The 3 Things That Unlock Every SMD Drawing</div>
+    <div class="step-title">The 3 Things That Unlock Every ROV Drawing</div>
     <div class="step-body">
       <strong>1. Zone references</strong> — Every component and wire cross-reference uses "SHT.X_YZ" format. When you see "SEE SHT.4" on a wire, flip to Sheet 4 and look for the same wire number continuing.<br><br>
       <strong>2. Wire numbers are unique</strong> — Wire 208-WE appears on multiple sheets but it's always the same physical wire. Follow the number, not the line.<br><br>
       <strong>3. Terminal blocks are your anchors</strong> — X7-2, X12-1 etc. are physical terminal blocks in the panel. If you're on the ROV and need to trace a fault, the terminal block is where you put your meter.
     </div>
-    <div class="step-tip">≡ƒÆí SMD Cabin Settings drawing (AH2713) is your best friend — it shows all transformer tap settings, contactor ratings, and LIM settings on ONE page. Print it and keep it in the control cabin.</div>
+    <div class="step-tip">💡 Cabin Settings drawing (AH2713) is your best friend — it shows all transformer tap settings, contactor ratings, and LIM settings on ONE page. Print it and keep it in the control cabin.</div>
   </div>
 </div>
 
@@ -1967,19 +1967,19 @@ function setMode(modNum, mode) {
 // ── STEP DATA ──
 const steps = {
   1: [
-    { num:'01', title:'Ship\'s Supply Entry', body:'Power enters from the vessel\'s main switchboard at <strong>440V 3-phase</strong> through contactor <span class="wire-ref">PH2</span> and changeover switch <span class="wire-ref">SW2</span>.<br><br>The <strong>Changeover Switch (SW1)</strong> selects between Ship\'s Supply and Customer\'s Generator (MA Set) — you\'ll see this on the LV PDU front panel.', tip:'≡ƒÆí Drawing ref: AH2645 Sht.2, Zone A1–A2. Wire colours: L1=Brown, L2=Black, L3=Grey, N=Blue' },
-    { num:'02', title:'440V Busbar — The Distribution Point', body:'All incoming power feeds onto the <strong>440V 3-phase busbar</strong> (L1, L2, L3, N). This is the common point from which everything downstream is fed.<br><br>The <strong>VMR (Voltage Monitor Relay)</strong> sits on this busbar and monitors for overvoltage, undervoltage, and phase loss. If voltage is outside 325–490V or hysteresis of 5%, it signals the control system.', tip:'≡ƒÆí VMR settings from AH2713: Overvolt=490V, Undervolt=320V, Hysteresis=5%' },
-    { num:'03', title:'Main Contactors — KM1 and KM2', body:'From the busbar, power splits to <strong>KM2 (Q2)</strong> — the ROV Motor contactor rated 100A — and <strong>KM1 (Q3)</strong> — the ROV Pod contactor rated 7.5A.<br><br>These are the main on/off switches you control from the pilot desk. KM2 energises to send power to the 256kVA transformer. No KM2 = no ROV motor.', tip:'≡ƒÆí KM2 is controlled by the pilot\'s MOTOR ON button. If it won\'t close, check: door interlock switches (SHT.2_D1), undervoltage trip coil, and the MPR1 relay.' },
-    { num:'04', title:'Y-╬ö Starter — Soft Motor Start', body:'The ROV HPU motor is 112kW — starting it Direct On Line (DOL) would pull <strong>600% inrush current</strong> and crash the ship\'s voltage.<br><br>The <strong>Y-╬ö (Star-Delta) starter TX7</strong> starts the motor in Star configuration (lower voltage, ~200% inrush), then after ~5–10 seconds switches to Delta for full power.', tip:'≡ƒÆí From AH2713: KM2=FLC 318A @ 380V (Y-╬ö), KM4=FLC 30A @ 380V (TMS). If motor trips immediately on start, check the MPR1 trip current setting.' },
-    { num:'05', title:'24V PSU — Control Supply', body:'A separate branch from the LV busbar feeds the <strong>24V DC PSU boards</strong> (PSU1=400W, PSU2=+12V, PSU3=-12V).<br><br>This provides the <strong>ECM supply</strong> (Electronic Control Module) — the control system\'s brain. If 24V fails, you lose all ROV control even if HV is healthy.', tip:'≡ƒÆí ECM supply reference: AH2645 Sht.4, Rung 45. If ROV comms drop but HV is present, check 24V PSU output first.' },
-    { num:'06', title:'LIM Units — Ground Fault Protection', body:'The <strong>LIM Units (Line Isolation Monitors)</strong> continuously measure the insulation resistance between each HV circuit and earth.<br><br>Settings from AH2713: DC measurement, Alarm 1 = 1M╬⌐ (warning), Alarm 2 = 10M╬⌐ (pre-warning), HV Coupler AGH5295. If LIM alarms, you may have seawater ingress into a connector subsea.', tip:'≡ƒÆí LIM alarms BEFORE a full earth fault trip. A LIM Alarm 1 means you have time to surface and investigate. Don\'t ignore it.' },
+    { num:'01', title:'Ship\'s Supply Entry', body:'Power enters from the vessel\'s main switchboard at <strong>440V 3-phase</strong> through contactor <span class="wire-ref">PH2</span> and changeover switch <span class="wire-ref">SW2</span>.<br><br>The <strong>Changeover Switch (SW1)</strong> selects between Ship\'s Supply and Customer\'s Generator (MA Set) — you\'ll see this on the LV PDU front panel.', tip:'💡 Drawing ref: AH2645 Sht.2, Zone A1–A2. Wire colours: L1=Brown, L2=Black, L3=Grey, N=Blue' },
+    { num:'02', title:'440V Busbar — The Distribution Point', body:'All incoming power feeds onto the <strong>440V 3-phase busbar</strong> (L1, L2, L3, N). This is the common point from which everything downstream is fed.<br><br>The <strong>VMR (Voltage Monitor Relay)</strong> sits on this busbar and monitors for overvoltage, undervoltage, and phase loss. If voltage is outside 325–490V or hysteresis of 5%, it signals the control system.', tip:'💡 VMR settings from AH2713: Overvolt=490V, Undervolt=320V, Hysteresis=5%' },
+    { num:'03', title:'Main Contactors — KM1 and KM2', body:'From the busbar, power splits to <strong>KM2 (Q2)</strong> — the ROV Motor contactor rated 100A — and <strong>KM1 (Q3)</strong> — the ROV Pod contactor rated 7.5A.<br><br>These are the main on/off switches you control from the pilot desk. KM2 energises to send power to the 256kVA transformer. No KM2 = no ROV motor.', tip:'💡 KM2 is controlled by the pilot\'s MOTOR ON button. If it won\'t close, check: door interlock switches (SHT.2_D1), undervoltage trip coil, and the MPR1 relay.' },
+    { num:'04', title:'Y-╬ö Starter — Soft Motor Start', body:'The ROV HPU motor is 112kW — starting it Direct On Line (DOL) would pull <strong>600% inrush current</strong> and crash the ship\'s voltage.<br><br>The <strong>Y-╬ö (Star-Delta) starter TX7</strong> starts the motor in Star configuration (lower voltage, ~200% inrush), then after ~5–10 seconds switches to Delta for full power.', tip:'💡 From AH2713: KM2=FLC 318A @ 380V (Y-╬ö), KM4=FLC 30A @ 380V (TMS). If motor trips immediately on start, check the MPR1 trip current setting.' },
+    { num:'05', title:'24V PSU — Control Supply', body:'A separate branch from the LV busbar feeds the <strong>24V DC PSU boards</strong> (PSU1=400W, PSU2=+12V, PSU3=-12V).<br><br>This provides the <strong>ECM supply</strong> (Electronic Control Module) — the control system\'s brain. If 24V fails, you lose all ROV control even if HV is healthy.', tip:'💡 ECM supply reference: AH2645 Sht.4, Rung 45. If ROV comms drop but HV is present, check 24V PSU output first.' },
+    { num:'06', title:'LIM Units — Ground Fault Protection', body:'The <strong>LIM Units (Line Isolation Monitors)</strong> continuously measure the insulation resistance between each HV circuit and earth.<br><br>Settings from AH2713: DC measurement, Alarm 1 = 1M╬⌐ (warning), Alarm 2 = 10M╬⌐ (pre-warning), HV Coupler AGH5295. If LIM alarms, you may have seawater ingress into a connector subsea.', tip:'💡 LIM alarms BEFORE a full earth fault trip. A LIM Alarm 1 means you have time to surface and investigate. Don\'t ignore it.' },
   ],
   2: [
-    { num:'01', title:'Why Step Voltage UP?', body:'The umbilical can be <strong>300m+ long</strong>. At 440V, cable resistance causes huge voltage drop and power loss reaching the seabed.<br><br>By stepping up to <strong>3000–3500V</strong>, the same power travels on less current — cable can be thinner and losses minimal. Same principle as power grid transmission lines.', tip:'≡ƒÆí P = V ├ù I — same power, higher voltage = lower current = less heat loss. P_loss = I┬▓ ├ù R' },
-    { num:'02', title:'TX2 — The 256kVA Motor Transformer', body:'<strong>TX2</strong> is the largest transformer in the system — 256kVA. It steps 440V up to <strong>3000–3200V</strong> on the secondary.<br><br>Primary tappings: 380/400/415/440/460/480V. Secondary tappings: 3000/3050/3100/3150/3200V. The tap setting is adjusted for your vessel\'s actual supply voltage to keep secondary voltage correct.', tip:'≡ƒÆí From AH2713 cabin settings: TX2 secondary set to 3400V. Check transformer tap links match the vessel supply.' },
-    { num:'03', title:'HT Couplers — High Voltage Isolation', body:'The <strong>HT Couplers</strong> (PB943, 4000V rating, 5╬⌐) sit between the transformer primary and the busbar supply.<br><br>They are current-limiting devices that also provide a coupling point for the ECM (Electronic Control Module) signal — the control commands ride on the HV power conductors through these couplers. This is how topside controls the ROV subsea without a separate control cable.', tip:'≡ƒÆí If you have HV but the ROV doesn\'t respond to controls, suspect an HT coupler fault — control signal can\'t get through.' },
-    { num:'04', title:'Current Transformers — Protection', body:'<strong>CT8 and CT9</strong> are current transformers that measure the HV current flowing to the motor. Their output goes to the <strong>MPR1 (Motor Protection Relay)</strong>.<br><br><strong>VT1</strong> (AA5727, 4000V/100V) is a voltage transformer for metering — it scales the HV voltage down to a safe measurable level for the panel voltmeter.', tip:'≡ƒÆí If motor current reads zero on the panel meter but motor is commanded on, check CT8/CT9 secondary circuit first — a broken CT secondary can cause protection issues.' },
-    { num:'05', title:'ETS — Earth Trip Switch', body:'The <strong>ETS (Earth Trip Switch)</strong> rated 56A at 5–18V is a sensitive earth fault detector on the HV circuit.<br><br>If the HV system develops an earth fault (e.g. seawater in a subsea connector), current flows through the earth path and the ETS detects it, tripping the system before damage or danger occurs.', tip:'≡ƒÆí ETS trips are serious — they indicate an earth fault on the HV system. Don\'t reset without investigating. Common cause: damaged umbilical or wet connector at the subsea termination.' },
+    { num:'01', title:'Why Step Voltage UP?', body:'The umbilical can be <strong>300m+ long</strong>. At 440V, cable resistance causes huge voltage drop and power loss reaching the seabed.<br><br>By stepping up to <strong>3000–3500V</strong>, the same power travels on less current — cable can be thinner and losses minimal. Same principle as power grid transmission lines.', tip:'💡 P = V ├ù I — same power, higher voltage = lower current = less heat loss. P_loss = I┬▓ ├ù R' },
+    { num:'02', title:'TX2 — The 256kVA Motor Transformer', body:'<strong>TX2</strong> is the largest transformer in the system — 256kVA. It steps 440V up to <strong>3000–3200V</strong> on the secondary.<br><br>Primary tappings: 380/400/415/440/460/480V. Secondary tappings: 3000/3050/3100/3150/3200V. The tap setting is adjusted for your vessel\'s actual supply voltage to keep secondary voltage correct.', tip:'💡 From AH2713 cabin settings: TX2 secondary set to 3400V. Check transformer tap links match the vessel supply.' },
+    { num:'03', title:'HT Couplers — High Voltage Isolation', body:'The <strong>HT Couplers</strong> (PB943, 4000V rating, 5╬⌐) sit between the transformer primary and the busbar supply.<br><br>They are current-limiting devices that also provide a coupling point for the ECM (Electronic Control Module) signal — the control commands ride on the HV power conductors through these couplers. This is how topside controls the ROV subsea without a separate control cable.', tip:'💡 If you have HV but the ROV doesn\'t respond to controls, suspect an HT coupler fault — control signal can\'t get through.' },
+    { num:'04', title:'Current Transformers — Protection', body:'<strong>CT8 and CT9</strong> are current transformers that measure the HV current flowing to the motor. Their output goes to the <strong>MPR1 (Motor Protection Relay)</strong>.<br><br><strong>VT1</strong> (AA5727, 4000V/100V) is a voltage transformer for metering — it scales the HV voltage down to a safe measurable level for the panel voltmeter.', tip:'💡 If motor current reads zero on the panel meter but motor is commanded on, check CT8/CT9 secondary circuit first — a broken CT secondary can cause protection issues.' },
+    { num:'05', title:'ETS — Earth Trip Switch', body:'The <strong>ETS (Earth Trip Switch)</strong> rated 56A at 5–18V is a sensitive earth fault detector on the HV circuit.<br><br>If the HV system develops an earth fault (e.g. seawater in a subsea connector), current flows through the earth path and the ETS detects it, tripping the system before damage or danger occurs.', tip:'💡 ETS trips are serious — they indicate an earth fault on the HV system. Don\'t reset without investigating. Common cause: damaged umbilical or wet connector at the subsea termination.' },
   ],
 };
 
@@ -2247,7 +2247,7 @@ explanation:'I = V/R = 24/6 = 4A. Ohm\'s Law is fundamental to all electrical fa
 {tier:1,badge:'ELECTRICAL',text:'What does a circle with an "M" inside represent?',
 svg:`<svg viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg"><circle cx="110" cy="35" r="30" fill="none" stroke="#00e5ff" stroke-width="2"/><text x="110" y="46" fill="#FFB300" font-size="28" text-anchor="middle" font-family="monospace" font-weight="bold">M</text><line x1="10" y1="35" x2="80" y2="35" stroke="#00e5ff" stroke-width="2"/><line x1="140" y1="35" x2="210" y2="35" stroke="#00e5ff" stroke-width="2"/></svg>`,
 options:['Measuring instrument','Electric motor','Multiplexer','Memory unit'],answer:1,
-hint:'This drives the HPU on the SMD subsea system.',
+hint:'This drives the HPU on the WR Class ROV subsea system.',
 explanation:'Circle with M = ELECTRIC MOTOR. On the SMD, the 112kW HPU motor (AE5690) runs at 3000V subsea to drive the hydraulic power unit that powers all ROV thrusters and functions.'},
 
 {tier:1,badge:'ELECTRICAL',text:'What does a circle with a "G" inside represent?',
@@ -2329,7 +2329,7 @@ options:['Filter contamination from hydraulic fluid','Store pressurised fluid fo
 hint:'Pre-charged with nitrogen gas, it acts like a hydraulic spring.',
 explanation:'Accumulators store pressurised fluid (pre-charged with nitrogen). Used for emergency functions (e.g. valve closure on power loss) and to smooth pressure fluctuations during peak demand.'},
 
-{tier:2,badge:'ROV',text:'Why does the SMD system transmit power at 3000-3500V down the umbilical?',
+{tier:2,badge:'ROV',text:'Why does the WR Class ROV system transmit power at 3000-3500V down the umbilical?',
 svg:`<svg viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg"><text x="110" y="25" fill="#00e5ff" font-size="14" text-anchor="middle" font-family="monospace">P = V × I</text><text x="110" y="48" fill="#FFB300" font-size="12" text-anchor="middle" font-family="monospace">P_loss = I² × R</text><text x="110" y="65" fill="#aaa" font-size="10" text-anchor="middle">300m+ umbilical</text></svg>`,
 options:['3000V is required by IMCA regulation','High voltage = lower current = less heat loss in cable','Higher voltage is safer subsea','Lower voltage transformers are more expensive'],answer:1,
 hint:'Think about what happens to cable losses when current is reduced.',
@@ -2451,7 +2451,7 @@ hint:'The gate draws almost zero current — making it very efficient.',
 explanation:'MOSFETs are VOLTAGE-controlled — the gate draws virtually no current. This makes them extremely efficient for PWM motor control, which is how ROV thruster speed is regulated in iTCU thruster controllers.'},
 
 // ── TIER 4 · MASTER PILOT — IMCA & Full Systems ─────────────────────────────
-{tier:4,badge:'MASTER',text:'What does drawing zone reference "SHT.2_A3" mean on an SMD schematic?',
+{tier:4,badge:'MASTER',text:'What does drawing zone reference "SHT.2_A3" mean on a ROV schematic?',
 svg:`<svg viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="8" width="200" height="54" fill="none" stroke="#00e5ff" stroke-width="1"/><line x1="10" y1="26" x2="210" y2="26" stroke="#aaa" stroke-width="0.5"/><line x1="10" y1="44" x2="210" y2="44" stroke="#aaa" stroke-width="0.5"/><line x1="77" y1="8" x2="77" y2="62" stroke="#aaa" stroke-width="0.5"/><line x1="144" y1="8" x2="144" y2="62" stroke="#aaa" stroke-width="0.5"/><rect x="77" y="26" width="67" height="18" fill="#FFB300" opacity="0.2"/><text x="110" y="39" fill="#FFB300" font-size="11" text-anchor="middle">A3</text></svg>`,
 options:['Sheet 23, revision A','Sheet 2, Row A, Column 3 — pinpoints exact location','Second amendment, third sheet','Area 2, section 3 of the ROV'],answer:1,
 hint:'Zone references use Sheet, Row letter and Column number.',
@@ -2460,10 +2460,10 @@ explanation:'Zone references (SHT.X_YZ) = Sheet number, Row letter, Column numbe
 {tier:4,badge:'MASTER',text:'Wire labelled "208-WE" on an SMD drawing — what does "WE" tell you?',
 svg:`<svg viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg"><line x1="10" y1="35" x2="210" y2="35" stroke="#f5f5f5" stroke-width="3"/><text x="110" y="25" fill="#FFB300" font-size="14" text-anchor="middle" font-family="monospace">208-WE</text></svg>`,
 options:['West end of the terminal block','Wire end connector type','White conductor — WE = White','Welded joint at this point'],answer:2,
-hint:'SMD wire numbering format is: number-COLOUR CODE.',
+hint:'ROV wire numbering format is: number-COLOUR CODE.',
 explanation:'SMD wire number format: NUMBER-COLOUR. WE = White. Colour codes: RD=Red, BK=Black, BN=Brown, GN=Green, WE=White, BE=Blue, OG=Orange, YW=Yellow, GN/YW=Green-Yellow (earth).'},
 
-{tier:4,badge:'MASTER',text:'Terminal reference "X12-1 (U1)" on an SMD drawing tells you what?',
+{tier:4,badge:'MASTER',text:'Terminal reference "X12-1 (U1)" on a ROV drawing tells you what?',
 svg:`<svg viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg"><rect x="45" y="15" width="130" height="40" fill="none" stroke="#00e5ff" stroke-width="2"/><text x="110" y="33" fill="#FFB300" font-size="14" text-anchor="middle">X12-1</text><text x="110" y="50" fill="#aaa" font-size="12" text-anchor="middle">(U1)</text></svg>`,
 options:['Drawing X, sheet 12, revision 1','External connector 12, unit 1','Terminal block X12, position 1, carrying conductor U1','Cross-reference to drawing X12, section 1'],answer:2,
 hint:'X = block ID, 12 = block number, -1 = terminal position, (U1) = conductor label.',
@@ -2551,7 +2551,7 @@ function renderMap(){
       const comp=state.levelStars[lvl]>0,unl=lvl<=state.unlockedLevel,cur=lvl===state.currentLevel;
       n.className='level-node '+(comp?'completed':unl?(cur?'current':'unlocked'):'locked');
       const st=state.levelStars[lvl]||0;
-      n.innerHTML=`<div class="ln-num">${lvl}</div><div class="ln-stars">${comp?'✓'.repeat(st)+'Γÿå'.repeat(3-st):''}</div><div class="ln-icon">${unl?'▶':'≡ƒöÆ'}</div>`;
+      n.innerHTML=`<div class="ln-num">${lvl}</div><div class="ln-stars">${comp?'✓'.repeat(st)+'Γÿå'.repeat(3-st):''}</div><div class="ln-icon">${unl?'▶':'⚡Æ'}</div>`;
       if(unl)n.onclick=()=>startGame(lvl);
       g.appendChild(n);}
   });
@@ -2619,7 +2619,7 @@ function useAb(id){
   switch(id){
     case'sonar':{let n=0;document.querySelectorAll('.opt-btn').forEach((b,i)=>{if(i!==q.answer&&n<2){b.classList.add('eliminated');n++;}});showToast('🗺 SONAR — 2 wrong answers eliminated!');break;}
     case'dive':{sess.frozen=true;setTimeout(()=>sess.frozen=false,15000);showToast('🎮 DEEP DIVE — Timer frozen 15s!');break;}
-    case'signal':{const h=document.getElementById('hint-box');h.textContent='≡ƒÆí HINT: '+q.hint;h.style.display='block';showToast('≡ƒô╢ SIGNAL — Hint revealed!');break;}
+    case'signal':{const h=document.getElementById('hint-box');h.textContent='💡 HINT: '+q.hint;h.style.display='block';showToast('≡ƒô╢ SIGNAL — Hint revealed!');break;}
     case'autopilot':{document.querySelectorAll('.opt-btn').forEach((b,i)=>{if(i===q.answer)b.style.borderColor='var(--green)';});showToast('🎯 AUTO PILOT — Correct answer highlighted!');break;}
     case'regen':{if(sess.hp<MAX_HP){sess.hp++;renderHearts();showToast('🔏 REGEN — Life restored!');}else showToast('🔏 Already at full health!');break;}
     case'overdrive':{sess.overLeft=3;showToast('⚡ OVERDRIVE — 2├ù points for 3 questions!');break;}
