@@ -3709,7 +3709,7 @@ const PDF_DATA = {
 
 function openPDF(drawingRef) {
   const key = drawingRef.split(' ')[0].toUpperCase();
-  const SP_MAP = {'AH2645':0,'AH2646':1,'AG8200':2,'AH2713':2,'AH2742':3,'AH2136':3,'AH2478':4,'AG5425':4};
+  const SP_MAP = {'AH2645':0,'AH2646':1,'AG8200':2,'AH2713':2,'AH2742':3,'AH2136':3,'AH2478':4,'AG5425':4,'ITCU':5,'AH2742':3};
   const tabIdx = SP_MAP[key] !== undefined ? SP_MAP[key] : 0;
   window.open('SP-DRAWINGS-VIEWER.html?tab='+tabIdx+'&ref='+encodeURIComponent(drawingRef),'_blank');
 }
