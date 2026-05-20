@@ -979,12 +979,12 @@ body {
 <!-- MAP -->
 <div id="screen-map" class="screen">
   <div class="map-header">
-    <div style="font-size:32px">≡ƒù║∩╕Å</div>
+    <div style="font-size:32px">🎮</div>
     <div class="map-title">MISSION MAP</div>
     <div class="map-sub" id="map-progress-text">Loading...</div>
   </div>
   <div class="tier-section">
-    <div class="tier-header" style="border-color:var(--teal);color:var(--teal)"><span>≡ƒÉó</span><h3 style="color:var(--teal)">CADET</h3><span class="tier-range">L1–5 · 0–300m</span></div>
+    <div class="tier-header" style="border-color:var(--teal);color:var(--teal)"><span>🎯</span><h3 style="color:var(--teal)">CADET</h3><span class="tier-range">L1–5 · 0–300m</span></div>
     <div class="levels-grid" id="grid-t1"></div>
   </div>
   <div class="tier-section">
@@ -1384,7 +1384,7 @@ body {
           <div class="comp-ref">TX7 · 500V SEL</div>
         </div>
         <div class="comp-card" onclick="showCompDetail('lim')">
-          <div class="comp-icon">≡ƒ¢í</div>
+          <div class="comp-icon">🛡</div>
           <div class="comp-name">LIM UNIT</div>
           <div class="comp-ref">Line Isolation Monitor</div>
         </div>
@@ -2143,7 +2143,7 @@ updateStep(1);
     <div class="timer-bar-bg"><div class="timer-bar" id="timer-bar" style="width:100%"></div></div>
   </div>
   <div class="abilities-bar" id="game-abilities"></div>
-  <div id="depth-badge" class="depth-badge depth-t1">≡ƒÉó CADET — SURFACE WATERS</div>
+  <div id="depth-badge" class="depth-badge depth-t1">🎯 CADET — SURFACE WATERS</div>
   <div class="q-card" id="q-card">
     <div class="q-badge badge-schematic" id="q-badge">SCHEMATIC</div>
     <div class="q-text" id="q-text">Loading...</div>
@@ -2174,12 +2174,12 @@ updateStep(1);
 const ABILITIES=[
   {id:'sonar',icon:'🗺',name:'SONAR SCAN',desc:'Eliminates 2 wrong answers',unlockLevel:1,color:'var(--cyan)'},
   {id:'dive',icon:'🎮',name:'DEEP DIVE',desc:'Freezes timer for 15 seconds',unlockLevel:3,color:'var(--teal)'},
-  {id:'signal',icon:'≡ƒô╢',name:'SIGNAL BOOST',desc:'Reveals a helpful hint',unlockLevel:5,color:'var(--purple)'},
+  {id:'signal',icon:'📶',name:'SIGNAL BOOST',desc:'Reveals a helpful hint',unlockLevel:5,color:'var(--purple)'},
   {id:'autopilot',icon:'🎯',name:'AUTO PILOT',desc:'Highlights the correct answer',unlockLevel:8,color:'var(--green)'},
   {id:'regen',icon:'🔏',name:'REGEN POWER',desc:'Restores 1 lost life',unlockLevel:10,color:'var(--green)'},
   {id:'overdrive',icon:'⚡',name:'OVERDRIVE',desc:'2├ù points for 3 questions',unlockLevel:12,color:'var(--amber)'},
   {id:'xray',icon:'🔍',name:'X-RAY VISION',desc:'Shows full explanation before answering',unlockLevel:15,color:'var(--purple)'},
-  {id:'shield',icon:'≡ƒ¢í',name:'PRESSURE SHIELD',desc:'Blocks one life loss',unlockLevel:18,color:'var(--red)'},
+  {id:'shield',icon:'🛡',name:'PRESSURE SHIELD',desc:'Blocks one life loss',unlockLevel:18,color:'var(--red)'},
 ];
 
 const QP=[
@@ -2278,7 +2278,7 @@ explanation:'A fuse melts and breaks the circuit if current exceeds its rated va
 svg:`<svg viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg"><circle cx="110" cy="35" r="30" fill="none" stroke="#00e5ff" stroke-width="2"/><polygon points="80,35 130,15 130,55" fill="#FFB300" opacity="0.8"/><line x1="10" y1="35" x2="80" y2="35" stroke="#00e5ff" stroke-width="2"/><line x1="140" y1="35" x2="210" y2="35" stroke="#00e5ff" stroke-width="2"/></svg>`,
 options:['Hydraulic pump','Hydraulic motor','Pressure relief valve','Flow control valve'],answer:1,
 hint:'This converts fluid pressure into rotation.',
-explanation:'Circle with triangle pointing INWARD = HYDRAULIC MOTOR (converts fluid pressure to mechanical rotation). The SMD HPU drives thrusters and manipulators via hydraulic motors.'},
+explanation:'Circle with triangle pointing INWARD = HYDRAULIC MOTOR (converts fluid pressure to mechanical rotation). The WR Class ROV HPU drives thrusters and manipulators via hydraulic motors.'},
 
 {tier:1,badge:'HYDRAULICS',text:'In a hydraulic schematic, a circle with a triangle pointing OUTWARD represents?',
 svg:`<svg viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg"><circle cx="110" cy="35" r="30" fill="none" stroke="#00e5ff" stroke-width="2"/><polygon points="140,35 90,15 90,55" fill="#FFB300" opacity="0.8"/><line x1="10" y1="35" x2="80" y2="35" stroke="#00e5ff" stroke-width="2"/><line x1="140" y1="35" x2="210" y2="35" stroke="#00e5ff" stroke-width="2"/></svg>`,
@@ -2578,7 +2578,7 @@ function renderQ(){
   document.getElementById('hud-q').textContent=`${sess.qIndex+1}/5`;
   document.getElementById('hud-combo').textContent=`x${sess.combo}`;
   renderHearts();renderXPBar();
-  const tInfo=[null,{cls:'depth-t1',txt:'≡ƒÉó CADET — SURFACE WATERS'},{cls:'depth-t2',txt:'🎮 DIVER — SHALLOW SECTOR'},{cls:'depth-t3',txt:'ΓÜô SUPERVISOR — DEEP WATERS'},{cls:'depth-t4',txt:'🏆️ MASTER PILOT — ABYSS'}];
+  const tInfo=[null,{cls:'depth-t1',txt:'🎯 CADET — SURFACE WATERS'},{cls:'depth-t2',txt:'🎮 DIVER — SHALLOW SECTOR'},{cls:'depth-t3',txt:'ΓÜô SUPERVISOR — DEEP WATERS'},{cls:'depth-t4',txt:'🏆️ MASTER PILOT — ABYSS'}];
   const db=document.getElementById('depth-badge');db.className='depth-badge '+tInfo[q.tier].cls;db.textContent=tInfo[q.tier].txt;
   const bm={SCHEMATIC:'badge-schematic',HYDRAULIC:'badge-hydraulic',ELECTRICAL:'badge-electrical',ROV:'badge-rov'};
   const b=document.getElementById('q-badge');b.className='q-badge '+(bm[q.badge]||'badge-schematic');b.textContent=q.badge;
@@ -2619,12 +2619,12 @@ function useAb(id){
   switch(id){
     case'sonar':{let n=0;document.querySelectorAll('.opt-btn').forEach((b,i)=>{if(i!==q.answer&&n<2){b.classList.add('eliminated');n++;}});showToast('🗺 SONAR — 2 wrong answers eliminated!');break;}
     case'dive':{sess.frozen=true;setTimeout(()=>sess.frozen=false,15000);showToast('🎮 DEEP DIVE — Timer frozen 15s!');break;}
-    case'signal':{const h=document.getElementById('hint-box');h.textContent='💡 HINT: '+q.hint;h.style.display='block';showToast('≡ƒô╢ SIGNAL — Hint revealed!');break;}
+    case'signal':{const h=document.getElementById('hint-box');h.textContent='💡 HINT: '+q.hint;h.style.display='block';showToast('📶 SIGNAL — Hint revealed!');break;}
     case'autopilot':{document.querySelectorAll('.opt-btn').forEach((b,i)=>{if(i===q.answer)b.style.borderColor='var(--green)';});showToast('🎯 AUTO PILOT — Correct answer highlighted!');break;}
     case'regen':{if(sess.hp<MAX_HP){sess.hp++;renderHearts();showToast('🔏 REGEN — Life restored!');}else showToast('🔏 Already at full health!');break;}
     case'overdrive':{sess.overLeft=3;showToast('⚡ OVERDRIVE — 2├ù points for 3 questions!');break;}
     case'xray':{const fb=document.getElementById('feedback');fb.className='feedback correct-fb';fb.innerHTML=`<strong>🔍 X-RAY:</strong> ${q.explanation}`;fb.style.display='block';showToast('🔍 X-RAY — Explanation revealed!');break;}
-    case'shield':{sess.shieldActive=true;showToast('≡ƒ¢í SHIELD — Next wrong answer blocked!');break;}
+    case'shield':{sess.shieldActive=true;showToast('🛡 SHIELD — Next wrong answer blocked!');break;}
   }
 }
 
@@ -2654,7 +2654,7 @@ function selectAns(chosen){
     showToast(`✗ +${pts} pts`);
   }else{
     sess.combo=1;document.getElementById('hud-combo').textContent='x1';
-    if(sess.shieldActive){sess.shieldActive=false;showToast('≡ƒ¢í SHIELD blocked damage!');}
+    if(sess.shieldActive){sess.shieldActive=false;showToast('🛡 SHIELD blocked damage!');}
     else{sess.hp=Math.max(0,sess.hp-1);renderHearts();if(sess.hp<=0)setTimeout(endLevel,1200);}
     showFB(false,`Γ¥î <strong>INCORRECT.</strong> Answer: <strong>${q.options[q.answer]}</strong><br><small>${q.explanation}</small>`);
   }
@@ -2674,7 +2674,7 @@ function endLevel(){
   if(stars>=1&&sess.level>=state.unlockedLevel){state.unlockedLevel=Math.min(20,sess.level+1);state.currentLevel=state.unlockedLevel;}
   saveState();
   let badge,title;
-  if(stars===3){badge='≡ƒÅå';title='PERFECT DIVE!';}else if(stars===2){badge='✓✓';title='MISSION COMPLETE';}else if(stars===1){badge='✓';title='LEVEL CLEARED';}else{badge='≡ƒÆÇ';title='MISSION FAILED';}
+  if(stars===3){badge='🏆';title='PERFECT DIVE!';}else if(stars===2){badge='✓✓';title='MISSION COMPLETE';}else if(stars===1){badge='✓';title='LEVEL CLEARED';}else{badge='🔧';title='MISSION FAILED';}
   document.getElementById('result-badge').textContent=badge;
   document.getElementById('result-title').textContent=title;
   document.getElementById('result-score').textContent=sess.score.toLocaleString();
