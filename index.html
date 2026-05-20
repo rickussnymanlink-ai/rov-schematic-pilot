@@ -964,9 +964,9 @@ body {
   <div class="depth-meter">
     <h3>MISSION TIERS</h3>
     <div class="tier-row"><div class="tier-dot t1"></div><span>CADET — Basic Symbols &amp; Circuits (L1–5)</span></div>
-    <div class="tier-row"><div class="tier-dot t2"></div><span>DIVER — Hydraulics &amp; ROV Systems (L6–10)</span></div>
-    <div class="tier-row"><div class="tier-dot t3"></div><span>SUPERVISOR — Power &amp; Fault Analysis (L11–15)</span></div>
-    <div class="tier-row"><div class="tier-dot t4"></div><span>MASTER PILOT — IMCA &amp; Full Systems (L16–20)</span></div>
+    <div class="tier-row"><div class="tier-dot t2"></div><span>PILOT TECH 1 — Hydraulics &amp; ROV Systems (L6–10)</span></div>
+    <div class="tier-row"><div class="tier-dot t3"></div><span>SENIOR PILOT TECH — Power &amp; Fault Analysis (L11–15)</span></div>
+    <div class="tier-row"><div class="tier-dot t4"></div><span>SUPERVISOR — IMCA &amp; Full Systems (L16–30)</span></div>
   </div>
   <button class="btn-primary" onclick="startGame()">▶ DIVE IN</button>
   <button class="btn-secondary" onclick="showMap()">🗺 MISSION MAP</button>
@@ -988,15 +988,15 @@ body {
     <div class="levels-grid" id="grid-t1"></div>
   </div>
   <div class="tier-section">
-    <div class="tier-header" style="border-color:var(--cyan);color:var(--cyan)"><span>🎮</span><h3 style="color:var(--cyan)">DIVER</h3><span class="tier-range">L6–10 · 300–1500m</span></div>
+    <div class="tier-header" style="border-color:var(--cyan);color:var(--cyan)"><span>🎮</span><h3 style="color:var(--cyan)">PILOT TECH 1</h3><span class="tier-range">L6–10 · 300–1500m</span></div>
     <div class="levels-grid" id="grid-t2"></div>
   </div>
   <div class="tier-section">
-    <div class="tier-header" style="border-color:var(--amber);color:var(--amber)"><span>ΓÜô</span><h3 style="color:var(--amber)">SUPERVISOR</h3><span class="tier-range">L11–15 · 1500–3000m</span></div>
+    <div class="tier-header" style="border-color:var(--amber);color:var(--amber)"><span>ΓÜô</span><h3 style="color:var(--amber)">SENIOR PILOT TECH</h3><span class="tier-range">L11–15 · 1500–3000m</span></div>
     <div class="levels-grid" id="grid-t3"></div>
   </div>
   <div class="tier-section">
-    <div class="tier-header" style="border-color:var(--purple);color:var(--purple)"><span>🏆️</span><h3 style="color:var(--purple)">MASTER PILOT</h3><span class="tier-range">L16–20 · 3000m+</span></div>
+    <div class="tier-header" style="border-color:var(--purple);color:var(--purple)"><span>🏆️</span><h3 style="color:var(--purple)">SUPERVISOR</h3><span class="tier-range">L16–30 · 3000m+</span></div>
     <div class="levels-grid" id="grid-t4"></div>
   </div>
   <div style="padding:0 16px"><button class="btn-secondary" onclick="showScreen('screen-title')">← BACK TO SURFACE</button></div>
@@ -2304,7 +2304,7 @@ options:['Flow in both directions','Flow in one direction only','Variable flow r
 hint:'Fluid can only pass in the direction the triangle points.',
 explanation:'CHECK VALVE = one-way valve. Fluid flows freely in one direction; backflow is blocked. Used to prevent HPU backflow when the pump stops and to maintain circuit pressure in pilot lines.'},
 
-// ── TIER 2 · DIVER — Hydraulics & ROV Systems ──────────────────────────────
+// ── TIER 2 · PILOT TECH 1 — Hydraulics & ROV Systems ──────────────────────────────
 {tier:2,badge:'HYDRAULICS',text:'What does a 4/3 directional control valve designation mean?',
 svg:`<svg viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="15" width="50" height="40" fill="none" stroke="#00e5ff" stroke-width="2"/><rect x="70" y="15" width="50" height="40" fill="none" stroke="#FFB300" stroke-width="2"/><rect x="120" y="15" width="50" height="40" fill="none" stroke="#00e5ff" stroke-width="2"/><text x="45" y="40" fill="#00e5ff" font-size="9" text-anchor="middle">A→B</text><text x="95" y="40" fill="#FFB300" font-size="9" text-anchor="middle">BLOCK</text><text x="145" y="40" fill="#00e5ff" font-size="9" text-anchor="middle">B→A</text><text x="110" y="65" fill="#aaa" font-size="9" text-anchor="middle">4 ports · 3 positions</text></svg>`,
 options:['4 pumps, 3 valves in series','4 ports and 3 switching positions','4 bar rated, 3 litres/min','4 filters, 3 pressure stages'],answer:1,
@@ -2383,7 +2383,7 @@ options:['Reverses motor direction on startup','Reduces inrush current on start 
 hint:'Star reduces voltage per winding by √3 during starting.',
 explanation:'Star-Delta: motor starts in Star (Y) — voltage per winding is reduced, limiting inrush current to ~33%. Once up to speed, switches to Delta (Δ) for full power. Used on TX7/TX8 starters in SMD LV PDU.'},
 
-// ── TIER 3 · SUPERVISOR — Power & Fault Analysis ────────────────────────────
+// ── TIER 3 · SENIOR PILOT TECH — Power & Fault Analysis ────────────────────────────
 {tier:3,badge:'POWER',text:'What does a Current Transformer (CT) do in a power monitoring circuit?',
 svg:`<svg viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg"><circle cx="110" cy="35" r="28" fill="none" stroke="#00e5ff" stroke-width="2"/><line x1="110" y1="7" x2="110" y2="63" stroke="#FFB300" stroke-width="4"/><text x="110" y="68" fill="#aaa" font-size="9" text-anchor="middle">CT8 / CT9</text></svg>`,
 options:['Steps down high current to a safe measurable level for meters and relays','Steps up voltage for HV transmission','Provides galvanic isolation only','Converts AC to pulsed DC'],answer:0,
@@ -2450,7 +2450,7 @@ options:['Current through the base terminal','Voltage on the gate — draws virt
 hint:'The gate draws almost zero current — making it very efficient.',
 explanation:'MOSFETs are VOLTAGE-controlled — the gate draws virtually no current. This makes them extremely efficient for PWM motor control, which is how ROV thruster speed is regulated in iTCU thruster controllers.'},
 
-// ── TIER 4 · MASTER PILOT — IMCA & Full Systems ─────────────────────────────
+// ── TIER 4 · SUPERVISOR — IMCA & Full Systems ─────────────────────────────
 {tier:4,badge:'MASTER',text:'What does drawing zone reference "SHT.2_A3" mean on a ROV schematic?',
 svg:`<svg viewBox="0 0 220 70" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="8" width="200" height="54" fill="none" stroke="#00e5ff" stroke-width="1"/><line x1="10" y1="26" x2="210" y2="26" stroke="#aaa" stroke-width="0.5"/><line x1="10" y1="44" x2="210" y2="44" stroke="#aaa" stroke-width="0.5"/><line x1="77" y1="8" x2="77" y2="62" stroke="#aaa" stroke-width="0.5"/><line x1="144" y1="8" x2="144" y2="62" stroke="#aaa" stroke-width="0.5"/><rect x="77" y="26" width="67" height="18" fill="#FFB300" opacity="0.2"/><text x="110" y="39" fill="#FFB300" font-size="11" text-anchor="middle">A3</text></svg>`,
 options:['Sheet 23, revision A','Sheet 2, Row A, Column 3 — pinpoints exact location','Second amendment, third sheet','Area 2, section 3 of the ROV'],answer:1,
@@ -2578,7 +2578,7 @@ function renderQ(){
   document.getElementById('hud-q').textContent=`${sess.qIndex+1}/5`;
   document.getElementById('hud-combo').textContent=`x${sess.combo}`;
   renderHearts();renderXPBar();
-  const tInfo=[null,{cls:'depth-t1',txt:'🎯 CADET — SURFACE WATERS'},{cls:'depth-t2',txt:'🎮 DIVER — SHALLOW SECTOR'},{cls:'depth-t3',txt:'ΓÜô SUPERVISOR — DEEP WATERS'},{cls:'depth-t4',txt:'🏆️ MASTER PILOT — ABYSS'}];
+  const tInfo=[null,{cls:'depth-t1',txt:'🎯 CADET — SURFACE WATERS'},{cls:'depth-t2',txt:'🎮 PILOT TECH 1 — SHALLOW SECTOR'},{cls:'depth-t3',txt:'ΓÜô SENIOR PILOT TECH — DEEP WATERS'},{cls:'depth-t4',txt:'🏆️ SUPERVISOR — ABYSS'}];
   const db=document.getElementById('depth-badge');db.className='depth-badge '+tInfo[q.tier].cls;db.textContent=tInfo[q.tier].txt;
   const bm={SCHEMATIC:'badge-schematic',HYDRAULIC:'badge-hydraulic',ELECTRICAL:'badge-electrical',ROV:'badge-rov'};
   const b=document.getElementById('q-badge');b.className='q-badge '+(bm[q.badge]||'badge-schematic');b.textContent=q.badge;
