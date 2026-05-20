@@ -2314,7 +2314,7 @@ for(let l=1;l<=20;l++){const t=Math.ceil(l/5);const tqs=QP.filter(q=>q.tier===t)
 function getLQ(level){
   const t=Math.ceil(level/5);
   const tqs=QP.filter(q=>q.tier===t);
-  const sh=[...tqs].sort(()=>Math.random()-.5);
+  const sh=[...tqs];for(let i=sh.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[sh[i],sh[j]]=[sh[j],sh[i]]};
   return sh.slice(0,5);
 }
 
