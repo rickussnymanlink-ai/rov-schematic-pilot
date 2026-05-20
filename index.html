@@ -3709,20 +3709,10 @@ const PDF_DATA = {
 
 function openPDF(drawingRef) {
   const key = drawingRef.split(' ')[0].toUpperCase();
-  const data = PDF_DATA[key];
-  if (!data) { alert('PDF not available: ' + drawingRef); return; }
-  const blob = (()=>{
-    const byteStr = atob(data.split(',')[1]);
-    const ab = new ArrayBuffer(byteStr.length);
-    const ia = new Uint8Array(ab);
-    for(let i=0;i<byteStr.length;i++) ia[i]=byteStr.charCodeAt(i);
-    return new Blob([ab],{type:'application/pdf'});
-  })();
-  const url = URL.createObjectURL(blob);
-  window.open(url,'_blank');
+  const SP_MAP = {'AH2645':0,'AH2646':1,'AG8200':2,'AH2713':2,'AH2742':3,'AH2136':3,'AH2478':4,'AG5425':4};
+  const tabIdx = SP_MAP[key] !== undefined ? SP_MAP[key] : 0;
+  window.open('SP-DRAWINGS-VIEWER.html?tab='+tabIdx+'&ref='+encodeURIComponent(drawingRef),'_blank');
 }
-
-
 // ══════════════════════════════════════════════════════════════
 
 function initM7() {
