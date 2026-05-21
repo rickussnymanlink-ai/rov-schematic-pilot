@@ -925,7 +925,7 @@ const DRAWINGS = [
 },
 {
   id: 'SP-005',
-  title: 'HOW TO READ SMD DRAWINGS — CONVENTIONS',
+  title: 'HOW TO READ WR CLASS ROV DRAWINGS — CONVENTIONS',
   sheet: '1 OF 1',
   ref: 'REF: AH2646 / AG8200 / AH2742',
   svg: `<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
@@ -1314,11 +1314,7 @@ let currentSheetIdx = 0;
 
 // ── FUNCTIONS ─────────────────────────────────────────────────────────────────
 function goBack() {
-  if (window.history.length > 1) {
-    window.history.back();
-  } else {
-    window.location.href = 'index.html';
-  }
+  window.location.href = 'index.html';
 }
 
 function init() {

@@ -1164,7 +1164,7 @@ body {
     <div class="header-title">WR CLASS ROV 150HP — STUDY MODE</div>
     <div class="header-sub">BASED ON WR CLASS ROV 150HP SYSTEM · AH2646 / AH2645 / AG8200</div>
   </div>
-  <button class="back-btn" onclick="showScreen('screen-title')">← GAME</button>
+  <button class="back-btn" onclick="showScreen('screen-title')">← HOME</button>
 </div>
 
 <!-- MODULE TABS -->
@@ -2305,6 +2305,7 @@ updateStep(1);
   <div class="feedback" id="feedback"></div>
   <button class="btn-next" id="btn-next" onclick="nextQuestion()">NEXT →</button>
   <button class="btn-secondary" style="margin-top:8px" onclick="confirmQuit()">🌊 SURFACE (QUIT)</button>
+  <button class="btn-secondary" style="margin-top:4px" onclick="showScreen('screen-title')">&#8962; HOME</button>
 </div>
 
 <!-- RESULT -->
@@ -2749,7 +2750,7 @@ function renderQ(){
   renderGameAbs();startTimer();
 }
 
-function renderHearts(){const c=document.getElementById('hud-hearts');c.innerHTML='';for(let i=0;i<MAX_HP;i++){const h=document.createElement('span');h.className='heart'+(i>=sess.hp?' lost':'');h.textContent='Γ¥ñ∩╕Å';c.appendChild(h);}}
+function renderHearts(){const c=document.getElementById('hud-hearts');c.innerHTML='';for(let i=0;i<MAX_HP;i++){const h=document.createElement('span');h.className='heart'+(i>=sess.hp?' lost':'');h.innerHTML='&#9829;';c.appendChild(h);}}
 function renderXPBar(){const xp=state.totalXP%XP_PER_LVL;document.getElementById('xp-bar').style.width=(xp/XP_PER_LVL*100)+'%';document.getElementById('xp-label').textContent=`${xp} / ${XP_PER_LVL} XP`;}
 
 function renderGameAbs(){
@@ -2926,7 +2927,7 @@ function tutStep(n){
   <div class="m7-header">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-right:4px">
       <div><h1>MODULE 7 — TRACE IT</h1><p>SMD QUASAR · Q CORE POD · AH2136 · AH2742</p></div>
-      <button class="popup-close" style="font-size:10px;padding:8px 14px" onclick="showScreen('screen-title')">← MAIN MENU</button>
+      <button class="popup-close" style="font-size:10px;padding:8px 14px" onclick="showScreen('screen-title')">← HOME</button>
     </div>
   </div>
   <div class="sig-legend">
