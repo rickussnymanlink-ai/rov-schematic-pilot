@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+<!-- SP-VIEWER-V2-PDF-EMBED-BACK-BUTTON -->
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCHEMATIC PILOT � Engineering Drawings SP-001 to SP-006</title>
+<title>SCHEMATIC PILOT — Engineering Drawings SP-001 to SP-006</title>
 <style>
 :root {
   --bg: #040d14;
@@ -28,7 +30,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── HEADER ── */
+/* â”€â”€ HEADER â”€â”€ */
 .header {
   background: var(--bg2);
   border-bottom: 1px solid var(--border);
@@ -49,7 +51,7 @@ body {
 .header-title .app { font-size: 11px; color: var(--dim); letter-spacing: 2px; }
 .header-title .name { font-size: 14px; font-weight: bold; color: var(--ctrl); letter-spacing: 1px; }
 
-/* ── MODE TOGGLE ── */
+/* â”€â”€ MODE TOGGLE â”€â”€ */
 .mode-toggle {
   display: flex;
   background: var(--bg3);
@@ -74,7 +76,7 @@ body {
   font-weight: bold;
 }
 
-/* ── DRAWING SELECTOR ── */
+/* â”€â”€ DRAWING SELECTOR â”€â”€ */
 .drawing-nav {
   background: var(--bg2);
   border-bottom: 1px solid var(--border);
@@ -105,7 +107,7 @@ body {
   background: rgba(255,179,0,0.08);
 }
 
-/* ── LEGEND ── */
+/* â”€â”€ LEGEND â”€â”€ */
 .legend {
   background: var(--bg2);
   border-bottom: 1px solid var(--border);
@@ -129,13 +131,13 @@ body {
   border-radius: 2px;
 }
 
-/* ── MAIN CONTENT ── */
+/* â”€â”€ MAIN CONTENT â”€â”€ */
 .main {
   display: flex;
   min-height: calc(100vh - 120px);
 }
 
-/* ── DRAWING AREA ── */
+/* â”€â”€ DRAWING AREA â”€â”€ */
 .drawing-area {
   flex: 1;
   padding: 16px;
@@ -145,7 +147,7 @@ body {
   align-items: center;
 }
 
-/* ── TITLE BLOCK ── */
+/* â”€â”€ TITLE BLOCK â”€â”€ */
 .title-block {
   width: 100%;
   max-width: 860px;
@@ -168,7 +170,7 @@ body {
 .tb-value { color: var(--ctrl); font-weight: bold; font-size: 11px; margin-top: 2px; }
 .tb-title .tb-value { color: var(--white); font-size: 10px; }
 
-/* ── SVG FRAME ── */
+/* â”€â”€ SVG FRAME â”€â”€ */
 .svg-frame {
   width: 100%;
   max-width: 860px;
@@ -183,7 +185,34 @@ body {
   display: block;
 }
 
-/* ── ZONE GRID OVERLAY (PDF mode) ── */
+/* ── SHEET SELECTOR ── */
+.sheet-btn {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--dim);
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.sheet-btn:hover { border-color: var(--ctrl); color: var(--ctrl); }
+.sheet-btn.active {
+  background: rgba(0,229,255,0.12);
+  border-color: var(--ctrl);
+  color: var(--ctrl);
+  font-weight: bold;
+}
+.hotspot.sheet-linked {
+  border-color: var(--lv) !important;
+  background: rgba(255,179,0,0.15) !important;
+  box-shadow: 0 0 8px rgba(255,179,0,0.4);
+}
+
+/* â”€â”€ ZONE GRID OVERLAY (PDF mode) â”€â”€ */
 .zone-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -193,7 +222,7 @@ body {
 }
 .zone-overlay.visible { opacity: 1; }
 
-/* ── HOTSPOT LAYER (Interactive mode) ── */
+/* â”€â”€ HOTSPOT LAYER (Interactive mode) â”€â”€ */
 .hotspot-layer {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -230,7 +259,7 @@ body {
   font-weight: bold;
 }
 
-/* ── INFO PANEL ── */
+/* â”€â”€ INFO PANEL â”€â”€ */
 .info-panel {
   width: 280px;
   min-width: 280px;
@@ -314,7 +343,7 @@ body {
 }
 .tip-label { color: var(--lv); font-weight: bold; font-size: 9px; letter-spacing: 1px; margin-bottom: 4px; }
 
-/* ── BOTTOM BAR ── */
+/* â”€â”€ BOTTOM BAR â”€â”€ */
 .bottom-bar {
   background: var(--bg2);
   border-top: 1px solid var(--border);
@@ -342,7 +371,7 @@ body {
 }
 .print-btn:hover { background: rgba(255,179,0,0.1); }
 
-/* ── ZOOM CONTROLS ── */
+/* â”€â”€ ZOOM CONTROLS â”€â”€ */
 .zoom-controls {
   display: flex;
   gap: 4px;
@@ -363,7 +392,7 @@ body {
 .zoom-btn:hover { border-color: var(--ctrl); }
 .zoom-level { font-size: 10px; color: var(--dim); min-width: 35px; text-align: center; }
 
-/* ── INTERACTIVE PROMPT ── */
+/* â”€â”€ INTERACTIVE PROMPT â”€â”€ */
 .int-prompt {
   position: absolute;
   bottom: 10px;
@@ -381,7 +410,7 @@ body {
 }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
 
-/* ── PRINT STYLES ── */
+/* â”€â”€ PRINT STYLES â”€â”€ */
 @media print {
   .header, .drawing-nav, .legend, .bottom-bar, .info-panel,
   .mode-toggle, .zoom-controls, .int-prompt, .hotspot-layer { display: none !important; }
@@ -394,7 +423,7 @@ body {
   svg text { fill: #000 !important; }
 }
 
-/* ── RESPONSIVE ── */
+/* â”€â”€ RESPONSIVE â”€â”€ */
 @media (max-width: 700px) {
   .info-panel { display: none; }
   .mode-btn { padding: 6px 10px; font-size: 10px; }
@@ -406,35 +435,36 @@ body {
 <!-- HEADER -->
 <div class="header">
   <div class="header-title">
-    <span class="app">SCHEMATIC PILOT � ROV EDITION</span>
+    <span class="app">SCHEMATIC PILOT · ROV EDITION</span>
     <span class="name">ENGINEERING DRAWING VIEWER</span>
   </div>
   <div class="mode-toggle">
-    <button class="mode-btn active" id="btn-pdf" onclick="setMode('pdf')">📄 PDF VIEW</button>
-    <button class="mode-btn" id="btn-int" onclick="setMode('interactive')">⚡ INTERACTIVE</button>
+    <button class="mode-btn active" id="btn-pdf" onclick="setMode('pdf')">ðŸ“„ PDF VIEW</button>
+    <button class="mode-btn" id="btn-int" onclick="setMode('interactive')">âš¡ INTERACTIVE</button>
   </div>
+  <button onclick="goBack()" style="background:var(--bg2);border:1px solid var(--border);color:var(--dim);font-family:monospace;font-size:11px;padding:5px 14px;cursor:pointer;border-radius:3px;letter-spacing:1px;margin-right:4px;" title="Go back">&#8592; BACK</button>
   <div class="zoom-controls">
-    <button class="zoom-btn" onclick="zoom(-0.1)">−</button>
+    <button class="zoom-btn" onclick="zoom(-0.1)">âˆ’</button>
     <span class="zoom-level" id="zoom-label">100%</span>
     <button class="zoom-btn" onclick="zoom(0.1)">+</button>
-    <button class="zoom-btn" onclick="resetZoom()" title="Fit">⊡</button>
+    <button class="zoom-btn" onclick="resetZoom()" title="Fit">âŠ¡</button>
   </div>
 </div>
 
 <!-- DRAWING SELECTOR -->
 <div class="drawing-nav">
-  <button class="drw-btn active" onclick="loadDrawing(0)">SP-001 � SYSTEM OVERVIEW</button>
-  <button class="drw-btn" onclick="loadDrawing(1)">SP-002 � HV PDU</button>
-  <button class="drw-btn" onclick="loadDrawing(2)">SP-003 � UMBILICAL AG8200</button>
-  <button class="drw-btn" onclick="loadDrawing(3)">SP-004 � Q CORE POD</button>
-  <button class="drw-btn" onclick="loadDrawing(4)">SP-005 � HOW TO READ</button>
-  <button class="drw-btn" onclick="loadDrawing(5)">SP-006 � iTCU BURTON</button>
+  <button class="drw-btn active" onclick="loadDrawing(0)">SP-001 · SYSTEM OVERVIEW</button>
+  <button class="drw-btn" onclick="loadDrawing(1)">SP-002 · HV PDU</button>
+  <button class="drw-btn" onclick="loadDrawing(2)">SP-003 · UMBILICAL AG8200</button>
+  <button class="drw-btn" onclick="loadDrawing(3)">SP-004 · Q CORE POD</button>
+  <button class="drw-btn" onclick="loadDrawing(4)">SP-005 · HOW TO READ</button>
+  <button class="drw-btn" onclick="loadDrawing(5)">SP-006 · iTCU BURTON</button>
 </div>
 
 <!-- LEGEND -->
 <div class="legend">
   <span style="font-size:9px;color:var(--dim);letter-spacing:1px;">SIGNAL KEY:</span>
-  <div class="leg-item"><div class="leg-line" style="background:#ff4444"></div>HV POWER 3000"�3500V</div>
+  <div class="leg-item"><div class="leg-line" style="background:#ff4444"></div>HV POWER 3000"“3500V</div>
   <div class="leg-item"><div class="leg-line" style="background:#ffb300"></div>LV POWER 440V/24V</div>
   <div class="leg-item"><div class="leg-line" style="background:#00e5ff"></div>CONTROL / ECM</div>
   <div class="leg-item"><div class="leg-line" style="background:#c77dff"></div>FIBRE / COMMS</div>
@@ -454,7 +484,7 @@ body {
       </div>
       <div class="tb-cell tb-title" style="flex:2">
         <div class="tb-label">DRAWING TITLE</div>
-        <div class="tb-value" id="tb-title">WR CLASS ROV 150HP � FULL SYSTEM OVERVIEW</div>
+        <div class="tb-value" id="tb-title">WR CLASS ROV 150HP — FULL SYSTEM OVERVIEW</div>
       </div>
       <div class="tb-cell">
         <div class="tb-label">DRW NO.</div>
@@ -474,11 +504,16 @@ body {
       </div>
     </div>
 
-    <!-- SVG FRAME -->
-    <div class="svg-frame" id="svg-frame">
+    <!-- SHEET SELECTOR -->
+    <div id="sheet-selector-wrap" style="display:none;width:100%;max-width:860px;flex-wrap:wrap;gap:4px;padding:6px 0 4px;"></div>
+
+    <!-- SVG FRAME (interactive diagram, faded in PDF mode) -->
+    <div class="svg-frame" id="svg-frame" style="min-height:540px;">
       <div id="svg-container"></div>
       <div class="hotspot-layer" id="hotspot-layer"></div>
       <div class="int-prompt" id="int-prompt" style="display:none">TAP ANY COMPONENT FOR DETAILS</div>
+      <!-- PDF EMBED OVERLAY -->
+      <div id="pdf-embed-frame" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;background:var(--bg);z-index:10;flex-direction:column;"></div>
     </div>
 
   </div>
@@ -487,7 +522,7 @@ body {
   <div class="info-panel hidden" id="info-panel">
     <div class="info-header">
       <h3>COMPONENT INFO</h3>
-      <button class="info-close" onclick="closeInfo()">✕</button>
+      <button class="info-close" onclick="closeInfo()">âœ•</button>
     </div>
     <div class="info-content" id="info-content">
       <div style="color:var(--dim);font-size:11px;line-height:1.8;padding-top:20px;text-align:center;">
@@ -499,17 +534,17 @@ body {
 
 <!-- BOTTOM BAR -->
 <div class="bottom-bar">
-  <span>SCHEMATIC PILOT TRAINING SYSTEM � SP DRAWING SERIES � REF: WR CLASS ROV 150HP ROV</span>
+  <span>SCHEMATIC PILOT TRAINING SYSTEM · SP DRAWING SERIES · REF: WR CLASS ROV 150HP ROV</span>
   <span class="status" id="mode-status">MODE: PDF VIEW</span>
-  <button class="print-btn" onclick="printDrawing()">🖨 PRINT / SAVE PDF</button>
+  <button class="print-btn" onclick="printDrawing()">ðŸ–¨ PRINT / SAVE PDF</button>
 </div>
 
 <script>
-// ── DRAWING DATA ──────────────────────────────────────────────────────────────
+// â”€â”€ DRAWING DATA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const DRAWINGS = [
 {
   id: 'SP-001',
-  title: 'WR CLASS ROV 150HP � FULL SYSTEM OVERVIEW',
+  title: 'WR CLASS ROV 150HP — FULL SYSTEM OVERVIEW',
   sheet: '1 OF 1',
   ref: 'REF: AG8200 / AH2713 / AH2646',
   svg: `<svg viewBox="0 0 380 620" xmlns="http://www.w3.org/2000/svg" id="svg-overview">
@@ -524,27 +559,27 @@ const DRAWINGS = [
       <text x="190" y="36" fill="#5a8fa8" font-family="monospace" font-size="8" text-anchor="middle">440V 3-PHASE 50/60Hz</text>
       <line x1="190" y1="44" x2="190" y2="62" stroke="#ffb300" stroke-width="2" marker-end="url(#arr-lv)"/>
       <rect x="70" y="62" width="240" height="50" rx="5" fill="rgba(255,179,0,0.08)" stroke="#ffb300" stroke-width="1.5"/>
-      <text x="190" y="80" fill="#ffb300" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle" letter-spacing="1">LV PDU � AH2645</text>
-      <text x="190" y="93" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">Changeover SW � Contactors CT1/CT2 � VMR � Metering</text>
-      <text x="190" y="104" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">24VDC PSUs � 110VAC Control � LIM Units</text>
+      <text x="190" y="80" fill="#ffb300" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle" letter-spacing="1">LV PDU — AH2645</text>
+      <text x="190" y="93" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">Changeover SW · Contactors CT1/CT2 · VMR · Metering</text>
+      <text x="190" y="104" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">24VDC PSUs · 110VAC Control · LIM Units</text>
       <line x1="190" y1="112" x2="190" y2="130" stroke="#ff4444" stroke-width="2.5" marker-end="url(#arr-hv)"/>
       <rect x="60" y="130" width="260" height="56" rx="5" fill="rgba(255,68,68,0.08)" stroke="#ff4444" stroke-width="1.5"/>
-      <text x="190" y="148" fill="#ff4444" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle" letter-spacing="1">HV PDU � AH2646</text>
-      <text x="190" y="161" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">TX1 7.5kVA ROV Pod � TX2 256kVA ROV Motor</text>
-      <text x="190" y="172" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">TX3 28kVA TMS Motor � TX4 7.5kVA TMS Pod</text>
-      <text x="190" y="183" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">KM1"�KM4 Contactors � HT Couplers � CT Protection</text>
+      <text x="190" y="148" fill="#ff4444" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle" letter-spacing="1">HV PDU — AH2646</text>
+      <text x="190" y="161" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">TX1 7.5kVA ROV Pod · TX2 256kVA ROV Motor</text>
+      <text x="190" y="172" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">TX3 28kVA TMS Motor · TX4 7.5kVA TMS Pod</text>
+      <text x="190" y="183" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">KM1"“KM4 Contactors · HT Couplers · CT Protection</text>
       <line x1="190" y1="186" x2="190" y2="204" stroke="#ff4444" stroke-width="2.5" marker-end="url(#arr-hv)"/>
       <line x1="170" y1="186" x2="170" y2="204" stroke="#00e5ff" stroke-width="1" marker-end="url(#arr-ctrl)"/>
       <line x1="210" y1="186" x2="210" y2="204" stroke="#c77dff" stroke-width="1" marker-end="url(#arr-comms)"/>
       <rect x="80" y="204" width="220" height="36" rx="4" fill="rgba(0,229,255,0.05)" stroke="#0d3555" stroke-width="1.5"/>
       <text x="190" y="220" fill="#c8e6f5" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="1">DECK CABLE (AC1762)</text>
-      <text x="190" y="232" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">→ UMBILICAL STATIC JB (AG1081)</text>
+      <text x="190" y="232" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">â†’ UMBILICAL STATIC JB (AG1081)</text>
       <line x1="190" y1="240" x2="190" y2="258" stroke="#ff4444" stroke-width="2.5" marker-end="url(#arr-hv)"/>
       <line x1="173" y1="240" x2="173" y2="258" stroke="#00e5ff" stroke-width="1"/>
       <line x1="208" y1="240" x2="208" y2="258" stroke="#c77dff" stroke-width="1"/>
       <rect x="105" y="258" width="170" height="34" rx="4" fill="rgba(0,191,165,0.06)" stroke="#00bfa5" stroke-width="1.5"/>
       <text x="190" y="273" fill="#00bfa5" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="1">SLIP RING (AF6768)</text>
-      <text x="190" y="284" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">Static → Rotating � Winch Interface</text>
+      <text x="190" y="284" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">Static â†’ Rotating · Winch Interface</text>
       <line x1="190" y1="292" x2="190" y2="308" stroke="#ff4444" stroke-width="2.5" marker-end="url(#arr-hv)"/>
       <line x1="173" y1="292" x2="173" y2="308" stroke="#00e5ff" stroke-width="1"/>
       <line x1="208" y1="292" x2="208" y2="308" stroke="#c77dff" stroke-width="1"/>
@@ -573,20 +608,20 @@ const DRAWINGS = [
       <line x1="190" y1="402" x2="190" y2="418" stroke="#ff4444" stroke-width="2.5" marker-end="url(#arr-hv)"/>
       <rect x="60" y="418" width="260" height="40" rx="5" fill="rgba(0,191,165,0.08)" stroke="#00bfa5" stroke-width="1.5"/>
       <text x="190" y="434" fill="#00bfa5" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="1">SUBSEA ELEC. TERM. (AH2775)</text>
-      <text x="190" y="446" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">3000V Transformer � Lamp Dim � Valve Tanks � JB1/JB2</text>
+      <text x="190" y="446" fill="#5a8fa8" font-family="monospace" font-size="7.5" text-anchor="middle">3000V Transformer · Lamp Dim · Valve Tanks · JB1/JB2</text>
       <line x1="140" y1="458" x2="100" y2="476" stroke="#ff4444" stroke-width="2" marker-end="url(#arr-hv)"/>
       <line x1="240" y1="458" x2="280" y2="476" stroke="#ffb300" stroke-width="2" marker-end="url(#arr-lv)"/>
       <rect x="30" y="476" width="140" height="50" rx="5" fill="rgba(0,229,255,0.07)" stroke="#00e5ff" stroke-width="1.5"/>
       <text x="100" y="493" fill="#00e5ff" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="1">Q CORE POD (AH2742)</text>
-      <text x="100" y="505" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">24V PSU � Beckhoff I/O</text>
-      <text x="100" y="516" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">Focal Fibre � LIM � Cameras</text>
+      <text x="100" y="505" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">24V PSU · Beckhoff I/O</text>
+      <text x="100" y="516" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">Focal Fibre · LIM · Cameras</text>
       <rect x="210" y="476" width="140" height="50" rx="5" fill="rgba(255,68,68,0.08)" stroke="#ff4444" stroke-width="1.5"/>
       <text x="280" y="493" fill="#ff4444" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="1">HPU MOTOR (AE5690)</text>
-      <text x="280" y="505" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">112kW � 3000V</text>
+      <text x="280" y="505" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">112kW · 3000V</text>
       <text x="280" y="516" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">FLC 34A @ 3000V</text>
       <line x1="190" y1="44" x2="20" y2="44" stroke="#00e676" stroke-width="1" stroke-dasharray="3,4"/>
       <line x1="20" y1="44" x2="20" y2="530" stroke="#00e676" stroke-width="1" stroke-dasharray="3,4"/>
-      <text x="14" y="290" fill="#00e676" font-family="monospace" font-size="8" transform="rotate(-90,14,290)">EARTH BOND (6mm� GN/YW)</text>
+      <text x="14" y="290" fill="#00e676" font-family="monospace" font-size="8" transform="rotate(-90,14,290)">EARTH BOND (6mm² GN/YW)</text>
       <text x="368" y="200" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="end" transform="rotate(-90,368,200)">TOPSIDE</text>
       <line x1="365" y1="8" x2="365" y2="200" stroke="#5a8fa8" stroke-width="0.5" stroke-dasharray="2,4"/>
       <text x="368" y="430" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="end" transform="rotate(-90,368,430)">SUBSEA</text>
@@ -613,7 +648,7 @@ const DRAWINGS = [
 },
 {
   id: 'SP-002',
-  title: 'HV PDU � WIRING SCHEMATIC',
+  title: 'HV PDU — WIRING SCHEMATIC',
   sheet: '1 OF 1',
   ref: 'REF: AH2646 SHT.2&3',
   svg: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
@@ -623,25 +658,25 @@ const DRAWINGS = [
         </defs>
         <rect x="10" y="10" width="120" height="30" rx="3" fill="rgba(255,179,0,0.08)" stroke="#ffb300" stroke-width="1.5"/>
         <text x="70" y="22" fill="#ffb300" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">FROM LV PDU</text>
-        <text x="70" y="32" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">440V 3PH � KM2 Output</text>
+        <text x="70" y="32" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">440V 3PH · KM2 Output</text>
         <rect x="150" y="8" width="100" height="36" rx="3" fill="rgba(255,68,68,0.08)" stroke="#ff4444" stroke-width="1.5"/>
         <text x="200" y="22" fill="#ff4444" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">HT COUPLER 2</text>
-        <text x="200" y="30" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">PB943 � 4000V 5O</text>
+        <text x="200" y="30" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">PB943 · 4000V 5Ω</text>
         <text x="200" y="38" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">Isolation coupling</text>
         <rect x="20" y="60" width="160" height="60" rx="4" fill="rgba(255,68,68,0.1)" stroke="#ff4444" stroke-width="2"/>
         <text x="100" y="76" fill="#ff4444" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">ROV MOTOR TX2</text>
         <text x="100" y="87" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">RATING: 256kVA</text>
         <text x="100" y="97" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">PRI: 380/400/415/440/460/480V</text>
         <text x="100" y="107" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">SEC: 3000/3050/3100/3150/3200V</text>
-        <text x="100" y="116" fill="#c77dff" font-family="monospace" font-size="6.5" text-anchor="middle">Y-Δ STAR POINT</text>
+        <text x="100" y="116" fill="#c77dff" font-family="monospace" font-size="6.5" text-anchor="middle">Y-Î” STAR POINT</text>
         <circle cx="68" cy="90" r="8" fill="none" stroke="#ff4444" stroke-width="1.5"/>
         <circle cx="82" cy="90" r="8" fill="none" stroke="#ff4444" stroke-width="1.5"/>
         <rect x="220" y="60" width="160" height="60" rx="4" fill="rgba(255,179,0,0.08)" stroke="#ffb300" stroke-width="2"/>
         <text x="300" y="76" fill="#ffb300" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">ROV POD TX1</text>
         <text x="300" y="87" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">RATING: 7.5kVA</text>
-        <text x="300" y="97" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">PRI: 380"�440V</text>
+        <text x="300" y="97" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">PRI: 380"“440V</text>
         <text x="300" y="107" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">SEC: 3000/3050/3100V</text>
-        <text x="300" y="116" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">6mm� HIGH V CONDUCTOR</text>
+        <text x="300" y="116" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">6mm² HIGH V CONDUCTOR</text>
         <circle cx="268" cy="90" r="8" fill="none" stroke="#ffb300" stroke-width="1.5"/>
         <circle cx="282" cy="90" r="8" fill="none" stroke="#ffb300" stroke-width="1.5"/>
         <rect x="60" y="138" width="80" height="28" rx="3" fill="rgba(0,230,118,0.07)" stroke="#00e676" stroke-width="1.5"/>
@@ -657,14 +692,14 @@ const DRAWINGS = [
         <text x="280" y="151" fill="#00bfa5" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">VT1 (AA5727)</text>
         <text x="280" y="161" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">4000/100V Metering</text>
         <rect x="20" y="182" width="160" height="34" rx="4" fill="rgba(255,68,68,0.12)" stroke="#ff4444" stroke-width="2"/>
-        <text x="100" y="197" fill="#ff4444" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">HV OUTPUT � ROV MOTOR</text>
-        <text x="100" y="208" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">X12 Terminals → U1/V1/W1</text>
+        <text x="100" y="197" fill="#ff4444" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">HV OUTPUT — ROV MOTOR</text>
+        <text x="100" y="208" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">X12 Terminals â†’ U1/V1/W1</text>
         <rect x="220" y="182" width="160" height="34" rx="4" fill="rgba(255,179,0,0.1)" stroke="#ffb300" stroke-width="2"/>
-        <text x="300" y="197" fill="#ffb300" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">HV OUTPUT � ROV POD</text>
-        <text x="300" y="208" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">X5 Terminals → L1/L2</text>
+        <text x="300" y="197" fill="#ffb300" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">HV OUTPUT — ROV POD</text>
+        <text x="300" y="208" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">X5 Terminals â†’ L1/L2</text>
         <rect x="80" y="234" width="240" height="30" rx="4" fill="rgba(0,229,255,0.06)" stroke="#00e5ff" stroke-width="1.5"/>
-        <text x="200" y="250" fill="#00e5ff" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle" letter-spacing="1">→ UMBILICAL TERMINATIONS (SHT.4)</text>
-        <text x="200" y="259" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">X19 � 34-Core Multicore Cable</text>
+        <text x="200" y="250" fill="#00e5ff" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle" letter-spacing="1">â†’ UMBILICAL TERMINATIONS (SHT.4)</text>
+        <text x="200" y="259" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">X19 · 34-Core Multicore Cable</text>
         <line x1="130" y1="40" x2="100" y2="60" stroke="#ff4444" stroke-width="2"/>
         <line x1="70" y1="40" x2="100" y2="60" stroke="#ffb300" stroke-width="1.5"/>
         <line x1="300" y1="40" x2="300" y2="60" stroke="#ffb300" stroke-width="1.5"/>
@@ -686,14 +721,14 @@ const DRAWINGS = [
     {x:'60%',y:'46%',w:'20%',h:'9%',id:'vt1',label:'VT1 VOLTAGE TRANSFORMER'},
     {x:'5%',y:'60%',w:'40%',h:'11%',id:'hv-out-motor',label:'HV OUTPUT X12 U1/V1/W1'},
     {x:'55%',y:'60%',w:'40%',h:'11%',id:'hv-out-pod',label:'HV OUTPUT X5 L1/L2'},
-    {x:'20%',y:'78%',w:'60%',h:'10%',id:'umbilical-term',label:'→ UMBILICAL SHT.4'},
+    {x:'20%',y:'78%',w:'60%',h:'10%',id:'umbilical-term',label:'â†’ UMBILICAL SHT.4'},
   ]
 },
 {
   id: 'SP-003',
-  title: 'UMBILICAL ALLOCATION � CONDUCTOR & FIBRE SCHEDULE',
+  title: 'UMBILICAL ALLOCATION — CONDUCTOR & FIBRE SCHEDULE',
   sheet: '1 OF 1',
-  ref: 'REF: AG8200 � CABLE AB7224 � PD0739 ISS.7',
+  ref: 'REF: AG8200 · CABLE AB7224 · PD0739 ISS.7',
   svg: `<svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg">
       <text x="10" y="14" fill="#5a8fa8" font-family="monospace" font-size="7" letter-spacing="1">HV PDU</text>
       <text x="90" y="14" fill="#5a8fa8" font-family="monospace" font-size="7" letter-spacing="1">DECK CABLE</text>
@@ -707,60 +742,60 @@ const DRAWINGS = [
       <text x="5" y="32" fill="#ff4444" font-family="monospace" font-size="7" font-weight="bold">ROV MOTOR HV</text>
       <text x="5" y="46" fill="#c8e6f5" font-family="monospace" font-size="7">X12-1 U1</text>
       <line x1="50" y1="43" x2="380" y2="43" stroke="#ff4444" stroke-width="2"/>
-      <text x="318" y="41" fill="#5a8fa8" font-family="monospace" font-size="6.5">3x4mm� RED 3300VAC</text>
+      <text x="318" y="41" fill="#5a8fa8" font-family="monospace" font-size="6.5">3x4mm² RED 3300VAC</text>
       <text x="5" y="58" fill="#c8e6f5" font-family="monospace" font-size="7">X12-2 V1</text>
       <line x1="50" y1="55" x2="380" y2="55" stroke="#ff4444" stroke-width="2"/>
-      <text x="318" y="53" fill="#5a8fa8" font-family="monospace" font-size="6.5">3x4mm� WHITE 3300VAC</text>
+      <text x="318" y="53" fill="#5a8fa8" font-family="monospace" font-size="6.5">3x4mm² WHITE 3300VAC</text>
       <text x="5" y="70" fill="#c8e6f5" font-family="monospace" font-size="7">X12-3 W1</text>
       <line x1="50" y1="67" x2="380" y2="67" stroke="#ff4444" stroke-width="2"/>
-      <text x="318" y="65" fill="#5a8fa8" font-family="monospace" font-size="6.5">3x4mm� GREEN 3300VAC</text>
+      <text x="318" y="65" fill="#5a8fa8" font-family="monospace" font-size="6.5">3x4mm² GREEN 3300VAC</text>
       <text x="5" y="86" fill="#ff8c42" font-family="monospace" font-size="7" font-weight="bold">TMS MOTOR HV</text>
       <text x="5" y="98" fill="#c8e6f5" font-family="monospace" font-size="7">X12-6 U2</text>
       <line x1="50" y1="95" x2="380" y2="95" stroke="#ff8c42" stroke-width="1.5"/>
-      <text x="318" y="93" fill="#5a8fa8" font-family="monospace" font-size="6.5">4mm� ORANGE 3300VAC</text>
+      <text x="318" y="93" fill="#5a8fa8" font-family="monospace" font-size="6.5">4mm² ORANGE 3300VAC</text>
       <text x="5" y="108" fill="#c8e6f5" font-family="monospace" font-size="7">X12-7 V2</text>
       <line x1="50" y1="105" x2="380" y2="105" stroke="#ff8c42" stroke-width="1.5"/>
-      <text x="318" y="103" fill="#5a8fa8" font-family="monospace" font-size="6.5">4mm� GREEN 3300VAC</text>
+      <text x="318" y="103" fill="#5a8fa8" font-family="monospace" font-size="6.5">4mm² GREEN 3300VAC</text>
       <text x="5" y="118" fill="#c8e6f5" font-family="monospace" font-size="7">X12-8 W2</text>
       <line x1="50" y1="115" x2="380" y2="115" stroke="#ff8c42" stroke-width="1.5"/>
-      <text x="318" y="113" fill="#5a8fa8" font-family="monospace" font-size="6.5">2x2mm� WHITE 3300VAC</text>
+      <text x="318" y="113" fill="#5a8fa8" font-family="monospace" font-size="6.5">2x2mm² WHITE 3300VAC</text>
       <text x="5" y="132" fill="#ffb300" font-family="monospace" font-size="7" font-weight="bold">ROV POD HV</text>
       <text x="5" y="144" fill="#c8e6f5" font-family="monospace" font-size="7">X12-4 L1</text>
       <line x1="50" y1="141" x2="380" y2="141" stroke="#ffb300" stroke-width="1.5"/>
-      <text x="318" y="139" fill="#5a8fa8" font-family="monospace" font-size="6.5">2mm� GREEN 3300VAC</text>
+      <text x="318" y="139" fill="#5a8fa8" font-family="monospace" font-size="6.5">2mm² GREEN 3300VAC</text>
       <text x="5" y="154" fill="#c8e6f5" font-family="monospace" font-size="7">X12-4 L2</text>
       <line x1="50" y1="151" x2="380" y2="151" stroke="#ffb300" stroke-width="1.5"/>
-      <text x="318" y="149" fill="#5a8fa8" font-family="monospace" font-size="6.5">2mm� RED 3300VAC</text>
+      <text x="318" y="149" fill="#5a8fa8" font-family="monospace" font-size="6.5">2mm² RED 3300VAC</text>
       <text x="5" y="168" fill="#c77dff" font-family="monospace" font-size="7" font-weight="bold">TMS POD HV</text>
       <text x="5" y="180" fill="#c8e6f5" font-family="monospace" font-size="7">X12-9 L3</text>
       <line x1="50" y1="177" x2="380" y2="177" stroke="#c77dff" stroke-width="1.5"/>
-      <text x="318" y="175" fill="#5a8fa8" font-family="monospace" font-size="6.5">2mm� ORANGE 3300VAC</text>
+      <text x="318" y="175" fill="#5a8fa8" font-family="monospace" font-size="6.5">2mm² ORANGE 3300VAC</text>
       <text x="5" y="190" fill="#c8e6f5" font-family="monospace" font-size="7">X12-10 L4</text>
       <line x1="50" y1="187" x2="380" y2="187" stroke="#c77dff" stroke-width="1.5"/>
-      <text x="318" y="185" fill="#5a8fa8" font-family="monospace" font-size="6.5">2mm� BLUE 3300VAC</text>
+      <text x="318" y="185" fill="#5a8fa8" font-family="monospace" font-size="6.5">2mm² BLUE 3300VAC</text>
       <text x="5" y="206" fill="#00e5ff" font-family="monospace" font-size="7" font-weight="bold">CONTROL / ECM</text>
       <text x="5" y="218" fill="#c8e6f5" font-family="monospace" font-size="7">X13-2 ROV ECM</text>
       <line x1="60" y1="215" x2="380" y2="215" stroke="#00e5ff" stroke-width="1"/>
-      <text x="318" y="213" fill="#5a8fa8" font-family="monospace" font-size="6.5">0.5mm� RED 240VAC</text>
+      <text x="318" y="213" fill="#5a8fa8" font-family="monospace" font-size="6.5">0.5mm² RED 240VAC</text>
       <text x="5" y="228" fill="#c8e6f5" font-family="monospace" font-size="7">X13-4 TMS ECM</text>
       <line x1="60" y1="225" x2="380" y2="225" stroke="#00bfa5" stroke-width="1"/>
-      <text x="318" y="223" fill="#5a8fa8" font-family="monospace" font-size="6.5">0.5mm� BLUE 240VAC</text>
+      <text x="318" y="223" fill="#5a8fa8" font-family="monospace" font-size="6.5">0.5mm² BLUE 240VAC</text>
       <text x="5" y="238" fill="#c8e6f5" font-family="monospace" font-size="7">X13-5 LIMIT SW</text>
       <line x1="60" y1="235" x2="380" y2="235" stroke="#00e5ff" stroke-width="1" stroke-dasharray="3,3"/>
-      <text x="318" y="233" fill="#5a8fa8" font-family="monospace" font-size="6.5">0.5mm� WHITE 240VAC</text>
+      <text x="318" y="233" fill="#5a8fa8" font-family="monospace" font-size="6.5">0.5mm² WHITE 240VAC</text>
       <text x="5" y="254" fill="#00e676" font-family="monospace" font-size="7" font-weight="bold">EARTH / DRAIN</text>
       <line x1="60" y1="251" x2="380" y2="251" stroke="#00e676" stroke-width="1.5"/>
       <text x="318" y="249" fill="#5a8fa8" font-family="monospace" font-size="6.5">18 DRAIN WIRES</text>
       <text x="5" y="274" fill="#c77dff" font-family="monospace" font-size="7" font-weight="bold">FIBRE OPTIC</text>
       <text x="5" y="286" fill="#c8e6f5" font-family="monospace" font-size="7">F1 (ROV)</text>
       <line x1="50" y1="283" x2="380" y2="283" stroke="#c77dff" stroke-width="1.5"/>
-      <text x="318" y="281" fill="#5a8fa8" font-family="monospace" font-size="6.5">9/125�m SM FIBRE RED</text>
+      <text x="318" y="281" fill="#5a8fa8" font-family="monospace" font-size="6.5">9/125µm SM FIBRE RED</text>
       <text x="5" y="296" fill="#c8e6f5" font-family="monospace" font-size="7">F2 (TMS)</text>
       <line x1="50" y1="293" x2="380" y2="293" stroke="#c77dff" stroke-width="1.5"/>
-      <text x="318" y="291" fill="#5a8fa8" font-family="monospace" font-size="6.5">9/125�m SM FIBRE GREEN</text>
+      <text x="318" y="291" fill="#5a8fa8" font-family="monospace" font-size="6.5">9/125µm SM FIBRE GREEN</text>
       <text x="5" y="306" fill="#c8e6f5" font-family="monospace" font-size="7">F3 (SURVEY)</text>
       <line x1="50" y1="303" x2="380" y2="303" stroke="#c77dff" stroke-width="1.5"/>
-      <text x="318" y="301" fill="#5a8fa8" font-family="monospace" font-size="6.5">9/125�m SM FIBRE BLUE</text>
+      <text x="318" y="301" fill="#5a8fa8" font-family="monospace" font-size="6.5">9/125µm SM FIBRE BLUE</text>
       <text x="5" y="316" fill="#c8e6f5" font-family="monospace" font-size="7">F4-F6 SPARE</text>
       <line x1="50" y1="313" x2="380" y2="313" stroke="#c77dff" stroke-width="1" stroke-dasharray="2,5" opacity="0.4"/>
       <text x="318" y="311" fill="#5a8fa8" font-family="monospace" font-size="6.5">SPARE FIBRES</text>
@@ -769,14 +804,14 @@ const DRAWINGS = [
       <text x="350" y="340" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">AB7224</text>
       <text x="350" y="350" fill="#5a8fa8" font-family="monospace" font-size="6" text-anchor="middle">300m+</text>
       <rect x="5" y="360" width="390" height="110" rx="4" fill="rgba(0,229,255,0.03)" stroke="#0d3555" stroke-width="1"/>
-      <text x="200" y="376" fill="#00e5ff" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle" letter-spacing="1">KEY FACTS � AG8200 NOTES</text>
-      <text x="15" y="392" fill="#c8e6f5" font-family="monospace" font-size="7">"� All fuses 30A (AA1177 + PK3777)</text>
-      <text x="15" y="404" fill="#c8e6f5" font-family="monospace" font-size="7">"� ↑ symbol = Termate HV terminal � ↓ = Entrelec high current terminal</text>
-      <text x="15" y="416" fill="#c8e6f5" font-family="monospace" font-size="7">"� → symbol = Wieland 2.5mm� terminal � = Wieland 10mm� terminal</text>
-      <text x="15" y="428" fill="#c8e6f5" font-family="monospace" font-size="7">"� = Earth/drain wire point � = Fibre connectors</text>
-      <text x="15" y="440" fill="#c8e6f5" font-family="monospace" font-size="7">"� All cables per DRG No. PD0739 ISS.7</text>
-      <text x="15" y="456" fill="#ffb300" font-family="monospace" font-size="7" font-weight="bold">"� ECM option: ROV ECM on core 21, TMS ECM on core 22</text>
-      <text x="15" y="468" fill="#ffb300" font-family="monospace" font-size="7" font-weight="bold">"� CP probe option: CP1 on core 12, CP2 on core 13 (see SHT.4)</text>
+      <text x="200" y="376" fill="#00e5ff" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle" letter-spacing="1">KEY FACTS — AG8200 NOTES</text>
+      <text x="15" y="392" fill="#c8e6f5" font-family="monospace" font-size="7">"¢ All fuses 30A (AA1177 + PK3777)</text>
+      <text x="15" y="404" fill="#c8e6f5" font-family="monospace" font-size="7">"¢ â†‘ symbol = Termate HV terminal · â†“ = Entrelec high current terminal</text>
+      <text x="15" y="416" fill="#c8e6f5" font-family="monospace" font-size="7">"¢ â†’ symbol = Wieland 2.5mm² terminal · = Wieland 10mm² terminal</text>
+      <text x="15" y="428" fill="#c8e6f5" font-family="monospace" font-size="7">"¢ = Earth/drain wire point · = Fibre connectors</text>
+      <text x="15" y="440" fill="#c8e6f5" font-family="monospace" font-size="7">"¢ All cables per DRG No. PD0739 ISS.7</text>
+      <text x="15" y="456" fill="#ffb300" font-family="monospace" font-size="7" font-weight="bold">"¢ ECM option: ROV ECM on core 21, TMS ECM on core 22</text>
+      <text x="15" y="468" fill="#ffb300" font-family="monospace" font-size="7" font-weight="bold">"¢ CP probe option: CP1 on core 12, CP2 on core 13 (see SHT.4)</text>
     </svg>`,
   hotspots: [
     {x:'1%',y:'5%',w:'78%',h:'4.5%',id:'u1',label:'X12-1 U1 ROV MOTOR PHASE'},
@@ -796,7 +831,7 @@ const DRAWINGS = [
 },
 {
   id: 'SP-004',
-  title: 'Q CORE POD � SUBSEA POWER & I/O',
+  title: 'Q CORE POD — SUBSEA POWER & I/O',
   sheet: '1 OF 1',
   ref: 'REF: AH2742 SHT.1',
   svg: `<svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg">
@@ -807,22 +842,22 @@ const DRAWINGS = [
       </defs>
       <rect x="10" y="10" width="150" height="32" rx="3" fill="rgba(255,179,0,0.08)" stroke="#ffb300" stroke-width="1.5"/>
       <text x="85" y="24" fill="#ffb300" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">FROM UMBILICAL</text>
-      <text x="85" y="34" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">L1/L2 3000-3100V � F1 Fibre</text>
+      <text x="85" y="34" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">L1/L2 3000-3100V · F1 Fibre</text>
       <rect x="240" y="10" width="150" height="32" rx="3" fill="rgba(255,68,68,0.08)" stroke="#ff4444" stroke-width="1.5"/>
       <text x="315" y="24" fill="#ff4444" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">SUBSEA 3000V TX</text>
-      <text x="315" y="34" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">AA0554 → 18VAC outputs</text>
+      <text x="315" y="34" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">AA0554 â†’ 18VAC outputs</text>
       <rect x="80" y="58" width="240" height="60" rx="4" fill="rgba(0,229,255,0.07)" stroke="#00e5ff" stroke-width="2"/>
-      <text x="200" y="74" fill="#00e5ff" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="1">24V PSU BOARD � AE4151</text>
-      <text x="200" y="85" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">PSU1: 24-24V 400W (AA6872) � BR1: Bridge Rectifier</text>
-      <text x="200" y="95" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">PSU2: +12V � PSU3: -12V � CAP1/CAP2: 47000�F</text>
+      <text x="200" y="74" fill="#00e5ff" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="1">24V PSU BOARD — AE4151</text>
+      <text x="200" y="85" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">PSU1: 24-24V 400W (AA6872) · BR1: Bridge Rectifier</text>
+      <text x="200" y="95" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">PSU2: +12V · PSU3: -12V · CAP1/CAP2: 47000µF</text>
       <text x="200" y="105" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">Fused outputs: F1(20A) F2(10A) F4(5A) F5(1A)-F13</text>
       <line x1="200" y1="118" x2="200" y2="136" stroke="#00e5ff" stroke-width="2" marker-end="url(#arr-ctrl)"/>
       <rect x="10" y="136" width="380" height="18" rx="2" fill="rgba(0,229,255,0.06)" stroke="#00e5ff" stroke-width="1"/>
-      <text x="200" y="148" fill="#00e5ff" font-family="monospace" font-size="7" text-anchor="middle" letter-spacing="1">24V REG � 24V UNREG � 8V REG � 5VDC � 12VDC � -12VDC RAILS</text>
+      <text x="200" y="148" fill="#00e5ff" font-family="monospace" font-size="7" text-anchor="middle" letter-spacing="1">24V REG · 24V UNREG · 8V REG · 5VDC · 12VDC · -12VDC RAILS</text>
       <rect x="10" y="166" width="110" height="60" rx="3" fill="rgba(199,125,255,0.07)" stroke="#c77dff" stroke-width="1.5"/>
       <text x="65" y="181" fill="#c77dff" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">BECKHOFF I/O</text>
       <text x="65" y="191" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">EtherCAT Modules</text>
-      <text x="65" y="201" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">Dig IN/OUT � Anlg IN</text>
+      <text x="65" y="201" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">Dig IN/OUT · Anlg IN</text>
       <text x="65" y="211" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">110VAC outputs</text>
       <text x="65" y="220" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">24VDC unreg ctrl</text>
       <line x1="65" y1="154" x2="65" y2="166" stroke="#c77dff" stroke-width="1.5"/>
@@ -831,17 +866,17 @@ const DRAWINGS = [
       <text x="190" y="191" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">Interface Rack</text>
       <text x="190" y="201" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">F1 ROV Comms</text>
       <text x="190" y="211" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">CWDM Channels</text>
-      <text x="190" y="220" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">→ Topside PC</text>
+      <text x="190" y="220" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">â†’ Topside PC</text>
       <line x1="190" y1="154" x2="190" y2="166" stroke="#c77dff" stroke-width="1.5"/>
       <rect x="260" y="166" width="130" height="60" rx="3" fill="rgba(0,230,118,0.07)" stroke="#00e676" stroke-width="1.5"/>
       <text x="325" y="181" fill="#00e676" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">LIM UNIT</text>
       <text x="325" y="191" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">Line Isolation Monitor</text>
-      <text x="325" y="201" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">100kO / 200kO</text>
+      <text x="325" y="201" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">100kΩ / 200kΩ</text>
       <text x="325" y="211" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">Alarm: NE (N.E.)</text>
       <text x="325" y="220" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">HT Coupler: AGH5295</text>
       <line x1="325" y1="154" x2="325" y2="166" stroke="#00e676" stroke-width="1.5"/>
       <rect x="10" y="244" width="380" height="24" rx="2" fill="rgba(0,191,165,0.05)" stroke="#00bfa5" stroke-width="1"/>
-      <text x="200" y="260" fill="#00bfa5" font-family="monospace" font-size="7.5" text-anchor="middle" letter-spacing="1">FACEPLATE CONNECTORS � PORTS 1"�31</text>
+      <text x="200" y="260" fill="#00bfa5" font-family="monospace" font-size="7.5" text-anchor="middle" letter-spacing="1">FACEPLATE CONNECTORS — PORTS 1"“31</text>
       <rect x="10" y="280" width="55" height="36" rx="3" fill="rgba(0,191,165,0.06)" stroke="#00bfa5" stroke-width="1"/>
       <text x="37" y="295" fill="#00bfa5" font-family="monospace" font-size="6.5" font-weight="bold" text-anchor="middle">CAMS</text>
       <text x="37" y="308" fill="#5a8fa8" font-family="monospace" font-size="6" text-anchor="middle">P1-P17</text>
@@ -867,8 +902,8 @@ const DRAWINGS = [
       <line x1="297" y1="268" x2="297" y2="280" stroke="#00bfa5" stroke-width="1"/>
       <line x1="362" y1="268" x2="362" y2="280" stroke="#00bfa5" stroke-width="1"/>
       <rect x="80" y="332" width="240" height="28" rx="3" fill="rgba(255,68,68,0.06)" stroke="#ff4444" stroke-width="1"/>
-      <text x="200" y="346" fill="#ff4444" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">MOISTURE SENSORS � AA9979</text>
-      <text x="200" y="356" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">Front + Rear Pod � Pressure � Humidity � Temp → MS1/MS2</text>
+      <text x="200" y="346" fill="#ff4444" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">MOISTURE SENSORS — AA9979</text>
+      <text x="200" y="356" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">Front + Rear Pod · Pressure · Humidity · Temp â†’ MS1/MS2</text>
       <line x1="85" y1="42" x2="130" y2="58" stroke="#ffb300" stroke-width="2" marker-end="url(#arr-lv)"/>
       <line x1="315" y1="42" x2="280" y2="58" stroke="#ff4444" stroke-width="2" marker-end="url(#arr-hv)"/>
     </svg>`,
@@ -891,12 +926,12 @@ const DRAWINGS = [
 },
 {
   id: 'SP-005',
-  title: 'HOW TO READ SMD DRAWINGS � CONVENTIONS',
+  title: 'HOW TO READ SMD DRAWINGS — CONVENTIONS',
   sheet: '1 OF 1',
   ref: 'REF: AH2646 / AG8200 / AH2742',
   svg: `<svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
       <rect x="5" y="5" width="390" height="55" rx="3" fill="rgba(0,229,255,0.04)" stroke="#00e5ff" stroke-width="1.5"/>
-      <text x="200" y="20" fill="#00e5ff" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="2">TITLE BLOCK � BOTTOM RIGHT OF EVERY SHEET</text>
+      <text x="200" y="20" fill="#00e5ff" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="2">TITLE BLOCK — BOTTOM RIGHT OF EVERY SHEET</text>
       <rect x="10" y="26" width="60" height="28" rx="2" fill="rgba(0,229,255,0.06)" stroke="#0d3555" stroke-width="1"/>
       <text x="40" y="38" fill="#c8e6f5" font-family="monospace" font-size="7" text-anchor="middle">DRAWING NO.</text>
       <text x="40" y="48" fill="#00e5ff" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">AH2646</text>
@@ -914,33 +949,33 @@ const DRAWINGS = [
       <text x="300" y="48" fill="#00e5ff" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">A2</text>
       <rect x="5" y="70" width="390" height="80" rx="3" fill="rgba(255,179,0,0.04)" stroke="#ffb300" stroke-width="1.5"/>
       <text x="200" y="84" fill="#ffb300" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="2">ZONE REFERENCE SYSTEM</text>
-      <text x="15" y="98" fill="#c8e6f5" font-family="monospace" font-size="7.5">Columns: 1-5 (left to right) � Rows: A-E (top to bottom)</text>
+      <text x="15" y="98" fill="#c8e6f5" font-family="monospace" font-size="7.5">Columns: 1-5 (left to right) · Rows: A-E (top to bottom)</text>
       <text x="15" y="112" fill="#ffb300" font-family="monospace" font-size="8" font-weight="bold">"SHT.2_A3"</text>
       <text x="115" y="112" fill="#c8e6f5" font-family="monospace" font-size="7.5"> = Sheet 2, Row A, Column 3</text>
       <text x="15" y="126" fill="#ffb300" font-family="monospace" font-size="8" font-weight="bold">"SEE SHT.4"</text>
-      <text x="115" y="126" fill="#c8e6f5" font-family="monospace" font-size="7.5"> = wire continues on Sheet 4 � follow it there</text>
-      <text x="15" y="140" fill="#5a8fa8" font-family="monospace" font-size="7">When a wire disappears off the edge, look for the arrow and sheet ref � it always tells you where it goes</text>
+      <text x="115" y="126" fill="#c8e6f5" font-family="monospace" font-size="7.5"> = wire continues on Sheet 4 — follow it there</text>
+      <text x="15" y="140" fill="#5a8fa8" font-family="monospace" font-size="7">When a wire disappears off the edge, look for the arrow and sheet ref — it always tells you where it goes</text>
       <rect x="5" y="160" width="390" height="80" rx="3" fill="rgba(0,229,255,0.04)" stroke="#00e5ff" stroke-width="1.5"/>
       <text x="200" y="174" fill="#00e5ff" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="2">WIRE NUMBERING SYSTEM</text>
       <text x="15" y="190" fill="#ffb300" font-family="monospace" font-size="8" font-weight="bold">208-WE</text>
       <text x="75" y="190" fill="#c8e6f5" font-family="monospace" font-size="7.5"> = Wire No. 208, colour White (WE = White)</text>
       <text x="15" y="204" fill="#ffb300" font-family="monospace" font-size="8" font-weight="bold">305-BE</text>
       <text x="75" y="204" fill="#c8e6f5" font-family="monospace" font-size="7.5"> = Wire No. 305, colour Blue (BE = Blue)</text>
-      <text x="15" y="218" fill="#5a8fa8" font-family="monospace" font-size="7">Colour codes: RD=Red � BK=Black � BN=Brown � GN=Green � GY=Grey</text>
-      <text x="15" y="230" fill="#5a8fa8" font-family="monospace" font-size="7">WE=White � BE=Blue � OG=Orange � YW=Yellow � GN/YW=Green/Yellow (earth)</text>
+      <text x="15" y="218" fill="#5a8fa8" font-family="monospace" font-size="7">Colour codes: RD=Red · BK=Black · BN=Brown · GN=Green · GY=Grey</text>
+      <text x="15" y="230" fill="#5a8fa8" font-family="monospace" font-size="7">WE=White · BE=Blue · OG=Orange · YW=Yellow · GN/YW=Green/Yellow (earth)</text>
       <rect x="5" y="250" width="390" height="70" rx="3" fill="rgba(199,125,255,0.04)" stroke="#c77dff" stroke-width="1.5"/>
       <text x="200" y="264" fill="#c77dff" font-family="monospace" font-size="8.5" font-weight="bold" text-anchor="middle" letter-spacing="2">TERMINAL BLOCK NOTATION</text>
       <text x="15" y="280" fill="#ffb300" font-family="monospace" font-size="8" font-weight="bold">X7-2</text>
       <text x="55" y="280" fill="#c8e6f5" font-family="monospace" font-size="7.5"> = Terminal Block X7, Terminal position 2</text>
       <text x="15" y="294" fill="#ffb300" font-family="monospace" font-size="8" font-weight="bold">X12-1 (U1)</text>
       <text x="95" y="294" fill="#c8e6f5" font-family="monospace" font-size="7.5"> = Terminal X12 pos.1, carrying conductor U1</text>
-      <text x="15" y="308" fill="#5a8fa8" font-family="monospace" font-size="7">X = Terminal block identifier � Number after dash = individual terminal position</text>
+      <text x="15" y="308" fill="#5a8fa8" font-family="monospace" font-size="7">X = Terminal block identifier · Number after dash = individual terminal position</text>
       <rect x="5" y="330" width="390" height="25" rx="3" fill="rgba(0,230,118,0.04)" stroke="#00e676" stroke-width="1"/>
-      <text x="15" y="340" fill="#00e676" font-family="monospace" font-size="7">↑ = HV Termate terminal</text>
-      <text x="130" y="340" fill="#00e676" font-family="monospace" font-size="7">↓ = Entrelec high current</text>
-      <text x="255" y="340" fill="#00e676" font-family="monospace" font-size="7">→ = Earth/drain point</text>
-      <text x="15" y="350" fill="#00e676" font-family="monospace" font-size="7">→ = Wieland 2.5mm�</text>
-      <text x="130" y="350" fill="#00e676" font-family="monospace" font-size="7">= Wieland 10mm�</text>
+      <text x="15" y="340" fill="#00e676" font-family="monospace" font-size="7">â†‘ = HV Termate terminal</text>
+      <text x="130" y="340" fill="#00e676" font-family="monospace" font-size="7">â†“ = Entrelec high current</text>
+      <text x="255" y="340" fill="#00e676" font-family="monospace" font-size="7">â†’ = Earth/drain point</text>
+      <text x="15" y="350" fill="#00e676" font-family="monospace" font-size="7">â†’ = Wieland 2.5mm²</text>
+      <text x="130" y="350" fill="#00e676" font-family="monospace" font-size="7">= Wieland 10mm²</text>
       <text x="255" y="350" fill="#00e676" font-family="monospace" font-size="7">= Fibre connector</text>
     </svg>`,
   hotspots: [
@@ -954,9 +989,9 @@ const DRAWINGS = [
 ,
 {
   id: 'SP-006',
-  title: 'iTCU BURTON � 7 STATION ASSEMBLY � ELECTRICAL & HYDRAULIC',
+  title: 'iTCU BURTON — 7 STATION ASSEMBLY · ELECTRICAL & HYDRAULIC',
   sheet: '2 OF 2',
-  ref: 'REF: AD6358 � AB7520 � PK4444',
+  ref: 'REF: AD6358 · AB7520 · PK4444',
   svg: `<svg viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <marker id="arr-hv" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ff4444"/></marker>
@@ -965,96 +1000,96 @@ const DRAWINGS = [
     </defs>
 
     <!-- SHEET LABEL -->
-    <text x="250" y="14" fill="#5a8fa8" font-family="monospace" font-size="8" text-anchor="middle" letter-spacing="1">ASSEMBLY 7 STATION iTCU BURTON � AD6358</text>
+    <text x="250" y="14" fill="#5a8fa8" font-family="monospace" font-size="8" text-anchor="middle" letter-spacing="1">ASSEMBLY 7 STATION iTCU BURTON · AD6358</text>
 
-    <!-- ── E1 CONNECTOR � MAIN INPUT ── -->
+    <!-- â”€â”€ E1 CONNECTOR — MAIN INPUT â”€â”€ -->
     <rect x="5" y="22" width="90" height="120" rx="3" fill="rgba(0,229,255,0.06)" stroke="#00e5ff" stroke-width="1.5"/>
     <text x="50" y="34" fill="#00e5ff" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">E1 CONNECTOR</text>
-    <text x="50" y="44" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">Main Input � 8-pin</text>
+    <text x="50" y="44" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">Main Input · 8-pin</text>
     <text x="10" y="58" fill="#c8e6f5" font-family="monospace" font-size="6.5">1 CONTROL</text>
     <text x="10" y="68" fill="#ffb300" font-family="monospace" font-size="6.5">2 +24V</text>
     <text x="10" y="78" fill="#c8e6f5" font-family="monospace" font-size="6.5">3 0V</text>
     <text x="10" y="88" fill="#5a8fa8" font-family="monospace" font-size="6.5">4 SCN</text>
     <text x="10" y="98" fill="#00e5ff" font-family="monospace" font-size="6.5">5 RS485+</text>
-    <text x="10" y="108" fill="#00e5ff" font-family="monospace" font-size="6.5">6 RS485−</text>
+    <text x="10" y="108" fill="#00e5ff" font-family="monospace" font-size="6.5">6 RS485âˆ’</text>
     <text x="10" y="118" fill="#00e676" font-family="monospace" font-size="6.5">7 EARTH</text>
     <text x="10" y="128" fill="#5a8fa8" font-family="monospace" font-size="6.5">8 N/C</text>
 
-    <!-- ── TCU CONTROLLER ── -->
+    <!-- â”€â”€ TCU CONTROLLER â”€â”€ -->
     <rect x="110" y="22" width="130" height="80" rx="3" fill="rgba(255,179,0,0.08)" stroke="#ffb300" stroke-width="2"/>
     <text x="175" y="38" fill="#ffb300" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">TCU CONTROLLER</text>
     <text x="175" y="50" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">AD6358</text>
-    <text x="175" y="63" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">J1 � J2 � J3 � J4</text>
-    <text x="175" y="73" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">J5 � J6 � J7 � J8</text>
+    <text x="175" y="63" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">J1 · J2 · J3 · J4</text>
+    <text x="175" y="73" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">J5 · J6 · J7 · J8</text>
     <text x="175" y="85" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">7-Station RS485 Control</text>
-    <text x="175" y="95" fill="#5a8fa8" font-family="monospace" font-size="6" text-anchor="middle">120O termination on J2</text>
+    <text x="175" y="95" fill="#5a8fa8" font-family="monospace" font-size="6" text-anchor="middle">120Ω termination on J2</text>
 
-    <!-- ── PSU ── -->
+    <!-- â”€â”€ PSU â”€â”€ -->
     <rect x="255" y="22" width="90" height="55" rx="3" fill="rgba(0,229,255,0.06)" stroke="#00e5ff" stroke-width="1.5"/>
     <text x="300" y="36" fill="#00e5ff" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">PSU AB7520</text>
     <text x="300" y="48" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">+12V (J6 pin1)</text>
-    <text x="300" y="58" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">−12V (J6 pin2)</text>
+    <text x="300" y="58" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">âˆ’12V (J6 pin2)</text>
     <text x="300" y="68" fill="#5a8fa8" font-family="monospace" font-size="6" text-anchor="middle">16AWG/WE supply</text>
 
-    <!-- ── J1 OUTPUT ── -->
+    <!-- â”€â”€ J1 OUTPUT â”€â”€ -->
     <rect x="360" y="22" width="130" height="55" rx="3" fill="rgba(0,229,255,0.06)" stroke="#00e5ff" stroke-width="1.5"/>
     <text x="425" y="36" fill="#00e5ff" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">J1 OUTPUT</text>
     <text x="425" y="48" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">1 TCU V.T. CONTROL</text>
     <text x="425" y="58" fill="#ffb300" font-family="monospace" font-size="6.5" text-anchor="middle">2 +24V UNREG</text>
     <text x="425" y="68" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">3 0V UNREG</text>
 
-    <!-- ── J2 RS485 ── -->
+    <!-- â”€â”€ J2 RS485 â”€â”€ -->
     <rect x="360" y="85" width="130" height="45" rx="3" fill="rgba(199,125,255,0.07)" stroke="#c77dff" stroke-width="1.5"/>
     <text x="425" y="98" fill="#c77dff" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">J2 RS485 BUS</text>
-    <text x="425" y="110" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">1 RS485+  2 RS485−</text>
-    <text x="425" y="120" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">3 SCREEN � 120O term</text>
+    <text x="425" y="110" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">1 RS485+  2 RS485âˆ’</text>
+    <text x="425" y="120" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">3 SCREEN · 120Ω term</text>
 
-    <!-- ── SENSORS ── -->
+    <!-- â”€â”€ SENSORS â”€â”€ -->
     <rect x="255" y="85" width="90" height="55" rx="3" fill="rgba(0,230,118,0.07)" stroke="#00e676" stroke-width="1.5"/>
     <text x="300" y="98" fill="#00e676" font-family="monospace" font-size="7" font-weight="bold" text-anchor="middle">SENSORS</text>
     <text x="300" y="110" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">J3: Moisture AA9979</text>
     <text x="300" y="120" fill="#c8e6f5" font-family="monospace" font-size="6.5" text-anchor="middle">J4: Temp PRT100</text>
     <text x="300" y="130" fill="#5a8fa8" font-family="monospace" font-size="6" text-anchor="middle">DC9301/DI3412</text>
 
-    <!-- ── J5 PRESSURE SENSOR ── -->
+    <!-- â”€â”€ J5 PRESSURE SENSOR â”€â”€ -->
     <rect x="5" y="155" width="90" height="75" rx="3" fill="rgba(255,68,68,0.06)" stroke="#ff4444" stroke-width="1.5"/>
-    <text x="50" y="168" fill="#ff4444" font-family="monospace" font-size="7" font-weight="bold" text-anchor="middle">J5 � PRESSURE</text>
+    <text x="50" y="168" fill="#ff4444" font-family="monospace" font-size="7" font-weight="bold" text-anchor="middle">J5 · PRESSURE</text>
     <text x="50" y="178" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">TXOR PK4444</text>
     <text x="10" y="192" fill="#ffb300" font-family="monospace" font-size="6.5">1,4,7,10 +24V</text>
     <text x="10" y="202" fill="#00e5ff" font-family="monospace" font-size="6.5">2,5,8,11 SIG</text>
     <text x="10" y="212" fill="#c8e6f5" font-family="monospace" font-size="6.5">3,6,9,12 0V</text>
-    <text x="10" y="222" fill="#5a8fa8" font-family="monospace" font-size="6">4 sensors �� 3 pins</text>
+    <text x="10" y="222" fill="#5a8fa8" font-family="monospace" font-size="6">4 sensors À— 3 pins</text>
 
-    <!-- ── STATION CONNECTORS E2/E3/E4 ── -->
+    <!-- â”€â”€ STATION CONNECTORS E2/E3/E4 â”€â”€ -->
     <rect x="110" y="115" width="235" height="110" rx="3" fill="rgba(255,179,0,0.05)" stroke="#ffb300" stroke-width="1.5"/>
-    <text x="227" y="128" fill="#ffb300" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">STATION CONNECTORS E2 � E3 � E4</text>
-    <text x="227" y="140" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">Each 8-pin � Same pinout</text>
+    <text x="227" y="128" fill="#ffb300" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">STATION CONNECTORS E2 · E3 · E4</text>
+    <text x="227" y="140" fill="#5a8fa8" font-family="monospace" font-size="7" text-anchor="middle">Each 8-pin · Same pinout</text>
     <text x="125" y="154" fill="#c8e6f5" font-family="monospace" font-size="6.5">Pin 1-3: N/C</text>
     <text x="125" y="164" fill="#ffb300" font-family="monospace" font-size="6.5">Pin 4: +24V</text>
     <text x="125" y="174" fill="#c8e6f5" font-family="monospace" font-size="6.5">Pin 5: 0V</text>
     <text x="125" y="184" fill="#5a8fa8" font-family="monospace" font-size="6.5">Pin 6: SCN</text>
     <text x="125" y="194" fill="#00e5ff" font-family="monospace" font-size="6.5">Pin 7: SIGNAL</text>
     <text x="125" y="204" fill="#5a8fa8" font-family="monospace" font-size="6.5">Pin 8: N/C</text>
-    <text x="270" y="154" fill="#5a8fa8" font-family="monospace" font-size="6.5">E2 → Stations 1,3</text>
-    <text x="270" y="164" fill="#5a8fa8" font-family="monospace" font-size="6.5">E3 → Stations 4,9</text>
-    <text x="270" y="174" fill="#5a8fa8" font-family="monospace" font-size="6.5">E4 → Stations 5,6,8</text>
+    <text x="270" y="154" fill="#5a8fa8" font-family="monospace" font-size="6.5">E2 â†’ Stations 1,3</text>
+    <text x="270" y="164" fill="#5a8fa8" font-family="monospace" font-size="6.5">E3 â†’ Stations 4,9</text>
+    <text x="270" y="174" fill="#5a8fa8" font-family="monospace" font-size="6.5">E4 â†’ Stations 5,6,8</text>
     <text x="270" y="188" fill="#FFB300" font-family="monospace" font-size="6.5" font-weight="bold">E5: HEAT SHRINK TAILS</text>
-    <text x="270" y="198" fill="#5a8fa8" font-family="monospace" font-size="6.5">All pins N/C � tie back</text>
+    <text x="270" y="198" fill="#5a8fa8" font-family="monospace" font-size="6.5">All pins N/C — tie back</text>
 
-    <!-- ── J7/J8 THRUSTER OUTPUTS ── -->
+    <!-- â”€â”€ J7/J8 THRUSTER OUTPUTS â”€â”€ -->
     <rect x="360" y="140" width="130" height="90" rx="3" fill="rgba(255,68,68,0.08)" stroke="#ff4444" stroke-width="1.5"/>
     <text x="425" y="153" fill="#ff4444" font-family="monospace" font-size="7.5" font-weight="bold" text-anchor="middle">J7 / J8 OUTPUTS</text>
-    <text x="365" y="166" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-1/2 → STN 1 PORT REAR HORIZ</text>
-    <text x="365" y="176" fill="#5a8fa8" font-family="monospace" font-size="6.5">J7-3/4 → STN 2 PORT REAR VERT NF</text>
-    <text x="365" y="186" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-5/6 → STN 3 PORT VERTICAL</text>
-    <text x="365" y="196" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-7/8 → STN 4 PORT FRONT HORIZ</text>
-    <text x="365" y="206" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-9/10 → STN 5 STBD FRONT HORIZ</text>
-    <text x="365" y="216" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-11/12 → STN 6 STBD VERTICAL</text>
-    <text x="365" y="226" fill="#5a8fa8" font-family="monospace" font-size="6.5">J8-1/2 → STN 7 STBD REAR VERT NF</text>
+    <text x="365" y="166" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-1/2 â†’ STN 1 PORT REAR HORIZ</text>
+    <text x="365" y="176" fill="#5a8fa8" font-family="monospace" font-size="6.5">J7-3/4 â†’ STN 2 PORT REAR VERT NF</text>
+    <text x="365" y="186" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-5/6 â†’ STN 3 PORT VERTICAL</text>
+    <text x="365" y="196" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-7/8 â†’ STN 4 PORT FRONT HORIZ</text>
+    <text x="365" y="206" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-9/10 â†’ STN 5 STBD FRONT HORIZ</text>
+    <text x="365" y="216" fill="#c8e6f5" font-family="monospace" font-size="6.5">J7-11/12 â†’ STN 6 STBD VERTICAL</text>
+    <text x="365" y="226" fill="#5a8fa8" font-family="monospace" font-size="6.5">J8-1/2 â†’ STN 7 STBD REAR VERT NF</text>
 
-    <!-- ── THRUSTER MAP ── -->
+    <!-- â”€â”€ THRUSTER MAP â”€â”€ -->
     <rect x="5" y="245" width="220" height="165" rx="3" fill="rgba(0,229,255,0.04)" stroke="#00e5ff" stroke-width="1.5"/>
-    <text x="115" y="260" fill="#00e5ff" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle" letter-spacing="1">STATION MAPPING � WR CLASS ROV</text>
+    <text x="115" y="260" fill="#00e5ff" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle" letter-spacing="1">STATION MAPPING — WR CLASS ROV</text>
     <text x="115" y="272" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">Uses stations 1,3,4,5,6,8,9</text>
 
     <!-- Station map grid -->
@@ -1088,10 +1123,10 @@ const DRAWINGS = [
     <circle cx="200" cy="388" r="10" fill="none" stroke="#ff4444" stroke-width="1.5"/>
     <text x="200" y="392" fill="#ffb300" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">8</text>
 
-    <!-- ── HYDRAULIC VALVE BLOCK SUMMARY ── -->
+    <!-- â”€â”€ HYDRAULIC VALVE BLOCK SUMMARY â”€â”€ -->
     <rect x="240" y="245" width="255" height="165" rx="3" fill="rgba(255,68,68,0.05)" stroke="#ff4444" stroke-width="1.5"/>
     <text x="367" y="260" fill="#ff4444" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle" letter-spacing="1">HYDRAULIC VALVE BLOCK</text>
-    <text x="367" y="272" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">7 Stations � P/T/A/B per station</text>
+    <text x="367" y="272" fill="#5a8fa8" font-family="monospace" font-size="6.5" text-anchor="middle">7 Stations · P/T/A/B per station</text>
 
     <text x="248" y="288" fill="#c8e6f5" font-family="monospace" font-size="6.5">P1/P2 PRESSURE  1-5/16" UNF SAE</text>
     <text x="248" y="299" fill="#c8e6f5" font-family="monospace" font-size="6.5">T1/T2 RETURN    1-5/16" UNF SAE</text>
@@ -1099,13 +1134,13 @@ const DRAWINGS = [
     <text x="248" y="321" fill="#c8e6f5" font-family="monospace" font-size="6.5">COMP            9/16" UNF SAE</text>
     <text x="248" y="332" fill="#c8e6f5" font-family="monospace" font-size="6.5">TP1 TEST POINT  1/4" BSPP</text>
     <text x="248" y="343" fill="#c8e6f5" font-family="monospace" font-size="6.5">PC PUMP CTRL    7/16" UNF SAE</text>
-    <text x="248" y="354" fill="#c8e6f5" font-family="monospace" font-size="6.5">V PACK RELIEF   1" NPT � 15 PSI</text>
+    <text x="248" y="354" fill="#c8e6f5" font-family="monospace" font-size="6.5">V PACK RELIEF   1" NPT · 15 PSI</text>
 
     <line x1="248" y1="362" x2="487" y2="362" stroke="#0d3555" stroke-width="0.5"/>
-    <text x="248" y="374" fill="#ffb300" font-family="monospace" font-size="6.5" font-weight="bold">ACTIVE STATIONS: 1 � 3 � 4 � 5 � 6 � 8 � 9</text>
+    <text x="248" y="374" fill="#ffb300" font-family="monospace" font-size="6.5" font-weight="bold">ACTIVE STATIONS: 1 · 3 · 4 · 5 · 6 · 8 · 9</text>
     <text x="248" y="385" fill="#5a8fa8" font-family="monospace" font-size="6.5">Station 2 (Port Rear Vert): NOT FITTED</text>
     <text x="248" y="396" fill="#5a8fa8" font-family="monospace" font-size="6.5">Station 7 (Stbd Rear Vert): NOT FITTED</text>
-    <text x="248" y="407" fill="#ff4444" font-family="monospace" font-size="6.5">J8-9/10 → Proportional Valve Pressure Ctrl</text>
+    <text x="248" y="407" fill="#ff4444" font-family="monospace" font-size="6.5">J8-9/10 â†’ Proportional Valve Pressure Ctrl</text>
 
     <!-- Flow lines -->
     <line x1="95" y1="62" x2="110" y2="62" stroke="#00e5ff" stroke-width="1.5" marker-end="url(#arr-ctrl)"/>
@@ -1119,10 +1154,10 @@ const DRAWINGS = [
   hotspots: [
     {x:'1%',y:'5%',w:'18%',h:'29%',id:'e1-conn',label:'E1 MAIN INPUT CONNECTOR'},
     {x:'22%',y:'5%',w:'26%',h:'19%',id:'tcu-ctrl',label:'TCU CONTROLLER AD6358'},
-    {x:'51%',y:'5%',w:'18%',h:'13%',id:'psu-itcu',label:'PSU AB7520 �12V'},
-    {x:'72%',y:'5%',w:'26%',h:'13%',id:'j1-out',label:'J1 OUTPUT � VT CONTROL + 24V'},
-    {x:'72%',y:'20%',w:'26%',h:'11%',id:'j2-rs485',label:'J2 RS485 BUS � 120O'},
-    {x:'51%',y:'20%',w:'18%',h:'13%',id:'sensors-itcu',label:'J3 MOISTURE � J4 TEMP SENSOR'},
+    {x:'51%',y:'5%',w:'18%',h:'13%',id:'psu-itcu',label:'PSU AB7520 ±12V'},
+    {x:'72%',y:'5%',w:'26%',h:'13%',id:'j1-out',label:'J1 OUTPUT — VT CONTROL + 24V'},
+    {x:'72%',y:'20%',w:'26%',h:'11%',id:'j2-rs485',label:'J2 RS485 BUS · 120Ω'},
+    {x:'51%',y:'20%',w:'18%',h:'13%',id:'sensors-itcu',label:'J3 MOISTURE · J4 TEMP SENSOR'},
     {x:'1%',y:'37%',w:'18%',h:'18%',id:'j5-pressure',label:'J5 PRESSURE SENSOR PK4444'},
     {x:'22%',y:'27%',w:'47%',h:'26%',id:'stations-e2-e4',label:'STATION CONNECTORS E2/E3/E4'},
     {x:'72%',y:'33%',w:'26%',h:'21%',id:'j7-j8',label:'J7/J8 THRUSTER OUTPUTS'},
@@ -1132,123 +1167,269 @@ const DRAWINGS = [
 }
 ];
 
-// ── COMPONENT INFO DATABASE ───────────────────────────────────────────────────
+// â”€â”€ COMPONENT INFO DATABASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const COMPONENT_INFO = {
-  'e1-conn': {ref:'E1 Connector',name:"E1 � Main Input Connector (8-pin)",body:"The E1 connector is the primary input to each iTCU station. Pin 1=CONTROL, 2=+24V, 3=0V, 4=SCN screen, 5=RS485+, 6=RS485−, 7=EARTH (same point as pin 7 green wire), 8=N/C.",specs:[['Pins','8'],['Pin 1','CONTROL signal'],['Pin 2','+24V supply'],['Pin 5/6','RS485+ / RS485−'],['Pin 7','EARTH � same as green wire']],tip:"Earth MUST be connected to the same earth point as pin 7 green wire. Floating earth causes RS485 communication errors on all stations."},
-  'tcu-ctrl': {ref:'AD6358',name:"TCU Controller AD6358",body:"The TCU Controller (AD6358) is the brain of the iTCU manifold. It receives RS485 commands from the topside PLC via J2, controls all 7 hydraulic valve stations, and monitors pressure/temperature sensors.",specs:[['Ref','AD6358'],['Control','RS485 from Beckhoff'],['Stations','7 (1,3,4,5,6,8,9 active)'],['Jumpers','JP1 Node 3 � JP2 address'],['Connectors','J1-J8']],tip:"JP1 jumper sets node address. For WR Class ROV node 3 is selected. JP2 sets the RS485 address. If iTCU doesn't respond, check JP1/JP2 settings match the topside configuration."},
-  'psu-itcu': {ref:'AB7520',name:"PSU AB7520 � �12V Supply",body:"The internal PSU (AB7520) generates �12V rails for the TCU controller electronics from the 24V input supply. 16AWG/WE wiring. Output on J6 pin 1 (+12V) and pin 2 (−12V).",specs:[['Ref','AB7520'],['Input','24V from E1 pin 2'],['Output','+12V J6 pin1'],['Output','−12V J6 pin2'],['Wire','16AWG/WE']],tip:"If TCU shows no response but 24V is present at E1, check �12V at J6. PSU failure causes total controller lockout."},
-  'j1-out': {ref:'J1',name:"J1 � VT Control Output",body:"J1 carries the TCU Variable Thrust control signal back to the topside system and the 24V unreg supply. Pin 1=TCU V.T. CONTROL, pin 2=+24V UNREG, pin 3=0V UNREG.",specs:[['Pin 1','TCU V.T. CONTROL'],['Pin 2','+24V UNREG'],['Pin 3','0V UNREG']],tip:"The V.T. Control signal on J1 pin 1 is the variable thrust feedback. If thruster speed control is lost but on/off works, check J1 pin 1 continuity."},
-  'j2-rs485': {ref:'J2',name:"J2 � RS485 Communications Bus",body:"J2 is the RS485 communications connector. Pin 1=RS485+, pin 2=RS485−, pin 3=SCREEN. A 120O termination resistor is fitted at J2 as this is the end of the RS485 bus.",specs:[['Pin 1','RS485+'],['Pin 2','RS485−'],['Pin 3','SCREEN'],['Termination','120O at J2']],tip:"120O termination is critical. Without it, RS485 reflections cause communication errors. If you're getting intermittent comms, check the termination resistor hasn't been removed during maintenance."},
-  'sensors-itcu': {ref:'J3/J4',name:"J3 Moisture & J4 Temperature Sensors",body:"J3 connects two moisture sensors (AA9979 ��2) monitoring +VE/−VE. J4 connects the PRT100 temperature sensor (DC9301/DI3412) via RTD+ and RTD− for internal temperature monitoring.",specs:[['J3','Moisture sensor AA9979 ��2'],['J3 Pin 1','+VE'],['J3 Pin 2','−VE'],['J4','Temp sensor PRT100'],['J4 Ref','DC9301 / DI3412']],tip:"Moisture alarms from J3 during a dive = water ingress in the iTCU enclosure. Recover immediately. Temperature alarms from J4 may indicate blocked cooling or stalled HPU."},
-  'j5-pressure': {ref:'J5 PK4444',name:"J5 � Pressure Sensor Connector PK4444",body:"J5 carries the pressure and temperature sensor signals from the HPU manifold. 12-pin connector � groups of 3 pins per sensor: 24V supply, signal, 0V. Sensors on pins 1-3, 4-6, 7-9, 10-12.",specs:[['Pins','12 total'],['Pattern','24V � SIG � 0V per sensor'],['Sensor','PK4444 pressure transducer'],['Locations','COMP � D4/D5 � T3 ports']],tip:"Each sensor group needs 24V and a clean 0V return. If pressure reading is erratic, check 0V connections first � a shared 0V with noise causes sensor instability."},
-  'stations-e2-e4': {ref:'E2/E3/E4',name:"Station Connectors E2, E3, E4",body:"E2, E3, E4 are the valve station connectors � same 8-pin pinout on each. Pin 4=+24V, pin 5=0V, pin 6=SCN, pin 7=SIGNAL. Pins 1-3 and pin 8 are N/C. E5 has heat-shrink tails � all N/C, tie back securely.",specs:[['Pin 4','+24V supply'],['Pin 5','0V return'],['Pin 6','SCN screen'],['Pin 7','SIGNAL (PWM control)'],['E5','Heat shrink tails � tie back']],tip:"E5 tails MUST be tied back securely. Loose tails can short against the manifold body causing intermittent faults. If a station loses control but 24V is present, check pin 7 SIGNAL continuity."},
-  'j7-j8': {ref:'J7/J8',name:"J7/J8 � Thruster Output Connectors",body:"J7 and J8 carry the individual thruster outputs. J7 covers stations 1-6, J8 covers stations 7-9 plus the proportional valve. Stations 2 and 7 are NOT FITTED on the WR Class ROV.",specs:[['J7-1/2','Station 1 Port Rear Horizontal'],['J7-5/6','Station 3 Port Vertical'],['J7-7/8','Station 4 Port Front Horizontal'],['J7-9/10','Station 5 Stbd Front Horizontal'],['J7-11/12','Station 6 Stbd Vertical'],['J8-3/4','Station 8 Stbd Rear Horizontal'],['J8-5/6','Station 9 Rear Vertical'],['J8-9/10','Proportional Valve Pressure']],tip:"Stations 2 and 7 are NOT FITTED � J7-3/4 and J8-1/2 will show no thruster response. This is normal. Don't waste time fault-finding unpopulated stations."},
-  'stn-map': {ref:'Station Map',name:"Thruster Station Mapping � WR Class ROV",body:"Standard thruster mapping for the WR Class ROV 150HP using stations 1,3,4,5,6,8,9. Port side left, Starboard right when viewed from above.",specs:[['Station 1','Port Rear Horizontal'],['Station 3','Port Vertical'],['Station 4','Port Front Horizontal'],['Station 5','Stbd Front Horizontal'],['Station 6','Stbd Vertical'],['Station 8','Stbd Rear Horizontal'],['Station 9','Rear Vertical']],tip:"When a thruster is lost, identify the station number first using this map. Then trace: Topside joystick → PLC → Fibre → Beckhoff → E1/E2/E3/E4 connector → TCU AD6358 → J7/J8 → thruster motor."},
-  'hyd-valve': {ref:'Hydraulic Block',name:"Hydraulic Valve Block � 7 Station Manifold",body:"The 7-station hydraulic manifold distributes HPU pressure to all thrusters via directional control valves. Each station has P/T supply-return and A/B actuator ports. Pack relief valve V set at 15 PSI.",specs:[['P1/P2','Pressure ports 1-5/16 UNF SAE'],['T1/T2','Return ports 1-5/16 UNF SAE'],['1A-7B','Service ports 3/4 UNF SAE'],['COMP','Compensation 9/16 UNF SAE'],['V','Pack relief 1 NPT � 15 PSI'],['PC','Pump control 7/16 UNF SAE']],tip:"If system pressure is normal but a specific thruster has no movement, check that station's A/B service ports for blockage. Proportional valve at J8-9/10 controls overall system pressure � if all thrusters are weak, check this valve signal first."},
-  'ships-supply': {ref:'SHIPS SUPPLY',name:"Ship's 440V 3-Phase Supply",body:"The vessel's main switchboard supplies 440V 3-phase 50/60Hz AC power to the ROV control cabin. Changeover switch SW1 selects between ship's supply and customer generator (MA Set).",specs:[['Voltage','440V 3-Phase'],['Frequency','50/60Hz'],['Standard','IEC 60364'],['Changeover','SW1 � ACK380']],tip:"When ship's supply is unavailable, SW1 switches to generator. Always verify phase sequence with VMR before energising."},
-  'lv-pdu': {ref:'AH2645',name:"LV PDU � Low Voltage Power Distribution Unit",body:"The LV PDU receives 440V ship's supply and distributes it to contactors, PSUs, and the HV PDU. Contains KM1/KM2 contactors, VMR voltage monitor, LIM unit, and 24VDC power supplies.",specs:[['Drawing','AH2645'],['Input','440V 3-Phase'],['KM2 Rating','100A ROV Motor'],['KM1 Rating','7.5A ROV Pod'],['24V PSU','PSU1 AA6872 400W']],tip:"Drawing ref AH2645 Sheet 2 covers incoming supply. Sheet 3 covers 24V PSU distribution. Always check VMR status before energising HV."},
-  'hv-pdu': {ref:'AH2646',name:"HV PDU � High Voltage Power Distribution Unit",body:"Steps 440V up to 3000-3500V via transformers TX1-TX4. TX2 (256kVA) feeds the 112kW HPU motor. TX1 (7.5kVA) feeds the ROV pod. HT couplers provide galvanic isolation between LV and HV sides.",specs:[['Drawing','AH2646'],['TX2 Rating','256kVA ROV Motor'],['TX1 Rating','7.5kVA ROV Pod'],['TX3 Rating','28kVA TMS Motor'],['HV Output','3000-3200V AC'],['HT Coupler','PB943 4000V 5O']],tip:"Transformer tap settings are on AH2713 (Cabin Settings). TX2 tap must match vessel supply voltage � incorrect tap = wrong HV output."},
-  'deck-cable': {ref:'AC1762 / AG1081',name:"Deck Cable & Static Junction Box",body:"The deck cable (AC1762) runs from the HV PDU to the static junction box (AG1081) at the winch. It carries all HV power conductors, control wiring, and fibre optics before the slip ring.",specs:[['Cable Ref','AC1762'],['Static JB','AG1081'],['Conductors','18 power + control'],['Fibres','6 �� SM 9/125�m'],['Fuses','30A AA1177+PK3777']],tip:"Static JB is the last accessible termination point before the rotating slip ring. Connector condition here is critical � check for corrosion and water ingress during inspections."},
-  'slip-ring': {ref:'AF6768',name:"Slip Ring � Static to Rotating Interface",body:"The slip ring transfers electrical power and signals between the static deck cable and the rotating umbilical drum. Individual contact rings carry each conductor. Most common source of intermittent faults on ROV systems.",specs:[['Ref','AF6768'],['Function','Static→Rotating'],['Conductors','18 individual rings'],['Fibres','Optical rotary joint'],['Fault Mode','Wear / contamination']],tip:"Intermittent faults that correlate with drum rotation = slip ring. Clean contacts with IPA. Check for bronze dust (wear indicator). Replace worn contact rings � do not run through a full set."},
-  'rot-jb': {ref:'AG1082',name:"Umbilical Rotating Junction Box",body:"The rotating JB (AG1082) is mounted on the drum and rotates with it. It consolidates all conductors from the slip ring into the umbilical cable entry. 18 conductors plus 6 SM fibres.",specs:[['Ref','AG1082'],['Position','On drum (rotating)'],['Conductors','18 power/control'],['Fibres','6 �� SM'],['Cable Entry','AB7224 umbilical']],tip:"Access to rotating JB requires drum to be stationary and power isolated. All conductors should be checked for continuity and insulation resistance during scheduled maintenance."},
-  'umbilical': {ref:'AB7224',name:"Umbilical Cable � AB7224",body:"The main umbilical carries all power and signals from topside to the ROV. Contains HV motor conductors (U1/V1/W1), pod HV (L1/L2), TMS conductors, ECM control, earth drains, and SM fibres F1-F6.",specs:[['Ref','AB7224'],['Length','300m+'],['HV Conductors','U1V1W1 � U2V2W2 � L1-L4'],['Fibres','F1-F6 SM 9/125�m'],['Control','ECM cores 21/22'],['Fuse Rating','30A all conductors']],tip:"Read AG8200 left to right � each column is a termination point. The conductor label (e.g. U1) stays the same throughout. Terminal numbers change at each junction."},
-  'subsea-term': {ref:'AH2775',name:"Subsea Electrical Termination Box",body:"The subsea termination box (AH2775) is the first subsea component. It contains the 3000V step-down transformer, lamp dimmer, valve tank connections, and distribution to JB1/JB2.",specs:[['Ref','AH2775'],['Input','3000-3500V from umbilical'],['Transformer','AA0554 → 18VAC'],['Functions','Lamp dim � Valve tanks'],['JBs','JB1 and JB2 distribution']],tip:"When 24V is lost subsea but HV is healthy, check the AA0554 transformer output first, then the rectifier bridge (BR1) in the PSU board AE4151."},
-  'q-pod': {ref:'AH2742',name:"Q Core Pod � Subsea Electronics Pod",body:"The ROV's subsea brain. Contains 24V PSU board (AE4151), Beckhoff EtherCAT I/O, Focal Fibre interface rack, LIM unit, and all 31 faceplate connectors for cameras, thrusters, tools and sensors.",specs:[['Drawing','AH2742 (18 sheets)'],['PSU Board','AE4151'],['24V PSU','AA6872 400W'],['I/O','Beckhoff EtherCAT'],['Comms','Focal Fibre CWDM'],['Ports','31 faceplate connectors']],tip:"AH2742 is 18 sheets. SHT.9=Sensors, SHT.13=Lamps, SHT.14=Thrusters, SHT.15=Manipulator, SHT.16-18=Tools. Always check sheet index first."},
-  'hpu-motor': {ref:'AE5690',name:"HPU Motor � 112kW Subsea Drive Motor",body:"The 112kW hydraulic power unit motor (AE5690) runs at 3000V AC subsea to drive the variable-displacement hydraulic pump. Full load current is 34A at 3000V. Protected by ETS and MPR topside.",specs:[['Ref','AE5690'],['Rating','112kW'],['Voltage','3000V AC'],['FLC','34A @ 3000V'],['Supply','U1/V1/W1 from umbilical'],['Protection','ETS + MPR1']],tip:"If HPU motor fails to start: check ETS hasn't tripped, verify HV at X12 terminals, check star-delta starter TX7, verify MPR1 settings match motor rating."},
-  'lv-input': {ref:'AH2645',name:"LV Input � FROM LV PDU",body:"440V 3-phase from LV PDU contactor KM2 feeds the HV PDU. KM2 is the 100A contactor for the ROV motor circuit. Must be energised before HV transformers can be powered.",specs:[['Source','LV PDU KM2 output'],['Voltage','440V 3-Phase'],['Contactor','KM2 � 100A rated'],['Interlock','VMR must be healthy']],tip:"KM2 is the main contactor for HV PDU supply. Check VMR status and all interlocks before attempting to close KM2."},
-  'ht-coupler': {ref:'PB943',name:"HT Coupler � Galvanic Isolation",body:"HT Couplers provide complete galvanic isolation between the 440V LV side and the 3000V+ HV side. No conductive path exists between primary and secondary. Rated 4000V, 5O.",specs:[['Ref','PB943'],['Rating','4000V isolation'],['Impedance','5O'],['Function','Galvanic isolation'],['Required for','LIM monitoring integrity']],tip:"If LIM reads low resistance, check HT coupler condition � a failed coupler can create a partial conductive path between LV and HV, causing false LIM readings."},
-  'tx2': {ref:'TX2',name:"ROV Motor Transformer TX2 � 256kVA",body:"Main power transformer for the 112kW HPU motor. Steps 440V up to 3000-3200V. Primary has multiple taps (380-480V) to match vessel supply. Secondary taps set 3000-3200V output. Y-Δ star point connection.",specs:[['Rating','256kVA'],['Primary','380/400/415/440/460/480V'],['Secondary','3000/3050/3100/3150/3200V'],['Connection','Y-Δ Star point'],['Drawing','AH2646 Sht.2']],tip:"Tap settings are documented on AH2713 Cabin Settings sheet. Wrong tap = wrong output voltage. Verify tap position matches ship's supply voltage during commissioning."},
-  'tx1': {ref:'TX1',name:"ROV Pod Transformer TX1 � 7.5kVA",body:"Powers the ROV pod electronics via the subsea 3000V distribution. 7.5kVA rating sufficient for pod electronics (24V PSU, cameras, sensors, control). Secondary output feeds L1/L2 conductors in umbilical.",specs:[['Rating','7.5kVA'],['Primary','380-440V'],['Secondary','3000/3050/3100V'],['Output terminals','X5 → L1/L2'],['Drawing','AH2646 Sht.3']],tip:"TX1 is separate from TX2 � pod electronics can be powered independently of HPU motor. Useful during testing when motor power is not required."},
-  'ets': {ref:'ETS 56A',name:"ETS � Earth Trip Switch",body:"The Earth Trip Switch monitors earth leakage current on the HV system. If leakage exceeds 56A threshold, it trips the HV supply immediately. Faster acting than LIM � this is the hard safety trip.",specs:[['Ref','ETS'],['Trip Level','56A'],['Voltage Range','5-18V sensing'],['Action','Trips HV supply contactor'],['Reset','Manual reset required']],tip:"ETS trip means a serious earth fault exists. Do NOT reset and re-energise without finding and rectifying the fault first. An ETS trip after LIM alarm = the fault has progressed to direct earth contact."},
-  'ct8': {ref:'CT8',name:"CT8 � Current Transformer (ROV Motor Phase)",body:"Current transformer CT8 wraps around a HV phase conductor and produces a scaled-down secondary current safe for protection relays and metering. Monitors one phase of the ROV motor supply.",specs:[['Ref','CT8'],['Function','Current measurement'],['Type','Wound CT'],['Output','Scaled for relay input'],['Drawing','AH2646']],tip:"CTs must never be open-circuited on the secondary while the primary is energised � dangerous high voltage will develop across the open terminals."},
-  'ct9': {ref:'CT9',name:"CT9 � Current Transformer (ROV Motor Phase)",body:"CT9 monitors the second phase of the ROV motor HV supply. Together with CT8, provides two-phase current monitoring for the motor protection relay MPR1.",specs:[['Ref','CT9'],['Function','Current measurement'],['Phase','Motor supply phase 2'],['Drawing','AH2646']],tip:"Two CTs provide sufficient protection for 3-phase fault detection. If CT reading is zero but motor is running, suspect CT wiring fault or failed CT � investigate before assuming motor fault."},
-  'vt1': {ref:'VT1 AA5727',name:"VT1 � Voltage Transformer for HV Metering",body:"Voltage transformer VT1 (AA5727) steps down 4000V to 100V for safe metering of the HV system. Allows panel voltmeters to display HV readings without direct connection to dangerous voltages.",specs:[['Ref','AA5727'],['Primary','4000V'],['Secondary','100V'],['Function','Metering only'],['Drawing','AH2646']],tip:"VT1 output feeds metering only � not protection relays. If HV voltmeter reads zero but HV is energised, check VT1 fuses and wiring, not the HV system itself."},
-  'hv-out-motor': {ref:'X12 U1/V1/W1',name:"HV Output � ROV Motor Terminals X12",body:"Terminal block X12 is the HV output point for the ROV motor supply. Terminals X12-1(U1), X12-2(V1), X12-3(W1) connect to the three-phase ROV motor conductors in the umbilical.",specs:[['Terminal Block','X12'],['Conductors','U1(pos1) V1(pos2) W1(pos3)'],['Voltage','3000-3200V AC'],['Cable Size','3��4mm� per phase'],['Colour','RED/WHITE/GREEN']],tip:"When checking HV at these terminals, use only rated HV test equipment. Verify transformer tap is correct before energising. Check terminal tightness � loose HV terminals cause arcing."},
-  'hv-out-pod': {ref:'X5 L1/L2',name:"HV Output � ROV Pod Terminals X5",body:"Terminal block X5 feeds L1 and L2 conductors for ROV pod HV supply. These connect to the TX1 (7.5kVA) secondary output and supply 3000-3100V to the pod transformer AA0554 subsea.",specs:[['Terminal Block','X5'],['Conductors','L1 and L2'],['Voltage','3000-3100V AC'],['Cable Size','2mm� each'],['Colour','GREEN and RED']],tip:"L1/L2 are single-phase HV � lower current than the three-phase motor supply. When pod electronics are lost, check L1/L2 presence at X5 before going subsea."},
-  'umbilical-term': {ref:'SHT.4 X19',name:"→ Umbilical Terminations Sheet 4",body:"Cross-reference to Sheet 4 of AH2646 where all HV conductors terminate onto the 34-core multicore cable going to the deck cable junction box. X19 is the main terminal block at this point.",specs:[['Cross-ref','AH2646 SHT.4'],['Terminal Block','X19'],['Cable','34-Core Multicore'],['From','HV PDU X12 and X5'],['To','Deck Cable AC1762']],tip:"'SEE SHT.4' means the wire physically continues on Sheet 4. Always follow the cross-reference � wires don't end at the edge of a drawing."},
-  'u1': {ref:'X12-1 U1',name:"U1 � ROV Motor Phase A Conductor",body:"First phase conductor of the ROV HPU motor supply. Runs from terminal X12-1 in HV PDU through deck cable, slip ring, rotating JB, and umbilical to subsea termination. 3��4mm� RED cable rated 3300VAC.",specs:[['Terminal','X12-1'],['Label','U1'],['Size','3��4mm�'],['Colour','RED'],['Voltage','3300VAC'],['Fuse','30A AA1177']],tip:"U1 uses 3 conductors in parallel (3��4mm�) to carry the high current required for the 112kW motor. Each conductor is individually fused at 30A."},
-  'v1': {ref:'X12-2 V1',name:"V1 � ROV Motor Phase B Conductor",body:"Second phase conductor of the ROV HPU motor supply. 3��4mm� WHITE cable. Runs the full length of the umbilical system alongside U1 and W1.",specs:[['Terminal','X12-2'],['Label','V1'],['Size','3��4mm�'],['Colour','WHITE'],['Voltage','3300VAC'],['Fuse','30A AA1177']],tip:"V1 WHITE conductor � if lost individually (while U1 and W1 present), motor will still attempt to run single-phase and will trip on overcurrent. Check V1 continuity first."},
-  'w1': {ref:'X12-3 W1',name:"W1 � ROV Motor Phase C Conductor",body:"Third phase conductor of the ROV HPU motor supply. 3��4mm� GREEN cable. Completes the three-phase supply for the 112kW HPU motor.",specs:[['Terminal','X12-3'],['Label','W1'],['Size','3��4mm�'],['Colour','GREEN'],['Voltage','3300VAC'],['Fuse','30A AA1177']],tip:"GREEN conductor = W phase. Note: GN/YW (green/yellow) = earth. Pure green = W1 motor phase. Don't confuse the two � different colours, completely different functions."},
-  'l1': {ref:'X12-4 L1',name:"L1 � ROV Pod HV Supply Conductor",body:"Single-phase HV conductor feeding the ROV pod electronics subsea. 2mm� GREEN cable from X12-4 in HV PDU, rated 3300VAC. Feeds the AA0554 transformer in the subsea termination box.",specs:[['Terminal','X12-4'],['Label','L1'],['Size','2mm�'],['Colour','GREEN'],['Voltage','3300VAC'],['Fuse','30A AA1177']],tip:"L1 and L2 together form the single-phase HV supply for pod electronics. If pod 24V is lost, check L1/L2 at the HV PDU output first � easier to access than subsea."},
-  'l2': {ref:'X12-4 L2',name:"L2 � ROV Pod HV Return Conductor",body:"Return conductor of the single-phase ROV pod HV supply. 2mm� RED cable. Together with L1 provides the complete single-phase supply for the pod transformer AA0554.",specs:[['Terminal','X12-4'],['Label','L2'],['Size','2mm�'],['Colour','RED'],['Voltage','3300VAC'],['Fuse','30A AA1177']],tip:"Note both L1 and L2 are listed as X12-4 � they share the same terminal block position number but are individual terminals within that block."},
-  'ecm': {ref:'X13-2 ROV ECM',name:"ROV ECM Control Conductor",body:"0.5mm� control conductor carrying ECM (Electronic Control Module) communication signal from topside to ROV. 240VAC rated. Core 21 in umbilical. Provides control path for ROV systems independent of fibre.",specs:[['Terminal','X13-2'],['Label','ROV ECM'],['Size','0.5mm�'],['Colour','RED'],['Voltage','240VAC'],['Umbilical Core','Core 21']],tip:"ECM conductors are the fallback control path. If fibre comms fails, ECM may maintain basic control. X13-4 carries TMS ECM on the same terminal block."},
-  'f1': {ref:'F1 ROV Comms',name:"F1 � ROV Fibre Optic Communications",body:"Single-mode 9/125�m optical fibre carrying all ROV control and video data between topside PC and Focal Fibre rack in Q Core Pod. Primary communication path for all ROV operations.",specs:[['Label','F1'],['Type','9/125�m SM Fibre'],['Colour code','RED'],['System','ROV Communications'],['Interface','Focal Fibre CWDM']],tip:"F1 failure = total comms loss to ROV. Check optical power at both ends before suspecting fibre damage. Dirty connectors cause 90% of fibre faults � clean with IEC-grade cleaner before testing."},
-  'f2': {ref:'F2 TMS Comms',name:"F2 � TMS Fibre Optic Communications",body:"Single-mode fibre for TMS (Tether Management System) communications. Independent of F1 ROV comms. GREEN colour code.",specs:[['Label','F2'],['Type','9/125�m SM Fibre'],['Colour code','GREEN'],['System','TMS Communications']],tip:"F2 is independent of F1 � TMS comms can be maintained even if ROV fibre fails. This allows TMS winch and sensors to remain operational during ROV comms troubleshooting."},
-  'umbilical-box': {ref:'AB7224',name:"Umbilical Cable AB7224",body:"The main umbilical cable bundle containing all conductors and fibres. Dashed box on drawing represents the physical umbilical � all conductors inside are allocated per drawing AG8200.",specs:[['Ref','AB7224'],['Contents','18 conductors + 6 fibres'],['Length','300m+'],['HV Rating','3300VAC'],['Drawing','AG8200 / PD0739 ISS.7']],tip:"The dashed box boundary on AG8200 shows what's physically inside the umbilical jacket. Everything outside is in junction boxes or deck cable."},
-  'key-facts': {ref:'AG8200 NOTES',name:"Key Facts � AG8200 Drawing Notes",body:"Critical reference notes from AG8200. All fuses are 30A (AA1177 + PK3777). Terminal symbols: ↑=Termate HV, ↓=Entrelec high current, →=Wieland 2.5mm�. ECM and CP probe options are on separate cores.",specs:[['Fuse Rating','30A all conductors'],['HV Terminal','Termate (↑ symbol)'],['Std Terminal','Entrelec (↓ symbol)'],['ECM Cores','21=ROV, 22=TMS'],['CP Probe','Cores 12/13 (SHT.4)']],tip:"These notes are on the drawing for a reason � read them before starting any fault-finding on the umbilical system. Terminal type affects which tools you use to open them safely."},
-  'title-block': {ref:'Drawing Standard',name:"Title Block � Every Sheet Has One",body:"The title block is always bottom-right. It contains drawing number, sheet number, revision, title, and size. Always check the revision letter first � you must be working on the latest issue.",specs:[['Location','Bottom right corner'],['Drawing No','e.g. AH2646'],['Sheet','e.g. 2 OF 5'],['Revision','Letter or number'],['Size','A1 or A2 typical']],tip:"If you have two different revisions of a drawing � always use the higher revision number. Old drawings can have significant differences. Check revision against the cabin settings sheet AH2713."},
-  'zone-ref': {ref:'Zone System',name:"Zone Reference System � SHT.X_YZ",body:"Zone references allow exact location of any component. Sheet number + Row letter (A-E, top to bottom) + Column number (1-5, left to right). Used in all cross-references between sheets.",specs:[['Format','SHT.X_YZ'],['X','Sheet number'],['Y','Row letter A-E'],['Z','Column number 1-5'],['Example','SHT.2_A3']],tip:"When a wire has 'SEE SHT.4_B2' � go to Sheet 4, Row B, Column 2. You will find the continuation of that wire. This is how you follow a conductor across multiple sheets."},
-  'wire-num': {ref:'Wire Numbers',name:"Wire Numbering System � NUMBER-COLOUR",body:"Every wire in SMD drawings has a unique number followed by a two-letter colour code. The same wire number appears on every sheet it passes through � follow the number to trace the conductor.",specs:[['Format','NUMBER-COLOUR'],['WE','White'],['BE','Blue'],['RD','Red'],['GN','Green'],['GY','Grey'],['OG','Orange'],['YW','Yellow'],['GN/YW','Green/Yellow (Earth)']],tip:"Wire numbers are unique across the entire drawing set. Wire 208-WE is ALWAYS the same physical wire wherever you see it. Use the wire number to cross-reference sheets."},
-  'terminal': {ref:'Terminal Notation',name:"Terminal Block Notation � X##-#",body:"X identifies the terminal block, the first number is the block number, and the number after the dash is the position within that block. Conductor label in brackets identifies what's connected.",specs:[['Format','X[block]-[position] (label)'],['X7-2','Block X7, Position 2'],['X12-1 (U1)','Block X12, Pos 1, Conductor U1'],['Physical','Actual terminal block in panel'],['Meter point','Where to put your test probes']],tip:"Terminal blocks are your physical access points for testing. X12-1 is where you put your voltmeter to check for HV conductor U1. The terminal number on the drawing matches the label on the physical block."},
-  'symbols': {ref:'Terminal Symbols',name:"Terminal Type Symbols Guide",body:"Different terminal types are shown by different symbols on SMD drawings. ↑ Termate = HV rated terminal. ↓ Entrelec = high current terminal. → Wieland = standard control terminal.",specs:[['↑ Termate','HV rated terminal'],['↓ Entrelec','High current terminal'],['→ Wieland 2.5mm�','Standard control'],['Wieland 10mm�','Power control'],['Fibre symbol','Optical connector']],tip:"Never use standard screwdriver tools on Termate HV terminals � they require specific Termate tool for safe operation at high voltage. Using wrong tools can result in terminal damage or injury."},
-  'umbilical-in': {ref:'L1/L2 + F1',name:"Umbilical Input � Pod HV + Fibre",body:"Power and communications enter the Q Core Pod via umbilical conductors L1/L2 (3000-3100V pod HV supply) and F1 (ROV comms fibre). This is the starting point for all subsea power distribution.",specs:[['HV Input','L1/L2 3000-3100V'],['Fibre','F1 SM 9/125�m'],['Source','HV PDU TX1 via umbilical'],['Termination','Subsea elec. term. AH2775']],tip:"Loss of L1/L2 = complete loss of pod power. Loss of F1 = comms blackout. Diagnose which has failed by checking if HPU motor is still running (indicates HV motor supply OK but pod supply may be separate fault)."},
-  'subsea-tx': {ref:'AA0554',name:"Subsea 3000V Transformer AA0554",body:"Steps down the 3000V HV pod supply to 18VAC outputs for the PSU board rectifiers. This is the first conversion step in the subsea power chain � from HV distribution to usable electronics voltage.",specs:[['Ref','AA0554'],['Primary','3000-3100V AC'],['Secondary','18VAC multiple outputs'],['Location','Subsea termination box'],['Drawing','AH2742']],tip:"If 24V is lost but HV supply is confirmed, check AA0554 output first. Measure 18VAC at the PSU board input � if absent, suspect transformer or its HV connection."},
-  'psu-board': {ref:'AE4151',name:"24V PSU Board AE4151",body:"Central power distribution for all subsea electronics. Receives 18VAC from transformer AA0554, rectifies via bridge rectifier BR1, then regulates to 24V (PSU1 AA6872 400W), +12V (PSU2), -12V (PSU3). Large 47000�F capacitors provide holdup during switching.",specs:[['Ref','AE4151'],['PSU1','24V 400W (AA6872)'],['PSU2','+12V'],['PSU3','-12V'],['Caps','CAP1/CAP2 47000�F'],['Fused outputs','F1(20A) F2(10A) F4-F13']],tip:"Each fused output F1-F13 on AE4151 feeds a different subsystem. When a specific system is lost, check its fuse on AE4151 before suspecting the device itself."},
+  'e1-conn': {ref:'E1 Connector',name:"E1 — Main Input Connector (8-pin)",body:"The E1 connector is the primary input to each iTCU station. Pin 1=CONTROL, 2=+24V, 3=0V, 4=SCN screen, 5=RS485+, 6=RS485âˆ’, 7=EARTH (same point as pin 7 green wire), 8=N/C.",specs:[['Pins','8'],['Pin 1','CONTROL signal'],['Pin 2','+24V supply'],['Pin 5/6','RS485+ / RS485âˆ’'],['Pin 7','EARTH — same as green wire']],tip:"Earth MUST be connected to the same earth point as pin 7 green wire. Floating earth causes RS485 communication errors on all stations."},
+  'tcu-ctrl': {ref:'AD6358',name:"TCU Controller AD6358",body:"The TCU Controller (AD6358) is the brain of the iTCU manifold. It receives RS485 commands from the topside PLC via J2, controls all 7 hydraulic valve stations, and monitors pressure/temperature sensors.",specs:[['Ref','AD6358'],['Control','RS485 from Beckhoff'],['Stations','7 (1,3,4,5,6,8,9 active)'],['Jumpers','JP1 Node 3 · JP2 address'],['Connectors','J1-J8']],tip:"JP1 jumper sets node address. For WR Class ROV node 3 is selected. JP2 sets the RS485 address. If iTCU doesn't respond, check JP1/JP2 settings match the topside configuration."},
+  'psu-itcu': {ref:'AB7520',name:"PSU AB7520 — ±12V Supply",body:"The internal PSU (AB7520) generates ±12V rails for the TCU controller electronics from the 24V input supply. 16AWG/WE wiring. Output on J6 pin 1 (+12V) and pin 2 (âˆ’12V).",specs:[['Ref','AB7520'],['Input','24V from E1 pin 2'],['Output','+12V J6 pin1'],['Output','âˆ’12V J6 pin2'],['Wire','16AWG/WE']],tip:"If TCU shows no response but 24V is present at E1, check ±12V at J6. PSU failure causes total controller lockout."},
+  'j1-out': {ref:'J1',name:"J1 — VT Control Output",body:"J1 carries the TCU Variable Thrust control signal back to the topside system and the 24V unreg supply. Pin 1=TCU V.T. CONTROL, pin 2=+24V UNREG, pin 3=0V UNREG.",specs:[['Pin 1','TCU V.T. CONTROL'],['Pin 2','+24V UNREG'],['Pin 3','0V UNREG']],tip:"The V.T. Control signal on J1 pin 1 is the variable thrust feedback. If thruster speed control is lost but on/off works, check J1 pin 1 continuity."},
+  'j2-rs485': {ref:'J2',name:"J2 — RS485 Communications Bus",body:"J2 is the RS485 communications connector. Pin 1=RS485+, pin 2=RS485âˆ’, pin 3=SCREEN. A 120Ω termination resistor is fitted at J2 as this is the end of the RS485 bus.",specs:[['Pin 1','RS485+'],['Pin 2','RS485âˆ’'],['Pin 3','SCREEN'],['Termination','120Ω at J2']],tip:"120Ω termination is critical. Without it, RS485 reflections cause communication errors. If you're getting intermittent comms, check the termination resistor hasn't been removed during maintenance."},
+  'sensors-itcu': {ref:'J3/J4',name:"J3 Moisture & J4 Temperature Sensors",body:"J3 connects two moisture sensors (AA9979 À—2) monitoring +VE/âˆ’VE. J4 connects the PRT100 temperature sensor (DC9301/DI3412) via RTD+ and RTDâˆ’ for internal temperature monitoring.",specs:[['J3','Moisture sensor AA9979 À—2'],['J3 Pin 1','+VE'],['J3 Pin 2','âˆ’VE'],['J4','Temp sensor PRT100'],['J4 Ref','DC9301 / DI3412']],tip:"Moisture alarms from J3 during a dive = water ingress in the iTCU enclosure. Recover immediately. Temperature alarms from J4 may indicate blocked cooling or stalled HPU."},
+  'j5-pressure': {ref:'J5 PK4444',name:"J5 — Pressure Sensor Connector PK4444",body:"J5 carries the pressure and temperature sensor signals from the HPU manifold. 12-pin connector — groups of 3 pins per sensor: 24V supply, signal, 0V. Sensors on pins 1-3, 4-6, 7-9, 10-12.",specs:[['Pins','12 total'],['Pattern','24V · SIG · 0V per sensor'],['Sensor','PK4444 pressure transducer'],['Locations','COMP · D4/D5 · T3 ports']],tip:"Each sensor group needs 24V and a clean 0V return. If pressure reading is erratic, check 0V connections first — a shared 0V with noise causes sensor instability."},
+  'stations-e2-e4': {ref:'E2/E3/E4',name:"Station Connectors E2, E3, E4",body:"E2, E3, E4 are the valve station connectors — same 8-pin pinout on each. Pin 4=+24V, pin 5=0V, pin 6=SCN, pin 7=SIGNAL. Pins 1-3 and pin 8 are N/C. E5 has heat-shrink tails — all N/C, tie back securely.",specs:[['Pin 4','+24V supply'],['Pin 5','0V return'],['Pin 6','SCN screen'],['Pin 7','SIGNAL (PWM control)'],['E5','Heat shrink tails — tie back']],tip:"E5 tails MUST be tied back securely. Loose tails can short against the manifold body causing intermittent faults. If a station loses control but 24V is present, check pin 7 SIGNAL continuity."},
+  'j7-j8': {ref:'J7/J8',name:"J7/J8 — Thruster Output Connectors",body:"J7 and J8 carry the individual thruster outputs. J7 covers stations 1-6, J8 covers stations 7-9 plus the proportional valve. Stations 2 and 7 are NOT FITTED on the WR Class ROV.",specs:[['J7-1/2','Station 1 Port Rear Horizontal'],['J7-5/6','Station 3 Port Vertical'],['J7-7/8','Station 4 Port Front Horizontal'],['J7-9/10','Station 5 Stbd Front Horizontal'],['J7-11/12','Station 6 Stbd Vertical'],['J8-3/4','Station 8 Stbd Rear Horizontal'],['J8-5/6','Station 9 Rear Vertical'],['J8-9/10','Proportional Valve Pressure']],tip:"Stations 2 and 7 are NOT FITTED — J7-3/4 and J8-1/2 will show no thruster response. This is normal. Don't waste time fault-finding unpopulated stations."},
+  'stn-map': {ref:'Station Map',name:"Thruster Station Mapping — WR Class ROV",body:"Standard thruster mapping for the WR Class ROV 150HP using stations 1,3,4,5,6,8,9. Port side left, Starboard right when viewed from above.",specs:[['Station 1','Port Rear Horizontal'],['Station 3','Port Vertical'],['Station 4','Port Front Horizontal'],['Station 5','Stbd Front Horizontal'],['Station 6','Stbd Vertical'],['Station 8','Stbd Rear Horizontal'],['Station 9','Rear Vertical']],tip:"When a thruster is lost, identify the station number first using this map. Then trace: Topside joystick â†’ PLC â†’ Fibre â†’ Beckhoff â†’ E1/E2/E3/E4 connector â†’ TCU AD6358 â†’ J7/J8 â†’ thruster motor."},
+  'hyd-valve': {ref:'Hydraulic Block',name:"Hydraulic Valve Block — 7 Station Manifold",body:"The 7-station hydraulic manifold distributes HPU pressure to all thrusters via directional control valves. Each station has P/T supply-return and A/B actuator ports. Pack relief valve V set at 15 PSI.",specs:[['P1/P2','Pressure ports 1-5/16 UNF SAE'],['T1/T2','Return ports 1-5/16 UNF SAE'],['1A-7B','Service ports 3/4 UNF SAE'],['COMP','Compensation 9/16 UNF SAE'],['V','Pack relief 1 NPT · 15 PSI'],['PC','Pump control 7/16 UNF SAE']],tip:"If system pressure is normal but a specific thruster has no movement, check that station's A/B service ports for blockage. Proportional valve at J8-9/10 controls overall system pressure — if all thrusters are weak, check this valve signal first."},
+  'ships-supply': {ref:'SHIPS SUPPLY',name:"Ship's 440V 3-Phase Supply",body:"The vessel's main switchboard supplies 440V 3-phase 50/60Hz AC power to the ROV control cabin. Changeover switch SW1 selects between ship's supply and customer generator (MA Set).",specs:[['Voltage','440V 3-Phase'],['Frequency','50/60Hz'],['Standard','IEC 60364'],['Changeover','SW1 · ACK380']],tip:"When ship's supply is unavailable, SW1 switches to generator. Always verify phase sequence with VMR before energising."},
+  'lv-pdu': {ref:'AH2645',name:"LV PDU — Low Voltage Power Distribution Unit",body:"The LV PDU receives 440V ship's supply and distributes it to contactors, PSUs, and the HV PDU. Contains KM1/KM2 contactors, VMR voltage monitor, LIM unit, and 24VDC power supplies.",specs:[['Drawing','AH2645'],['Input','440V 3-Phase'],['KM2 Rating','100A ROV Motor'],['KM1 Rating','7.5A ROV Pod'],['24V PSU','PSU1 AA6872 400W']],tip:"Drawing ref AH2645 Sheet 2 covers incoming supply. Sheet 3 covers 24V PSU distribution. Always check VMR status before energising HV."},
+  'hv-pdu': {ref:'AH2646',name:"HV PDU — High Voltage Power Distribution Unit",body:"Steps 440V up to 3000-3500V via transformers TX1-TX4. TX2 (256kVA) feeds the 112kW HPU motor. TX1 (7.5kVA) feeds the ROV pod. HT couplers provide galvanic isolation between LV and HV sides.",specs:[['Drawing','AH2646'],['TX2 Rating','256kVA ROV Motor'],['TX1 Rating','7.5kVA ROV Pod'],['TX3 Rating','28kVA TMS Motor'],['HV Output','3000-3200V AC'],['HT Coupler','PB943 4000V 5Ω']],tip:"Transformer tap settings are on AH2713 (Cabin Settings). TX2 tap must match vessel supply voltage — incorrect tap = wrong HV output."},
+  'deck-cable': {ref:'AC1762 / AG1081',name:"Deck Cable & Static Junction Box",body:"The deck cable (AC1762) runs from the HV PDU to the static junction box (AG1081) at the winch. It carries all HV power conductors, control wiring, and fibre optics before the slip ring.",specs:[['Cable Ref','AC1762'],['Static JB','AG1081'],['Conductors','18 power + control'],['Fibres','6 À— SM 9/125µm'],['Fuses','30A AA1177+PK3777']],tip:"Static JB is the last accessible termination point before the rotating slip ring. Connector condition here is critical — check for corrosion and water ingress during inspections."},
+  'slip-ring': {ref:'AF6768',name:"Slip Ring — Static to Rotating Interface",body:"The slip ring transfers electrical power and signals between the static deck cable and the rotating umbilical drum. Individual contact rings carry each conductor. Most common source of intermittent faults on ROV systems.",specs:[['Ref','AF6768'],['Function','Staticâ†’Rotating'],['Conductors','18 individual rings'],['Fibres','Optical rotary joint'],['Fault Mode','Wear / contamination']],tip:"Intermittent faults that correlate with drum rotation = slip ring. Clean contacts with IPA. Check for bronze dust (wear indicator). Replace worn contact rings — do not run through a full set."},
+  'rot-jb': {ref:'AG1082',name:"Umbilical Rotating Junction Box",body:"The rotating JB (AG1082) is mounted on the drum and rotates with it. It consolidates all conductors from the slip ring into the umbilical cable entry. 18 conductors plus 6 SM fibres.",specs:[['Ref','AG1082'],['Position','On drum (rotating)'],['Conductors','18 power/control'],['Fibres','6 À— SM'],['Cable Entry','AB7224 umbilical']],tip:"Access to rotating JB requires drum to be stationary and power isolated. All conductors should be checked for continuity and insulation resistance during scheduled maintenance."},
+  'umbilical': {ref:'AB7224',name:"Umbilical Cable — AB7224",body:"The main umbilical carries all power and signals from topside to the ROV. Contains HV motor conductors (U1/V1/W1), pod HV (L1/L2), TMS conductors, ECM control, earth drains, and SM fibres F1-F6.",specs:[['Ref','AB7224'],['Length','300m+'],['HV Conductors','U1V1W1 · U2V2W2 · L1-L4'],['Fibres','F1-F6 SM 9/125µm'],['Control','ECM cores 21/22'],['Fuse Rating','30A all conductors']],tip:"Read AG8200 left to right — each column is a termination point. The conductor label (e.g. U1) stays the same throughout. Terminal numbers change at each junction."},
+  'subsea-term': {ref:'AH2775',name:"Subsea Electrical Termination Box",body:"The subsea termination box (AH2775) is the first subsea component. It contains the 3000V step-down transformer, lamp dimmer, valve tank connections, and distribution to JB1/JB2.",specs:[['Ref','AH2775'],['Input','3000-3500V from umbilical'],['Transformer','AA0554 â†’ 18VAC'],['Functions','Lamp dim · Valve tanks'],['JBs','JB1 and JB2 distribution']],tip:"When 24V is lost subsea but HV is healthy, check the AA0554 transformer output first, then the rectifier bridge (BR1) in the PSU board AE4151."},
+  'q-pod': {ref:'AH2742',name:"Q Core Pod — Subsea Electronics Pod",body:"The ROV's subsea brain. Contains 24V PSU board (AE4151), Beckhoff EtherCAT I/O, Focal Fibre interface rack, LIM unit, and all 31 faceplate connectors for cameras, thrusters, tools and sensors.",specs:[['Drawing','AH2742 (18 sheets)'],['PSU Board','AE4151'],['24V PSU','AA6872 400W'],['I/O','Beckhoff EtherCAT'],['Comms','Focal Fibre CWDM'],['Ports','31 faceplate connectors']],tip:"AH2742 is 18 sheets. SHT.9=Sensors, SHT.13=Lamps, SHT.14=Thrusters, SHT.15=Manipulator, SHT.16-18=Tools. Always check sheet index first."},
+  'hpu-motor': {ref:'AE5690',name:"HPU Motor — 112kW Subsea Drive Motor",body:"The 112kW hydraulic power unit motor (AE5690) runs at 3000V AC subsea to drive the variable-displacement hydraulic pump. Full load current is 34A at 3000V. Protected by ETS and MPR topside.",specs:[['Ref','AE5690'],['Rating','112kW'],['Voltage','3000V AC'],['FLC','34A @ 3000V'],['Supply','U1/V1/W1 from umbilical'],['Protection','ETS + MPR1']],tip:"If HPU motor fails to start: check ETS hasn't tripped, verify HV at X12 terminals, check star-delta starter TX7, verify MPR1 settings match motor rating."},
+  'lv-input': {ref:'AH2645',name:"LV Input — FROM LV PDU",body:"440V 3-phase from LV PDU contactor KM2 feeds the HV PDU. KM2 is the 100A contactor for the ROV motor circuit. Must be energised before HV transformers can be powered.",specs:[['Source','LV PDU KM2 output'],['Voltage','440V 3-Phase'],['Contactor','KM2 · 100A rated'],['Interlock','VMR must be healthy']],tip:"KM2 is the main contactor for HV PDU supply. Check VMR status and all interlocks before attempting to close KM2."},
+  'ht-coupler': {ref:'PB943',name:"HT Coupler — Galvanic Isolation",body:"HT Couplers provide complete galvanic isolation between the 440V LV side and the 3000V+ HV side. No conductive path exists between primary and secondary. Rated 4000V, 5Ω.",specs:[['Ref','PB943'],['Rating','4000V isolation'],['Impedance','5Ω'],['Function','Galvanic isolation'],['Required for','LIM monitoring integrity']],tip:"If LIM reads low resistance, check HT coupler condition — a failed coupler can create a partial conductive path between LV and HV, causing false LIM readings."},
+  'tx2': {ref:'TX2',name:"ROV Motor Transformer TX2 — 256kVA",body:"Main power transformer for the 112kW HPU motor. Steps 440V up to 3000-3200V. Primary has multiple taps (380-480V) to match vessel supply. Secondary taps set 3000-3200V output. Y-Î” star point connection.",specs:[['Rating','256kVA'],['Primary','380/400/415/440/460/480V'],['Secondary','3000/3050/3100/3150/3200V'],['Connection','Y-Î” Star point'],['Drawing','AH2646 Sht.2']],tip:"Tap settings are documented on AH2713 Cabin Settings sheet. Wrong tap = wrong output voltage. Verify tap position matches ship's supply voltage during commissioning."},
+  'tx1': {ref:'TX1',name:"ROV Pod Transformer TX1 — 7.5kVA",body:"Powers the ROV pod electronics via the subsea 3000V distribution. 7.5kVA rating sufficient for pod electronics (24V PSU, cameras, sensors, control). Secondary output feeds L1/L2 conductors in umbilical.",specs:[['Rating','7.5kVA'],['Primary','380-440V'],['Secondary','3000/3050/3100V'],['Output terminals','X5 â†’ L1/L2'],['Drawing','AH2646 Sht.3']],tip:"TX1 is separate from TX2 — pod electronics can be powered independently of HPU motor. Useful during testing when motor power is not required."},
+  'ets': {ref:'ETS 56A',name:"ETS — Earth Trip Switch",body:"The Earth Trip Switch monitors earth leakage current on the HV system. If leakage exceeds 56A threshold, it trips the HV supply immediately. Faster acting than LIM — this is the hard safety trip.",specs:[['Ref','ETS'],['Trip Level','56A'],['Voltage Range','5-18V sensing'],['Action','Trips HV supply contactor'],['Reset','Manual reset required']],tip:"ETS trip means a serious earth fault exists. Do NOT reset and re-energise without finding and rectifying the fault first. An ETS trip after LIM alarm = the fault has progressed to direct earth contact."},
+  'ct8': {ref:'CT8',name:"CT8 — Current Transformer (ROV Motor Phase)",body:"Current transformer CT8 wraps around a HV phase conductor and produces a scaled-down secondary current safe for protection relays and metering. Monitors one phase of the ROV motor supply.",specs:[['Ref','CT8'],['Function','Current measurement'],['Type','Wound CT'],['Output','Scaled for relay input'],['Drawing','AH2646']],tip:"CTs must never be open-circuited on the secondary while the primary is energised — dangerous high voltage will develop across the open terminals."},
+  'ct9': {ref:'CT9',name:"CT9 — Current Transformer (ROV Motor Phase)",body:"CT9 monitors the second phase of the ROV motor HV supply. Together with CT8, provides two-phase current monitoring for the motor protection relay MPR1.",specs:[['Ref','CT9'],['Function','Current measurement'],['Phase','Motor supply phase 2'],['Drawing','AH2646']],tip:"Two CTs provide sufficient protection for 3-phase fault detection. If CT reading is zero but motor is running, suspect CT wiring fault or failed CT — investigate before assuming motor fault."},
+  'vt1': {ref:'VT1 AA5727',name:"VT1 — Voltage Transformer for HV Metering",body:"Voltage transformer VT1 (AA5727) steps down 4000V to 100V for safe metering of the HV system. Allows panel voltmeters to display HV readings without direct connection to dangerous voltages.",specs:[['Ref','AA5727'],['Primary','4000V'],['Secondary','100V'],['Function','Metering only'],['Drawing','AH2646']],tip:"VT1 output feeds metering only — not protection relays. If HV voltmeter reads zero but HV is energised, check VT1 fuses and wiring, not the HV system itself."},
+  'hv-out-motor': {ref:'X12 U1/V1/W1',name:"HV Output — ROV Motor Terminals X12",body:"Terminal block X12 is the HV output point for the ROV motor supply. Terminals X12-1(U1), X12-2(V1), X12-3(W1) connect to the three-phase ROV motor conductors in the umbilical.",specs:[['Terminal Block','X12'],['Conductors','U1(pos1) V1(pos2) W1(pos3)'],['Voltage','3000-3200V AC'],['Cable Size','3À—4mm² per phase'],['Colour','RED/WHITE/GREEN']],tip:"When checking HV at these terminals, use only rated HV test equipment. Verify transformer tap is correct before energising. Check terminal tightness — loose HV terminals cause arcing."},
+  'hv-out-pod': {ref:'X5 L1/L2',name:"HV Output — ROV Pod Terminals X5",body:"Terminal block X5 feeds L1 and L2 conductors for ROV pod HV supply. These connect to the TX1 (7.5kVA) secondary output and supply 3000-3100V to the pod transformer AA0554 subsea.",specs:[['Terminal Block','X5'],['Conductors','L1 and L2'],['Voltage','3000-3100V AC'],['Cable Size','2mm² each'],['Colour','GREEN and RED']],tip:"L1/L2 are single-phase HV — lower current than the three-phase motor supply. When pod electronics are lost, check L1/L2 presence at X5 before going subsea."},
+  'umbilical-term': {ref:'SHT.4 X19',name:"â†’ Umbilical Terminations Sheet 4",body:"Cross-reference to Sheet 4 of AH2646 where all HV conductors terminate onto the 34-core multicore cable going to the deck cable junction box. X19 is the main terminal block at this point.",specs:[['Cross-ref','AH2646 SHT.4'],['Terminal Block','X19'],['Cable','34-Core Multicore'],['From','HV PDU X12 and X5'],['To','Deck Cable AC1762']],tip:"'SEE SHT.4' means the wire physically continues on Sheet 4. Always follow the cross-reference — wires don't end at the edge of a drawing."},
+  'u1': {ref:'X12-1 U1',name:"U1 — ROV Motor Phase A Conductor",body:"First phase conductor of the ROV HPU motor supply. Runs from terminal X12-1 in HV PDU through deck cable, slip ring, rotating JB, and umbilical to subsea termination. 3À—4mm² RED cable rated 3300VAC.",specs:[['Terminal','X12-1'],['Label','U1'],['Size','3À—4mm²'],['Colour','RED'],['Voltage','3300VAC'],['Fuse','30A AA1177']],tip:"U1 uses 3 conductors in parallel (3À—4mm²) to carry the high current required for the 112kW motor. Each conductor is individually fused at 30A."},
+  'v1': {ref:'X12-2 V1',name:"V1 — ROV Motor Phase B Conductor",body:"Second phase conductor of the ROV HPU motor supply. 3À—4mm² WHITE cable. Runs the full length of the umbilical system alongside U1 and W1.",specs:[['Terminal','X12-2'],['Label','V1'],['Size','3À—4mm²'],['Colour','WHITE'],['Voltage','3300VAC'],['Fuse','30A AA1177']],tip:"V1 WHITE conductor — if lost individually (while U1 and W1 present), motor will still attempt to run single-phase and will trip on overcurrent. Check V1 continuity first."},
+  'w1': {ref:'X12-3 W1',name:"W1 — ROV Motor Phase C Conductor",body:"Third phase conductor of the ROV HPU motor supply. 3À—4mm² GREEN cable. Completes the three-phase supply for the 112kW HPU motor.",specs:[['Terminal','X12-3'],['Label','W1'],['Size','3À—4mm²'],['Colour','GREEN'],['Voltage','3300VAC'],['Fuse','30A AA1177']],tip:"GREEN conductor = W phase. Note: GN/YW (green/yellow) = earth. Pure green = W1 motor phase. Don't confuse the two — different colours, completely different functions."},
+  'l1': {ref:'X12-4 L1',name:"L1 — ROV Pod HV Supply Conductor",body:"Single-phase HV conductor feeding the ROV pod electronics subsea. 2mm² GREEN cable from X12-4 in HV PDU, rated 3300VAC. Feeds the AA0554 transformer in the subsea termination box.",specs:[['Terminal','X12-4'],['Label','L1'],['Size','2mm²'],['Colour','GREEN'],['Voltage','3300VAC'],['Fuse','30A AA1177']],tip:"L1 and L2 together form the single-phase HV supply for pod electronics. If pod 24V is lost, check L1/L2 at the HV PDU output first — easier to access than subsea."},
+  'l2': {ref:'X12-4 L2',name:"L2 — ROV Pod HV Return Conductor",body:"Return conductor of the single-phase ROV pod HV supply. 2mm² RED cable. Together with L1 provides the complete single-phase supply for the pod transformer AA0554.",specs:[['Terminal','X12-4'],['Label','L2'],['Size','2mm²'],['Colour','RED'],['Voltage','3300VAC'],['Fuse','30A AA1177']],tip:"Note both L1 and L2 are listed as X12-4 — they share the same terminal block position number but are individual terminals within that block."},
+  'ecm': {ref:'X13-2 ROV ECM',name:"ROV ECM Control Conductor",body:"0.5mm² control conductor carrying ECM (Electronic Control Module) communication signal from topside to ROV. 240VAC rated. Core 21 in umbilical. Provides control path for ROV systems independent of fibre.",specs:[['Terminal','X13-2'],['Label','ROV ECM'],['Size','0.5mm²'],['Colour','RED'],['Voltage','240VAC'],['Umbilical Core','Core 21']],tip:"ECM conductors are the fallback control path. If fibre comms fails, ECM may maintain basic control. X13-4 carries TMS ECM on the same terminal block."},
+  'f1': {ref:'F1 ROV Comms',name:"F1 — ROV Fibre Optic Communications",body:"Single-mode 9/125µm optical fibre carrying all ROV control and video data between topside PC and Focal Fibre rack in Q Core Pod. Primary communication path for all ROV operations.",specs:[['Label','F1'],['Type','9/125µm SM Fibre'],['Colour code','RED'],['System','ROV Communications'],['Interface','Focal Fibre CWDM']],tip:"F1 failure = total comms loss to ROV. Check optical power at both ends before suspecting fibre damage. Dirty connectors cause 90% of fibre faults — clean with IEC-grade cleaner before testing."},
+  'f2': {ref:'F2 TMS Comms',name:"F2 — TMS Fibre Optic Communications",body:"Single-mode fibre for TMS (Tether Management System) communications. Independent of F1 ROV comms. GREEN colour code.",specs:[['Label','F2'],['Type','9/125µm SM Fibre'],['Colour code','GREEN'],['System','TMS Communications']],tip:"F2 is independent of F1 — TMS comms can be maintained even if ROV fibre fails. This allows TMS winch and sensors to remain operational during ROV comms troubleshooting."},
+  'umbilical-box': {ref:'AB7224',name:"Umbilical Cable AB7224",body:"The main umbilical cable bundle containing all conductors and fibres. Dashed box on drawing represents the physical umbilical — all conductors inside are allocated per drawing AG8200.",specs:[['Ref','AB7224'],['Contents','18 conductors + 6 fibres'],['Length','300m+'],['HV Rating','3300VAC'],['Drawing','AG8200 / PD0739 ISS.7']],tip:"The dashed box boundary on AG8200 shows what's physically inside the umbilical jacket. Everything outside is in junction boxes or deck cable."},
+  'key-facts': {ref:'AG8200 NOTES',name:"Key Facts — AG8200 Drawing Notes",body:"Critical reference notes from AG8200. All fuses are 30A (AA1177 + PK3777). Terminal symbols: â†‘=Termate HV, â†“=Entrelec high current, â†’=Wieland 2.5mm². ECM and CP probe options are on separate cores.",specs:[['Fuse Rating','30A all conductors'],['HV Terminal','Termate (â†‘ symbol)'],['Std Terminal','Entrelec (â†“ symbol)'],['ECM Cores','21=ROV, 22=TMS'],['CP Probe','Cores 12/13 (SHT.4)']],tip:"These notes are on the drawing for a reason — read them before starting any fault-finding on the umbilical system. Terminal type affects which tools you use to open them safely."},
+  'title-block': {ref:'Drawing Standard',name:"Title Block — Every Sheet Has One",body:"The title block is always bottom-right. It contains drawing number, sheet number, revision, title, and size. Always check the revision letter first — you must be working on the latest issue.",specs:[['Location','Bottom right corner'],['Drawing No','e.g. AH2646'],['Sheet','e.g. 2 OF 5'],['Revision','Letter or number'],['Size','A1 or A2 typical']],tip:"If you have two different revisions of a drawing — always use the higher revision number. Old drawings can have significant differences. Check revision against the cabin settings sheet AH2713."},
+  'zone-ref': {ref:'Zone System',name:"Zone Reference System — SHT.X_YZ",body:"Zone references allow exact location of any component. Sheet number + Row letter (A-E, top to bottom) + Column number (1-5, left to right). Used in all cross-references between sheets.",specs:[['Format','SHT.X_YZ'],['X','Sheet number'],['Y','Row letter A-E'],['Z','Column number 1-5'],['Example','SHT.2_A3']],tip:"When a wire has 'SEE SHT.4_B2' — go to Sheet 4, Row B, Column 2. You will find the continuation of that wire. This is how you follow a conductor across multiple sheets."},
+  'wire-num': {ref:'Wire Numbers',name:"Wire Numbering System — NUMBER-COLOUR",body:"Every wire in SMD drawings has a unique number followed by a two-letter colour code. The same wire number appears on every sheet it passes through — follow the number to trace the conductor.",specs:[['Format','NUMBER-COLOUR'],['WE','White'],['BE','Blue'],['RD','Red'],['GN','Green'],['GY','Grey'],['OG','Orange'],['YW','Yellow'],['GN/YW','Green/Yellow (Earth)']],tip:"Wire numbers are unique across the entire drawing set. Wire 208-WE is ALWAYS the same physical wire wherever you see it. Use the wire number to cross-reference sheets."},
+  'terminal': {ref:'Terminal Notation',name:"Terminal Block Notation — X##-#",body:"X identifies the terminal block, the first number is the block number, and the number after the dash is the position within that block. Conductor label in brackets identifies what's connected.",specs:[['Format','X[block]-[position] (label)'],['X7-2','Block X7, Position 2'],['X12-1 (U1)','Block X12, Pos 1, Conductor U1'],['Physical','Actual terminal block in panel'],['Meter point','Where to put your test probes']],tip:"Terminal blocks are your physical access points for testing. X12-1 is where you put your voltmeter to check for HV conductor U1. The terminal number on the drawing matches the label on the physical block."},
+  'symbols': {ref:'Terminal Symbols',name:"Terminal Type Symbols Guide",body:"Different terminal types are shown by different symbols on SMD drawings. â†‘ Termate = HV rated terminal. â†“ Entrelec = high current terminal. â†’ Wieland = standard control terminal.",specs:[['â†‘ Termate','HV rated terminal'],['â†“ Entrelec','High current terminal'],['â†’ Wieland 2.5mm²','Standard control'],['Wieland 10mm²','Power control'],['Fibre symbol','Optical connector']],tip:"Never use standard screwdriver tools on Termate HV terminals — they require specific Termate tool for safe operation at high voltage. Using wrong tools can result in terminal damage or injury."},
+  'umbilical-in': {ref:'L1/L2 + F1',name:"Umbilical Input — Pod HV + Fibre",body:"Power and communications enter the Q Core Pod via umbilical conductors L1/L2 (3000-3100V pod HV supply) and F1 (ROV comms fibre). This is the starting point for all subsea power distribution.",specs:[['HV Input','L1/L2 3000-3100V'],['Fibre','F1 SM 9/125µm'],['Source','HV PDU TX1 via umbilical'],['Termination','Subsea elec. term. AH2775']],tip:"Loss of L1/L2 = complete loss of pod power. Loss of F1 = comms blackout. Diagnose which has failed by checking if HPU motor is still running (indicates HV motor supply OK but pod supply may be separate fault)."},
+  'subsea-tx': {ref:'AA0554',name:"Subsea 3000V Transformer AA0554",body:"Steps down the 3000V HV pod supply to 18VAC outputs for the PSU board rectifiers. This is the first conversion step in the subsea power chain — from HV distribution to usable electronics voltage.",specs:[['Ref','AA0554'],['Primary','3000-3100V AC'],['Secondary','18VAC multiple outputs'],['Location','Subsea termination box'],['Drawing','AH2742']],tip:"If 24V is lost but HV supply is confirmed, check AA0554 output first. Measure 18VAC at the PSU board input — if absent, suspect transformer or its HV connection."},
+  'psu-board': {ref:'AE4151',name:"24V PSU Board AE4151",body:"Central power distribution for all subsea electronics. Receives 18VAC from transformer AA0554, rectifies via bridge rectifier BR1, then regulates to 24V (PSU1 AA6872 400W), +12V (PSU2), -12V (PSU3). Large 47000µF capacitors provide holdup during switching.",specs:[['Ref','AE4151'],['PSU1','24V 400W (AA6872)'],['PSU2','+12V'],['PSU3','-12V'],['Caps','CAP1/CAP2 47000µF'],['Fused outputs','F1(20A) F2(10A) F4-F13']],tip:"Each fused output F1-F13 on AE4151 feeds a different subsystem. When a specific system is lost, check its fuse on AE4151 before suspecting the device itself."},
   'beckhoff': {ref:'Beckhoff EtherCAT',name:"Beckhoff EtherCAT I/O Modules",body:"The Beckhoff system is the ROV's subsea PLC I/O interface. EtherCAT modules handle all digital inputs (sensors, switches), digital outputs (valves, enables), and analogue inputs (pressure, temperature, position). Communicates via F1 fibre to topside.",specs:[['System','EtherCAT'],['Modules','Digital I/O + Analogue'],['Control','110VAC and 24VDC outputs'],['Comms','Via Focal Fibre to topside'],['Drawing','AH2742 multiple sheets']],tip:"Beckhoff I/O faults show as specific function losses, not total system loss. If one thruster dies, check the Beckhoff output for that thruster on AH2742 SHT.14 before replacing the thruster."},
-  'focal-fibre': {ref:'Focal Fibre',name:"Focal Fibre Interface Rack",body:"The Focal Fibre rack converts between the optical F1 fibre from topside and the EtherCAT copper communications used by the Beckhoff I/O system subsea. Uses CWDM wavelength multiplexing to carry multiple channels on F1.",specs:[['Type','CWDM Fibre Interface'],['Fibre','F1 SM 9/125�m'],['Protocol','EtherCAT over fibre'],['Connection','Topside PC ↔ Beckhoff I/O']],tip:"CWDM = Coarse Wavelength Division Multiplexing � multiple channels share one fibre at different wavelengths. If all ROV functions are lost simultaneously, suspect Focal Fibre or fibre F1 before anything else."},
-  'lim': {ref:'LIM AGH5295',name:"LIM � Line Isolation Monitor (Subsea)",body:"Subsea LIM monitors insulation resistance between HV conductors and earth/seawater. Set to alarm at 100kO and trip at 200kO (or reverse � check AH2713). HT Coupler AGH5295 provides isolation for the monitor itself.",specs:[['Ref','LIM + AGH5295'],['Alarm','100kO (typical)'],['Trip','200kO or as set'],['Alarm contact','NE (Normally Energised)'],['HT Coupler','AGH5295']],tip:"Subsea LIM protects from water ingress in subsea connectors creating earth paths. A wet connector on a 3000V system can deliver lethal current � LIM gives early warning before the ETS trips."},
-  'faceplate': {ref:'Ports 1-31',name:"Faceplate Connectors � Ports 1 to 31",body:"The Q Core Pod faceplate has 31 connector ports for all external ROV devices. Port numbers correspond to Beckhoff I/O channels and drawing sheet references on AH2742.",specs:[['Total Ports','31'],['Cameras','P1-P17'],['Lamps','SHT.13'],['Thrusters','SHT.14'],['Manipulator','SHT.15'],['Sensors','SHT.9'],['Tools','SHT.16-18']],tip:"Port number on faceplate = I/O channel in Beckhoff. Port 11 = DVL, Port 19 = Responder trigger, Port 27 = CP probe analogue. Keep port allocation list with the system documentation."},
+  'focal-fibre': {ref:'Focal Fibre',name:"Focal Fibre Interface Rack",body:"The Focal Fibre rack converts between the optical F1 fibre from topside and the EtherCAT copper communications used by the Beckhoff I/O system subsea. Uses CWDM wavelength multiplexing to carry multiple channels on F1.",specs:[['Type','CWDM Fibre Interface'],['Fibre','F1 SM 9/125µm'],['Protocol','EtherCAT over fibre'],['Connection','Topside PC â†” Beckhoff I/O']],tip:"CWDM = Coarse Wavelength Division Multiplexing — multiple channels share one fibre at different wavelengths. If all ROV functions are lost simultaneously, suspect Focal Fibre or fibre F1 before anything else."},
+  'lim': {ref:'LIM AGH5295',name:"LIM — Line Isolation Monitor (Subsea)",body:"Subsea LIM monitors insulation resistance between HV conductors and earth/seawater. Set to alarm at 100kΩ and trip at 200kΩ (or reverse — check AH2713). HT Coupler AGH5295 provides isolation for the monitor itself.",specs:[['Ref','LIM + AGH5295'],['Alarm','100kΩ (typical)'],['Trip','200kΩ or as set'],['Alarm contact','NE (Normally Energised)'],['HT Coupler','AGH5295']],tip:"Subsea LIM protects from water ingress in subsea connectors creating earth paths. A wet connector on a 3000V system can deliver lethal current — LIM gives early warning before the ETS trips."},
+  'faceplate': {ref:'Ports 1-31',name:"Faceplate Connectors — Ports 1 to 31",body:"The Q Core Pod faceplate has 31 connector ports for all external ROV devices. Port numbers correspond to Beckhoff I/O channels and drawing sheet references on AH2742.",specs:[['Total Ports','31'],['Cameras','P1-P17'],['Lamps','SHT.13'],['Thrusters','SHT.14'],['Manipulator','SHT.15'],['Sensors','SHT.9'],['Tools','SHT.16-18']],tip:"Port number on faceplate = I/O channel in Beckhoff. Port 11 = DVL, Port 19 = Responder trigger, Port 27 = CP probe analogue. Keep port allocation list with the system documentation."},
   'cams': {ref:'P1-P17',name:"Camera Ports P1-P17",body:"17 camera ports on the pod faceplate. Carry 24VDC power and RS232/RS485/SDI video signals. Standard cameras use RS485 + composite video. HD cameras use RS232 + SDI. Connections on AH2742 SHT.9 (sensors/cameras).",specs:[['Ports','P1-P17'],['Power','24VDC'],['Std Cam','RS485 + Composite video'],['HD Cam','RS232 + SDI'],['Drawing','AH2742 SHT.9']],tip:"If camera lost, check 24V at port with a test lead before pulling ROV. If 24V present at port but no image, suspect camera or video path. If no 24V, check Beckhoff output for that port."},
-  'lamps': {ref:'SHT.13',name:"Lamp Circuits � AH2742 Sheet 13",body:"Work lights and HID lamps controlled via 110VAC lamp dimmer circuit. Standard lamps use direct 110VAC switching. HID lamps use K2 relay and ballast. Detailed wiring on AH2742 Sheet 13.",specs:[['Voltage','110VAC'],['Control','Lamp dimmer + K2 relay'],['HID Lamps','Via K2 relay + ballast'],['Drawing','AH2742 SHT.13']],tip:"HID lamps require warm-up time after power applied. If lamp fails to illuminate, allow 60 seconds before fault-finding. Check 110VAC at lamp connector before suspecting lamp failure."},
-  'thrusters': {ref:'SHT.14',name:"Thruster Circuits � AH2742 Sheet 14",body:"All thruster connections � power, RS485 iTCU control, and feedback. Each thruster has a dedicated port. iTCU (intelligent Thruster Control Unit) regulates speed via PWM. Detailed on AH2742 Sheet 14.",specs:[['Protocol','RS485 to iTCU'],['Drawing','AH2742 SHT.14'],['Control','PWM via Beckhoff output'],['Power','24VDC control + hydraulic'],['Fault trace','Port → Beckhoff → PLC → Joystick']],tip:"Thruster fault trace: topside joystick command → PLC output → Fibre → Beckhoff output → port connector → iTCU → thruster. Work from source to load."},
-  'manip': {ref:'SHT.15',name:"Manipulator Circuit � AH2742 Sheet 15",body:"Manipulator control wiring including solenoid valve connections, position feedback (if fitted), and power supply. Hydraulic manipulators use solenoid valves controlled by Beckhoff digital outputs.",specs:[['Drawing','AH2742 SHT.15'],['Control','Beckhoff digital outputs'],['Valves','24VDC solenoids'],['Feedback','Position sensor (if fitted)']],tip:"Manipulator valves are 24VDC solenoids. Check 24V at solenoid connector before suspecting valve blockage. Confirm Beckhoff output is activating � use diagnostic display topside to verify."},
-  'sensors': {ref:'SHT.9',name:"Sensor Circuits � AH2742 Sheet 9",body:"All environmental and navigation sensors � depth, altitude, heading, temperature. Analogue sensors use 0-10VDC or 4-20mA to Beckhoff AI modules. Digital sensors use RS232 or RS485.",specs:[['Drawing','AH2742 SHT.9'],['Analogue','0-10VDC or 4-20mA'],['Digital','RS232 or RS485'],['Altimeter','0-10VDC Slot 14 AI'],['Responder','Trigger port 19']],tip:"Analogue sensor faults: check signal at Beckhoff AI channel. 0V = sensor powered off or short. Max V = open circuit (sensor disconnected). Reading drifts = partial connection or contamination."},
-  'tools': {ref:'SHT.16-18',name:"Tool Circuits � AH2742 Sheets 16-18",body:"Tooling interface connections on Sheets 16-18. Tool ports carry power and signals for interchangeable tooling packages. Tool specification varies by project � check system-specific tool interface drawing.",specs:[['Drawing','AH2742 SHT.16-18'],['Power','24VDC and 110VAC options'],['Ports','Multiple tooling ports'],['Interface','Project-specific']],tip:"Tool interfaces are project-specific. Always check the tool interface drawing for the specific job before connecting tooling � pin allocations may differ between projects."},
-  'moisture': {ref:'AA9979',name:"Moisture Sensors AA9979",body:"Internal moisture sensors monitor humidity and detect water ingress in the pod. Front and rear sensors (MS1/MS2) provide early warning of flooding. Also monitor internal pressure and temperature.",specs:[['Ref','AA9979'],['Sensors','MS1 (front) + MS2 (rear)'],['Parameters','Humidity � Pressure � Temperature'],['Output','To Beckhoff AI module'],['Alarm','Topside display alert']],tip:"A moisture alarm during a dive requires immediate consideration of recovery. Don't ignore moisture alarms � water in the pod can short control electronics within minutes at depth."},
-  'u2': {ref:'X12-6 U2',name:"U2 � TMS Motor Phase A Conductor",body:"First phase of TMS motor HV supply. 4mm� ORANGE cable rated 3300VAC. Allocated on AG8200 same as ROV motor conductors but separate circuit via TX3 (28kVA TMS Motor transformer).",specs:[['Terminal','X12-6'],['Label','U2'],['Size','4mm�'],['Colour','ORANGE'],['Voltage','3300VAC'],['Supply','Via TX3 28kVA']],tip:"TMS motor supply is separate from ROV motor. TX3 (28kVA) is smaller than TX2 (256kVA) � TMS motor is smaller than HPU motor. Check TX3 taps on AH2713 if TMS motor won't start."},
-  'v2': {ref:'X12-7 V2',name:"V2 � TMS Motor Phase B Conductor",body:"Second phase of TMS motor HV supply. 4mm� GREEN cable rated 3300VAC. Part of the three-phase TMS winch motor supply alongside U2 and W2.",specs:[['Terminal','X12-7'],['Label','V2'],['Size','4mm�'],['Colour','GREEN'],['Voltage','3300VAC']],tip:"Note V2 is also GREEN � same as W1 ROV motor phase. The conductor LABEL (V2 vs W1) is what distinguishes them, not just colour. Always check the label AND colour together."},
-  'w2': {ref:'X12-8 W2',name:"W2 � TMS Motor Phase C Conductor",body:"Third phase of TMS motor HV supply. 2��2mm� WHITE cable � note this uses TWO 2mm� conductors in parallel rather than a single larger conductor, unlike the ROV motor phases.",specs:[['Terminal','X12-8'],['Label','W2'],['Size','2��2mm� parallel'],['Colour','WHITE'],['Note','2 conductors in parallel']],tip:"W2 uses 2��2mm� parallel conductors � this is an important detail for cable identification. If you find two white HV conductors connected together at X12-8, that's correct � it's W2 TMS phase C."},
+  'lamps': {ref:'SHT.13',name:"Lamp Circuits — AH2742 Sheet 13",body:"Work lights and HID lamps controlled via 110VAC lamp dimmer circuit. Standard lamps use direct 110VAC switching. HID lamps use K2 relay and ballast. Detailed wiring on AH2742 Sheet 13.",specs:[['Voltage','110VAC'],['Control','Lamp dimmer + K2 relay'],['HID Lamps','Via K2 relay + ballast'],['Drawing','AH2742 SHT.13']],tip:"HID lamps require warm-up time after power applied. If lamp fails to illuminate, allow 60 seconds before fault-finding. Check 110VAC at lamp connector before suspecting lamp failure."},
+  'thrusters': {ref:'SHT.14',name:"Thruster Circuits — AH2742 Sheet 14",body:"All thruster connections — power, RS485 iTCU control, and feedback. Each thruster has a dedicated port. iTCU (intelligent Thruster Control Unit) regulates speed via PWM. Detailed on AH2742 Sheet 14.",specs:[['Protocol','RS485 to iTCU'],['Drawing','AH2742 SHT.14'],['Control','PWM via Beckhoff output'],['Power','24VDC control + hydraulic'],['Fault trace','Port â†’ Beckhoff â†’ PLC â†’ Joystick']],tip:"Thruster fault trace: topside joystick command â†’ PLC output â†’ Fibre â†’ Beckhoff output â†’ port connector â†’ iTCU â†’ thruster. Work from source to load."},
+  'manip': {ref:'SHT.15',name:"Manipulator Circuit — AH2742 Sheet 15",body:"Manipulator control wiring including solenoid valve connections, position feedback (if fitted), and power supply. Hydraulic manipulators use solenoid valves controlled by Beckhoff digital outputs.",specs:[['Drawing','AH2742 SHT.15'],['Control','Beckhoff digital outputs'],['Valves','24VDC solenoids'],['Feedback','Position sensor (if fitted)']],tip:"Manipulator valves are 24VDC solenoids. Check 24V at solenoid connector before suspecting valve blockage. Confirm Beckhoff output is activating — use diagnostic display topside to verify."},
+  'sensors': {ref:'SHT.9',name:"Sensor Circuits — AH2742 Sheet 9",body:"All environmental and navigation sensors — depth, altitude, heading, temperature. Analogue sensors use 0-10VDC or 4-20mA to Beckhoff AI modules. Digital sensors use RS232 or RS485.",specs:[['Drawing','AH2742 SHT.9'],['Analogue','0-10VDC or 4-20mA'],['Digital','RS232 or RS485'],['Altimeter','0-10VDC Slot 14 AI'],['Responder','Trigger port 19']],tip:"Analogue sensor faults: check signal at Beckhoff AI channel. 0V = sensor powered off or short. Max V = open circuit (sensor disconnected). Reading drifts = partial connection or contamination."},
+  'tools': {ref:'SHT.16-18',name:"Tool Circuits — AH2742 Sheets 16-18",body:"Tooling interface connections on Sheets 16-18. Tool ports carry power and signals for interchangeable tooling packages. Tool specification varies by project — check system-specific tool interface drawing.",specs:[['Drawing','AH2742 SHT.16-18'],['Power','24VDC and 110VAC options'],['Ports','Multiple tooling ports'],['Interface','Project-specific']],tip:"Tool interfaces are project-specific. Always check the tool interface drawing for the specific job before connecting tooling — pin allocations may differ between projects."},
+  'moisture': {ref:'AA9979',name:"Moisture Sensors AA9979",body:"Internal moisture sensors monitor humidity and detect water ingress in the pod. Front and rear sensors (MS1/MS2) provide early warning of flooding. Also monitor internal pressure and temperature.",specs:[['Ref','AA9979'],['Sensors','MS1 (front) + MS2 (rear)'],['Parameters','Humidity · Pressure · Temperature'],['Output','To Beckhoff AI module'],['Alarm','Topside display alert']],tip:"A moisture alarm during a dive requires immediate consideration of recovery. Don't ignore moisture alarms — water in the pod can short control electronics within minutes at depth."},
+  'u2': {ref:'X12-6 U2',name:"U2 — TMS Motor Phase A Conductor",body:"First phase of TMS motor HV supply. 4mm² ORANGE cable rated 3300VAC. Allocated on AG8200 same as ROV motor conductors but separate circuit via TX3 (28kVA TMS Motor transformer).",specs:[['Terminal','X12-6'],['Label','U2'],['Size','4mm²'],['Colour','ORANGE'],['Voltage','3300VAC'],['Supply','Via TX3 28kVA']],tip:"TMS motor supply is separate from ROV motor. TX3 (28kVA) is smaller than TX2 (256kVA) — TMS motor is smaller than HPU motor. Check TX3 taps on AH2713 if TMS motor won't start."},
+  'v2': {ref:'X12-7 V2',name:"V2 — TMS Motor Phase B Conductor",body:"Second phase of TMS motor HV supply. 4mm² GREEN cable rated 3300VAC. Part of the three-phase TMS winch motor supply alongside U2 and W2.",specs:[['Terminal','X12-7'],['Label','V2'],['Size','4mm²'],['Colour','GREEN'],['Voltage','3300VAC']],tip:"Note V2 is also GREEN — same as W1 ROV motor phase. The conductor LABEL (V2 vs W1) is what distinguishes them, not just colour. Always check the label AND colour together."},
+  'w2': {ref:'X12-8 W2',name:"W2 — TMS Motor Phase C Conductor",body:"Third phase of TMS motor HV supply. 2À—2mm² WHITE cable — note this uses TWO 2mm² conductors in parallel rather than a single larger conductor, unlike the ROV motor phases.",specs:[['Terminal','X12-8'],['Label','W2'],['Size','2À—2mm² parallel'],['Colour','WHITE'],['Note','2 conductors in parallel']],tip:"W2 uses 2À—2mm² parallel conductors — this is an important detail for cable identification. If you find two white HV conductors connected together at X12-8, that's correct — it's W2 TMS phase C."},
 };
 
-// ── STATE ─────────────────────────────────────────────────────────────────────
-let currentDrawing = 0;
-let currentMode = 'pdf';
-let zoomLevel = 1;
+// â”€â”€ STATE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── PDF SHEET MAPPING ────────────────────────────────────────────────────────
+const PDF_SHEETS = {
+  'SP-001': { sheets: [
+    { label:'AH2713 Sht1', title:'CABIN SETTINGS', file:'drawings/AH2713-SHT1-CLEAN.pdf' },
+    { label:'AH2713 Sht2', title:'TRANSFORMER TAPPING SETTINGS', file:'drawings/AH2713-SHT2-CLEAN.pdf' },
+  ]},
+  'SP-002': { sheets: [
+    { label:'AH2646 Sht2', title:'HV PDU / ROV POD & MOTOR SUPPLIES', file:'drawings/AH2646-SHT2-CLEAN.pdf' },
+    { label:'AH2646 Sht3', title:'HV PDU / TMS POD & MOTOR SUPPLIES', file:'drawings/AH2646-SHT3-CLEAN.pdf' },
+    { label:'AH2646 Sht4', title:'HV PDU / EXTERNAL TERMINATIONS', file:'drawings/AH2646-SHT4-CLEAN.pdf' },
+    { label:'AH2646 Sht5', title:'HV PDU / OVERALL CONTROL CABIN EARTH DIAGRAM', file:'drawings/AH2646-SHT5-CLEAN.pdf' },
+  ]},
+  'SP-003': { sheets: [
+    { label:'AG8200 Sht1', title:'UMBILICAL ALLOCATION / ECM ENABLED', file:'drawings/AG8200-SHT1-CLEAN.pdf' },
+    { label:'AG8200 Sht2', title:'UMBILICAL ALLOCATION', file:'drawings/AG8200-SHT2-CLEAN.pdf' },
+    { label:'AG8200 Sht3', title:'DRAWING UMBILICAL ALLOCATION', file:'drawings/AG8200-SHT3-CLEAN.pdf' },
+    { label:'AG8200 Sht4', title:'UMBILICAL ALLOCATION / CP PROBE OPTION', file:'drawings/AG8200-SHT4-CLEAN.pdf' },
+  ]},
+  'SP-004': { sheets: [
+    { label:'AH2742 Sht2',  title:'24V PSU BOARD AE4151', file:'drawings/AH2742-SHT2-CLEAN.pdf' },
+    { label:'AH2742 Sht3',  title:'BECKHOFF — DIGI INPUTS/OUTPUTS', file:'drawings/AH2742-SHT3-CLEAN.pdf' },
+    { label:'AH2742 Sht4',  title:'BECKHOFF — DIGI OUTPUTS', file:'drawings/AH2742-SHT4-CLEAN.pdf' },
+    { label:'AH2742 Sht5',  title:'BECKHOFF — DIGI OUTPUTS / ANL INPUTS', file:'drawings/AH2742-SHT5-CLEAN.pdf' },
+    { label:'AH2742 Sht6',  title:'BECKHOFF — DIGI OUTPUTS [24V DC UNREG.]', file:'drawings/AH2742-SHT6-CLEAN.pdf' },
+    { label:'AH2742 Sht7',  title:'BECKHOFF — DIGI OUTPUTS [110V AC]', file:'drawings/AH2742-SHT7-CLEAN.pdf' },
+    { label:'AH2742 Sht8',  title:'BECKHOFF — DIGI OUTPUTS', file:'drawings/AH2742-SHT8-CLEAN.pdf' },
+    { label:'AH2742 Sht9',  title:'CAMERA CONTROL CARD AE0024', file:'drawings/AH2742-SHT9-CLEAN.pdf' },
+    { label:'AH2742 Sht10', title:'FACEPLATE INTERFACE BOARD AF1440', file:'drawings/AH2742-SHT10-CLEAN.pdf' },
+    { label:'AH2742 Sht11', title:'FACEPLATE INTERFACE BOARD AF1441', file:'drawings/AH2742-SHT11-CLEAN.pdf' },
+    { label:'AH2742 Sht12', title:'FOCAL FIBRE OPTIC INTERFACE RACK', file:'drawings/AH2742-SHT12-CLEAN.pdf' },
+    { label:'AH2742 Sht13', title:'LIM, LAMPS 9-12 SUPPLY & CWDM CONNS.', file:'drawings/AH2742-SHT13-CLEAN.pdf' },
+    { label:'AH2742 Sht14', title:'FACEPLATE CONNECTORS — POD POWER & LAMP DIMMER', file:'drawings/AH2742-SHT14-CLEAN.pdf' },
+    { label:'AH2742 Sht15', title:'FACEPLATE CONNECTORS — PORTS 1-8 CAMERAS', file:'drawings/AH2742-SHT15-CLEAN.pdf' },
+    { label:'AH2742 Sht16', title:'FACEPLATE CONNECTORS — PORTS 9-17', file:'drawings/AH2742-SHT16-CLEAN.pdf' },
+    { label:'AH2742 Sht17', title:'FACEPLATE CONNECTORS — PORTS 18-24', file:'drawings/AH2742-SHT17-CLEAN.pdf' },
+    { label:'AH2742 Sht18', title:'FACEPLATE CONNECTORS — PORTS 27-31', file:'drawings/AH2742-SHT18-CLEAN.pdf' },
+  ]},
+  'SP-005': { sheets: [] },
+  'SP-006': { sheets: [
+    { label:'AH2645 Sht2',  title:'INCOMING, ROV POD & MOTOR SUPPLIES', file:'drawings/AH2645-SHT2-CLEAN.pdf' },
+    { label:'AH2645 Sht3',  title:'TMS POD & MOTOR SUPPLIES, 110V & 240V AC', file:'drawings/AH2645-SHT3-CLEAN.pdf' },
+    { label:'AH2645 Sht4',  title:'110V AC CONTROL CIRCUITS & PSUs', file:'drawings/AH2645-SHT4-CLEAN.pdf' },
+    { label:'AH2645 Sht5',  title:'24V DC CONTROL CIRCUITS', file:'drawings/AH2645-SHT5-CLEAN.pdf' },
+    { label:'AH2645 Sht6',  title:'24V DC CONTROL CIRCUITS', file:'drawings/AH2645-SHT6-CLEAN.pdf' },
+    { label:'AH2645 Sht7',  title:'PLC DIGITAL INPUTS', file:'drawings/AH2645-SHT7-CLEAN.pdf' },
+    { label:'AH2645 Sht8',  title:'PLC DIGITAL OUTPUTS', file:'drawings/AH2645-SHT8-CLEAN.pdf' },
+    { label:'AH2645 Sht9',  title:'PLC ANALOGUE INPUTS', file:'drawings/AH2645-SHT9-CLEAN.pdf' },
+    { label:'AH2645 Sht10', title:'EXTERNAL TERMINATIONS', file:'drawings/AH2645-SHT10-CLEAN.pdf' },
+    { label:'AH2645 Sht11', title:'OVERALL CONTROL CABIN EARTHING DIAGRAM', file:'drawings/AH2645-SHT11-CLEAN.pdf' },
+  ]},
+};
 
-// ── INIT ──────────────────────────────────────────────────────────────────────
+// Resolve "AH2742 Sht7" or "AH2742 Sht14 / AH2136 Sht2" to {spTabIdx, sheetIdx}
+function resolveRef(refStr) {
+  if (!refStr) return null;
+  const parts = refStr.split('/').map(s => s.trim());
+  for (const part of parts) {
+    for (let si = 0; si < DRAWINGS.length; si++) {
+      const pdfData = PDF_SHEETS[DRAWINGS[si].id];
+      if (!pdfData) continue;
+      for (let pi = 0; pi < pdfData.sheets.length; pi++) {
+        const norm = s => s.toLowerCase().replace(/\s+/g,'').replace('sht','sht');
+        if (norm(pdfData.sheets[pi].label) === norm(part)) {
+          return { spTabIdx: si, sheetIdx: pi };
+        }
+      }
+    }
+  }
+  return null;
+}
+
+// ── STATE ────────────────────────────────────────────────────────────────────
+let currentDrawing = 0;
+let currentMode = 'interactive';
+let zoomLevel = 1;
+let currentSheetIdx = 0;
+
+// ── FUNCTIONS ─────────────────────────────────────────────────────────────────
+function goBack() {
+  if (window.history.length > 1) {
+    window.history.back();
+  } else {
+    window.location.href = 'index.html';
+  }
+}
+
 function init() {
-  loadDrawing(0);
+  const urlParams = new URLSearchParams(window.location.search);
+  const tabParam  = urlParams.get('tab');
+  const refParam  = urlParams.get('ref');
+
+  let targetTab   = 0;
+  let targetSheet = 0;
+  let startMode   = 'interactive';
+
+  if (refParam) {
+    const resolved = resolveRef(decodeURIComponent(refParam));
+    if (resolved) {
+      targetTab   = resolved.spTabIdx;
+      targetSheet = resolved.sheetIdx;
+      startMode   = 'pdf';
+    } else if (tabParam !== null) {
+      targetTab = Math.max(0, Math.min(parseInt(tabParam)||0, DRAWINGS.length-1));
+      startMode = 'pdf';
+    }
+    // Show ref badge
+    setTimeout(() => {
+      const b = document.createElement('div');
+      b.style.cssText = 'position:fixed;top:70px;right:16px;background:rgba(255,179,0,0.15);border:1px solid #ffb300;padding:6px 12px;font-family:monospace;font-size:10px;color:#ffb300;border-radius:4px;letter-spacing:1px;z-index:200;pointer-events:none;';
+      b.textContent = '\uD83D\uDD0E REF: ' + decodeURIComponent(refParam);
+      document.body.appendChild(b);
+      setTimeout(() => b.remove(), 5000);
+    }, 500);
+  } else if (tabParam !== null) {
+    targetTab = Math.max(0, Math.min(parseInt(tabParam)||0, DRAWINGS.length-1));
+  }
+
+  currentMode     = startMode;
+  currentSheetIdx = targetSheet;
+  loadDrawing(targetTab);
 }
 
 function loadDrawing(idx) {
-  currentDrawing = idx;
+  currentDrawing  = idx;
+  currentSheetIdx = 0;
   const d = DRAWINGS[idx];
-
-  // Update title block
   document.getElementById('tb-title').textContent = d.title;
   document.getElementById('tb-drwno').textContent = d.id;
   document.getElementById('tb-sheet').textContent = d.sheet;
-
-  // Update drawing nav buttons
-  document.querySelectorAll('.drw-btn').forEach((b,i) => {
-    b.classList.toggle('active', i === idx);
-  });
-
-  // Inject SVG
+  document.querySelectorAll('.drw-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
   document.getElementById('svg-container').innerHTML = d.svg;
-
-  // Build hotspots
   buildHotspots(d);
-
-  // Apply current mode
+  buildSheetSelector(idx);
   applyMode();
-
-  // Close info panel
   closeInfo();
+}
+
+function buildSheetSelector(idx) {
+  const wrap = document.getElementById('sheet-selector-wrap');
+  const pdfData = PDF_SHEETS[DRAWINGS[idx].id];
+  if (!wrap) return;
+  if (!pdfData || !pdfData.sheets.length) {
+    wrap.style.display = 'none';
+    wrap.innerHTML = '';
+    return;
+  }
+  wrap.style.display = 'flex';
+  wrap.innerHTML = pdfData.sheets.map((s,i) =>
+    `<button class="sheet-btn${i===currentSheetIdx?' active':''}" onclick="selectSheet(${i})" title="${s.title}">${s.label}</button>`
+  ).join('');
+}
+
+function selectSheet(idx) {
+  currentSheetIdx = idx;
+  document.querySelectorAll('.sheet-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
+  if (currentMode === 'pdf') renderPdfEmbed();
+  // Highlight matching hotspot
+  const spId = DRAWINGS[currentDrawing].id;
+  const pdfData = PDF_SHEETS[spId];
+  if (pdfData && pdfData.sheets[idx]) {
+    const drawNum = pdfData.sheets[idx].label.split(' ')[0].toLowerCase();
+    document.querySelectorAll('.hotspot').forEach(h => {
+      h.classList.toggle('sheet-linked', (h.getAttribute('data-label')||'').toLowerCase().includes(drawNum));
+    });
+  }
+}
+
+function renderPdfEmbed() {
+  const frame = document.getElementById('pdf-embed-frame');
+  if (!frame) return;
+  const pdfData = PDF_SHEETS[DRAWINGS[currentDrawing].id];
+  if (!pdfData || !pdfData.sheets.length) {
+    frame.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--dim);font-size:13px;text-align:center;padding:40px;"><div><div style="font-size:32px;margin-bottom:16px;">📄</div><div style="color:var(--ctrl);margin-bottom:8px;">NO DRAWINGS LINKED</div><div>This SP drawing has no associated<br>engineering drawings yet.</div></div></div>';
+    return;
+  }
+  const sheet = pdfData.sheets[currentSheetIdx] || pdfData.sheets[0];
+  frame.innerHTML =
+    `<div style="padding:6px 10px;background:var(--bg3);border-bottom:1px solid var(--border);font-size:10px;color:var(--ctrl);letter-spacing:1px;display:flex;align-items:center;gap:8px;flex-shrink:0;">` +
+    `<span style="color:var(--dim);">DRAWING:</span><span>${sheet.label}</span>` +
+    `<span style="color:var(--dim);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${sheet.title}</span>` +
+    `<a href="${sheet.file}" download style="color:var(--lv);text-decoration:none;font-size:9px;border:1px solid var(--lv);padding:2px 8px;border-radius:2px;cursor:pointer;">&#11015; DOWNLOAD PDF</a>` +
+    `</div>` +
+    `<embed src="${sheet.file}" type="application/pdf" style="width:100%;flex:1;border:none;display:block;" title="${sheet.label}">`;
 }
 
 function buildHotspots(d) {
   const layer = document.getElementById('hotspot-layer');
   layer.innerHTML = '';
   if (!d.hotspots) return;
-
   d.hotspots.forEach(h => {
     const el = document.createElement('div');
     el.className = 'hotspot';
-    el.style.left = h.x;
-    el.style.top = h.y;
-    el.style.width = h.w;
-    el.style.height = h.h;
+    el.style.left = h.x; el.style.top = h.y;
+    el.style.width = h.w; el.style.height = h.h;
     el.setAttribute('data-label', h.label);
     el.setAttribute('data-id', h.id);
     el.onclick = () => showInfo(h.id);
@@ -1256,100 +1437,86 @@ function buildHotspots(d) {
   });
 }
 
-function setMode(mode) {
-  currentMode = mode;
-  applyMode();
-}
+function setMode(mode) { currentMode = mode; applyMode(); }
 
 function applyMode() {
   const isPdf = currentMode === 'pdf';
-
   document.getElementById('btn-pdf').classList.toggle('active', isPdf);
   document.getElementById('btn-int').classList.toggle('active', !isPdf);
   document.getElementById('mode-status').textContent = isPdf ? 'MODE: PDF VIEW' : 'MODE: INTERACTIVE';
-
   const layer = document.getElementById('hotspot-layer');
   layer.classList.toggle('active', !isPdf);
-
-  const prompt = document.getElementById('int-prompt');
-  prompt.style.display = isPdf ? 'none' : 'block';
-
-  // In PDF mode, remove hotspot hover effects but keep structure
   layer.style.pointerEvents = isPdf ? 'none' : 'all';
+  const prompt = document.getElementById('int-prompt');
+  if (prompt) prompt.style.display = isPdf ? 'none' : 'block';
+  const svgWrap = document.getElementById('svg-container');
+  const pdfFrame = document.getElementById('pdf-embed-frame');
+  if (svgWrap) {
+    svgWrap.style.opacity = isPdf ? '0.06' : '1';
+    svgWrap.style.pointerEvents = isPdf ? 'none' : 'all';
+  }
+  if (pdfFrame) {
+    pdfFrame.style.display = isPdf ? 'flex' : 'none';
+    if (isPdf) renderPdfEmbed();
+  }
 }
 
 function showInfo(id) {
   const info = COMPONENT_INFO[id];
   if (!info) return;
-
   const panel = document.getElementById('info-panel');
   panel.classList.remove('hidden');
-
   let specsHtml = '';
   if (info.specs) {
     specsHtml = '<div class="info-specs">' +
       info.specs.map(s => `<div class="info-spec-row"><span class="spec-key">${s[0]}</span><span class="spec-val">${s[1]}</span></div>`).join('') +
       '</div>';
   }
-
-  document.getElementById('info-content').innerHTML = `
-    <div class="info-ref">${info.ref}</div>
-    <div class="info-name">${info.name}</div>
-    <div class="info-body">${info.body}</div>
-    ${specsHtml}
-    ${info.tip ? `<div class="info-tip"><div class="tip-label">⚡ ROV PILOT TIP</div>${info.tip}</div>` : ''}
-  `;
+  document.getElementById('info-content').innerHTML =
+    `<div class="info-ref">${info.ref}</div>` +
+    `<div class="info-name">${info.name}</div>` +
+    `<div class="info-body">${info.body}</div>` +
+    specsHtml +
+    (info.tip ? `<div class="info-tip"><div class="tip-label">&#9889; ROV PILOT TIP</div>${info.tip}</div>` : '');
 }
 
-function closeInfo() {
-  document.getElementById('info-panel').classList.add('hidden');
-}
+function closeInfo() { document.getElementById('info-panel').classList.add('hidden'); }
 
 function zoom(delta) {
   zoomLevel = Math.max(0.5, Math.min(3, zoomLevel + delta));
-  const frame = document.getElementById('svg-container');
-  frame.style.transform = `scale(${zoomLevel})`;
-  frame.style.transformOrigin = 'top left';
-  document.getElementById('zoom-label').textContent = Math.round(zoomLevel * 100) + '%';
+  const f = document.getElementById('svg-container');
+  f.style.transform = `scale(${zoomLevel})`;
+  f.style.transformOrigin = 'top left';
+  document.getElementById('zoom-label').textContent = Math.round(zoomLevel*100)+'%';
 }
 
 function resetZoom() {
   zoomLevel = 1;
-  const frame = document.getElementById('svg-container');
-  frame.style.transform = 'scale(1)';
+  const f = document.getElementById('svg-container');
+  f.style.transform = 'scale(1)';
   document.getElementById('zoom-label').textContent = '100%';
 }
 
+// Print: if in PDF mode print the actual PDF file, else print the page
 function printDrawing() {
+  const isPdf = currentMode === 'pdf';
+  if (isPdf) {
+    const pdfData = PDF_SHEETS[DRAWINGS[currentDrawing].id];
+    if (pdfData && pdfData.sheets.length) {
+      const sheet = pdfData.sheets[currentSheetIdx] || pdfData.sheets[0];
+      // Open PDF in new tab for printing
+      const win = window.open(sheet.file, '_blank');
+      if (win) {
+        win.addEventListener('load', () => win.print(), true);
+      }
+      return;
+    }
+  }
   window.print();
 }
 
-// Handle URL parameters � ?tab=N jumps to drawing N
-const urlParams = new URLSearchParams(window.location.search);
-const tabParam = urlParams.get('tab');
-const refParam = urlParams.get('ref');
-if (tabParam !== null) {
-  const tabIdx = parseInt(tabParam);
-  if (tabIdx >= 0 && tabIdx < DRAWINGS.length) {
-    currentDrawing = tabIdx;
-  }
-}
-
-// Start
+// ── START ─────────────────────────────────────────────────────────────────────
 init();
-
-// Show ref badge if provided
-if (refParam) {
-  setTimeout(() => {
-    const badge = document.createElement('div');
-    badge.style.cssText = 'position:fixed;top:70px;right:16px;background:rgba(255,179,0,0.15);border:1px solid #ffb300;padding:6px 12px;font-family:monospace;font-size:10px;color:#ffb300;border-radius:4px;letter-spacing:1px;z-index:200;';
-    badge.textContent = '📎 REF: ' + decodeURIComponent(refParam);
-    document.body.appendChild(badge);
-    setTimeout(() => badge.remove(), 5000);
-  }, 500);
-}
 </script>
 </body>
 </html>
-
-
