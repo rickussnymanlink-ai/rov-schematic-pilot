@@ -3,8 +3,7 @@
 
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SCHEMATIC PILOT — Engineering Drawings SP-001 to SP-006</title>
 <style>
 :root {
@@ -439,15 +438,15 @@ body {
     <span class="name">ENGINEERING DRAWING VIEWER</span>
   </div>
   <div class="mode-toggle">
-    <button class="mode-btn active" id="btn-pdf" onclick="setMode('pdf')">ðŸ“„ PDF VIEW</button>
-    <button class="mode-btn" id="btn-int" onclick="setMode('interactive')">âš¡ INTERACTIVE</button>
+    <button class="mode-btn active" id="btn-pdf" onclick="setMode('pdf')">&#x1F4C4; PDF VIEW</button>
+    <button class="mode-btn" id="btn-int" onclick="setMode('interactive')">&#x26A1; INTERACTIVE</button>
   </div>
   <button onclick="goBack()" style="background:var(--bg2);border:1px solid var(--border);color:var(--dim);font-family:monospace;font-size:11px;padding:5px 14px;cursor:pointer;border-radius:3px;letter-spacing:1px;margin-right:4px;" title="Go back">&#8592; BACK</button>
   <div class="zoom-controls">
     <button class="zoom-btn" onclick="zoom(-0.1)">âˆ’</button>
     <span class="zoom-level" id="zoom-label">100%</span>
     <button class="zoom-btn" onclick="zoom(0.1)">+</button>
-    <button class="zoom-btn" onclick="resetZoom()" title="Fit">âŠ¡</button>
+    <button class="zoom-btn" onclick="resetZoom()" title="Fit">&#x22A1;</button>
   </div>
 </div>
 
@@ -522,7 +521,7 @@ body {
   <div class="info-panel hidden" id="info-panel">
     <div class="info-header">
       <h3>COMPONENT INFO</h3>
-      <button class="info-close" onclick="closeInfo()">âœ•</button>
+      <button class="info-close" onclick="closeInfo()">&#x2715;</button>
     </div>
     <div class="info-content" id="info-content">
       <div style="color:var(--dim);font-size:11px;line-height:1.8;padding-top:20px;text-align:center;">
@@ -536,7 +535,7 @@ body {
 <div class="bottom-bar">
   <span>SCHEMATIC PILOT TRAINING SYSTEM · SP DRAWING SERIES · REF: WR CLASS ROV 150HP ROV</span>
   <span class="status" id="mode-status">MODE: PDF VIEW</span>
-  <button class="print-btn" onclick="printDrawing()">ðŸ–¨ PRINT / SAVE PDF</button>
+  <button class="print-btn" onclick="printDrawing()">&#x1F5A8; PRINT / SAVE PDF</button>
 </div>
 
 <script>
@@ -1520,3 +1519,5 @@ init();
 </script>
 </body>
 </html>
+
+
