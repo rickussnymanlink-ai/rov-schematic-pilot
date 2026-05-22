@@ -1053,6 +1053,10 @@ body {
 .ctrl-btn:hover { border-color: var(--cyan); background: rgba(0,229,255,0.06); }
 .ctrl-btn.red-btn { color: var(--red); border-color: rgba(255,23,68,0.3); }
 .ctrl-btn.red-btn:hover { border-color: var(--red); background: rgba(255,23,68,0.08); }
+/* ── NAV BUTTON COLORS ── */
+.nav-fd { background: #00e5ff !important; border-color: #00e5ff !important; color: #001a1f !important; font-weight: 700 !important; }
+.nav-bw { background: #ffb300 !important; border-color: #ffb300 !important; color: #1a0d00 !important; font-weight: 700 !important; }
+.nav-home { background: #ff1744 !important; border-color: #ff1744 !important; color: #fff !important; font-weight: 700 !important; }
 
 /* ── OPEN PORTS TABLE ── */
 .ports-section {
@@ -1150,7 +1154,7 @@ body {
     <div class="tier-header" style="border-color:var(--purple);color:var(--purple)"><span>🏆️</span><h3 style="color:var(--purple)">SUPERVISOR</h3><span class="tier-range">L16–30 · 3000m+</span></div>
     <div class="levels-grid" id="grid-t4"></div>
   </div>
-  <div style="padding:0 16px"><button class="btn-secondary" onclick="showScreen('screen-title')">← BACK TO SURFACE</button></div>
+  <div style="padding:0 16px"><button class="btn-secondary nav-home" onclick="showScreen('screen-title')">← BACK TO SURFACE</button></div>
 </div>
 
 <!-- TUTORIAL -->
@@ -1164,7 +1168,7 @@ body {
     <div class="header-title">WR CLASS ROV 150HP — STUDY MODE</div>
     <div class="header-sub">BASED ON WR CLASS ROV 150HP SYSTEM · AH2646 / AH2645 / AG8200</div>
   </div>
-  <button class="back-btn" onclick="showScreen('screen-title')">← HOME</button>
+  <button class="back-btn nav-home" onclick="showScreen('screen-title')">← HOME</button>
 </div>
 
 <!-- MODULE TABS -->
@@ -1487,9 +1491,9 @@ body {
     <div class="progress-dots" id="m1-dots"></div>
 
     <div class="step-controls">
-      <button class="step-btn" onclick="prevStep(1)">PG BW  ↓</button>
+      <button class="step-btn nav-bw" onclick="prevStep(1)">PG BW  ↓</button>
       <button class="step-btn primary" id="m1-play-btn" onclick="togglePlay(1)">▶ PLAY</button>
-      <button class="step-btn" onclick="nextStep(1)">PG FD  ↑</button>
+      <button class="step-btn nav-fd" onclick="nextStep(1)">PG FD  ↑</button>
       <div class="step-counter" id="m1-counter">1 / 6</div>
     </div>
 
@@ -1659,9 +1663,9 @@ body {
     <div class="progress-dots" id="m2-dots"></div>
 
     <div class="step-controls">
-      <button class="step-btn" onclick="prevStep(2)">PG BW  ↓</button>
+      <button class="step-btn nav-bw" onclick="prevStep(2)">PG BW  ↓</button>
       <button class="step-btn primary" id="m2-play-btn" onclick="togglePlay(2)">▶ PLAY</button>
-      <button class="step-btn" onclick="nextStep(2)">PG FD  ↑</button>
+      <button class="step-btn nav-fd" onclick="nextStep(2)">PG FD  ↑</button>
       <div class="step-counter" id="m2-counter">1 / 5</div>
     </div>
 
@@ -2274,7 +2278,7 @@ updateStep(1);
     <div class="map-sub">UNLOCK BY REACHING LEVELS</div>
   </div>
   <div id="abilities-list" style="padding:0 16px;display:flex;flex-direction:column;gap:10px"></div>
-  <div style="padding:16px"><button class="btn-secondary" onclick="showScreen('screen-title')">← BACK</button></div>
+  <div style="padding:16px"><button class="btn-secondary nav-home" onclick="showScreen('screen-title')">← BACK</button></div>
 </div>
 
 <!-- GAME -->
@@ -2303,7 +2307,7 @@ updateStep(1);
     <div class="options" id="options"></div>
   </div>
   <div class="feedback" id="feedback"></div>
-  <button class="btn-next" id="btn-next" onclick="nextQuestion()">PG FD  ↑</button>
+  <button class="btn-next nav-fd" id="btn-next" onclick="nextQuestion()">PG FD  ↑</button>
   <button class="btn-secondary" style="margin-top:8px" onclick="confirmQuit()">🌊 SURFACE (QUIT)</button>
   <button class="btn-secondary" style="margin-top:4px" onclick="showScreen('screen-title')">&#8962; HOME</button>
 </div>
@@ -2927,7 +2931,7 @@ function tutStep(n){
   <div class="m7-header">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-right:4px">
       <div><h1>MODULE 7 — TRACE IT</h1><p>SMD QUASAR · Q CORE POD · AH2136 · AH2742</p></div>
-      <button class="popup-close" style="font-size:10px;padding:8px 14px" onclick="showScreen('screen-title')">← HOME</button>
+      <button class="popup-close nav-home" style="font-size:10px;padding:8px 14px" onclick="showScreen('screen-title')">← HOME</button>
     </div>
   </div>
   <div class="sig-legend">
@@ -2964,12 +2968,12 @@ function tutStep(n){
   <div class="trace-section">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:4px">
       <h2 id="traceTitleBar" style="margin-bottom:0">TRACE: LIGHTS 1-4 + LAMP DIMMER</h2>
-      <button class="ctrl-btn" onclick="document.getElementById('m7SelectorSection').scrollIntoView({behavior:'smooth',block:'start'})" title="Back to trace selection" style="font-size:9px;padding:5px 10px;white-space:nowrap">PG BW ↓ BACK</button>
+      <button class="ctrl-btn nav-bw" onclick="document.getElementById('m7SelectorSection').scrollIntoView({behavior:'smooth',block:'start'})" title="Back to trace selection" style="font-size:9px;padding:5px 10px;white-space:nowrap">PG BW ↓ BACK</button>
     </div>
     <div style="display:flex;align-items:center;gap:8px;padding:4px 0 6px;flex-wrap:wrap;">
-      <button class="ctrl-btn" id="btnScrollUp" onclick="scrollTrace(-1)" style="min-width:44px;" title="Previous node">PG BW  ↓</button>
+      <button class="ctrl-btn nav-bw" id="btnScrollUp" onclick="scrollTrace(-1)" style="min-width:44px;" title="Previous node">PG BW  ↓</button>
       <span id="traceNodeCounter" style="font-family:'Share Tech Mono';font-size:10px;color:var(--dim);letter-spacing:1px;">NODE 1 / 1</span>
-      <button class="ctrl-btn" id="btnScrollDown" onclick="scrollTrace(1)" style="min-width:44px;" title="Next node">PG FD  ↑</button>
+      <button class="ctrl-btn nav-fd" id="btnScrollDown" onclick="scrollTrace(1)" style="min-width:44px;" title="Next node">PG FD  ↑</button>
       <span style="font-family:'Share Tech Mono';font-size:9px;color:var(--dim);margin-left:8px;">SCROLL PATH · TAP NODE FOR DETAILS</span>
     </div>
     <div class="trace-canvas-wrap" id="traceCanvasWrap"></div>
