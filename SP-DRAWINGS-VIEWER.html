@@ -232,13 +232,14 @@ body {
 .hotspot {
   position: absolute;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 1px solid var(--ctrl);
   border-radius: 3px;
+  background: rgba(0,0,0,0.4);
   transition: all 0.15s;
 }
 .hotspot:hover {
   border-color: var(--ctrl);
-  background: rgba(0,229,255,0.1);
+  background: rgba(0,229,255,0.15);
 }
 .hotspot:hover::after {
   content: attr(data-label);
