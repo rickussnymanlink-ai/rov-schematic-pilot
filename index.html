@@ -1487,9 +1487,9 @@ body {
     <div class="progress-dots" id="m1-dots"></div>
 
     <div class="step-controls">
-      <button class="step-btn" onclick="prevStep(1)">← PREV</button>
+      <button class="step-btn" onclick="prevStep(1)">PG BW  ↓</button>
       <button class="step-btn primary" id="m1-play-btn" onclick="togglePlay(1)">▶ PLAY</button>
-      <button class="step-btn" onclick="nextStep(1)">NEXT →</button>
+      <button class="step-btn" onclick="nextStep(1)">PG FD  ↑</button>
       <div class="step-counter" id="m1-counter">1 / 6</div>
     </div>
 
@@ -1659,9 +1659,9 @@ body {
     <div class="progress-dots" id="m2-dots"></div>
 
     <div class="step-controls">
-      <button class="step-btn" onclick="prevStep(2)">← PREV</button>
+      <button class="step-btn" onclick="prevStep(2)">PG BW  ↓</button>
       <button class="step-btn primary" id="m2-play-btn" onclick="togglePlay(2)">▶ PLAY</button>
-      <button class="step-btn" onclick="nextStep(2)">NEXT →</button>
+      <button class="step-btn" onclick="nextStep(2)">PG FD  ↑</button>
       <div class="step-counter" id="m2-counter">1 / 5</div>
     </div>
 
@@ -2303,7 +2303,7 @@ updateStep(1);
     <div class="options" id="options"></div>
   </div>
   <div class="feedback" id="feedback"></div>
-  <button class="btn-next" id="btn-next" onclick="nextQuestion()">NEXT →</button>
+  <button class="btn-next" id="btn-next" onclick="nextQuestion()">PG FD  ↑</button>
   <button class="btn-secondary" style="margin-top:8px" onclick="confirmQuit()">🌊 SURFACE (QUIT)</button>
   <button class="btn-secondary" style="margin-top:4px" onclick="showScreen('screen-title')">&#8962; HOME</button>
 </div>
@@ -2815,7 +2815,7 @@ function selectAns(chosen){
 }
 
 function showFB(ok,html){const fb=document.getElementById('feedback');fb.className='feedback '+(ok?'correct-fb':'wrong-fb');fb.innerHTML=html;fb.style.display='block';}
-function showNxt(){const b=document.getElementById('btn-next');b.style.display='block';b.textContent=sess.qIndex<4?'NEXT QUESTION →':'SEE RESULTS →';}
+function showNxt(){const b=document.getElementById('btn-next');b.style.display='block';b.textContent='PG FD  ↑';}
 
 function nextQuestion(){sess.qIndex++;if(sess.qIndex>=5||sess.hp<=0){endLevel();}else{renderQ();window.scrollTo(0,0);}}
 
@@ -2964,9 +2964,9 @@ function tutStep(n){
   <div class="trace-section">
     <h2 id="traceTitleBar">TRACE: LIGHTS 1-4 + LAMP DIMMER</h2>
     <div style="display:flex;align-items:center;gap:8px;padding:4px 0 6px;flex-wrap:wrap;">
-      <button class="ctrl-btn" id="btnScrollUp" onclick="scrollTrace(-1)" style="min-width:44px;font-size:16px;" title="Previous node">&#8593;</button>
+      <button class="ctrl-btn" id="btnScrollUp" onclick="scrollTrace(-1)" style="min-width:44px;" title="Previous node">PG BW  ↓</button>
       <span id="traceNodeCounter" style="font-family:'Share Tech Mono';font-size:10px;color:var(--dim);letter-spacing:1px;">NODE 1 / 1</span>
-      <button class="ctrl-btn" id="btnScrollDown" onclick="scrollTrace(1)" style="min-width:44px;font-size:16px;" title="Next node">&#8595;</button>
+      <button class="ctrl-btn" id="btnScrollDown" onclick="scrollTrace(1)" style="min-width:44px;" title="Next node">PG FD  ↑</button>
       <span style="font-family:'Share Tech Mono';font-size:9px;color:var(--dim);margin-left:8px;">SCROLL PATH · TAP NODE FOR DETAILS</span>
     </div>
     <div class="trace-canvas-wrap" id="traceCanvasWrap"></div>
@@ -3406,7 +3406,7 @@ function renderTrace(traceKey) {
     <g onclick="tapNode('${n.id}')" data-nodeid="${n.id}" style="cursor:pointer;opacity:${opacity}">
       <rect x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" rx="5"
         fill="${fillCol}" stroke="${borderCol}" stroke-width="${isFault?2:1}" />
-      ${isFault?`<text x="${n.x+n.w-10}" y="${n.y+12}" font-size="10" fill="#ff1744" text-anchor="middle">⚡</text>`:''}
+      ${isFault?`<circle cx="${n.x+n.w-8}" cy="${n.y+8}" r="8" fill="#ff1744" filter="url(#glow-red)"/><text x="${n.x+n.w-8}" y="${n.y+8}" font-size="9" fill="#fff" text-anchor="middle" dominant-baseline="central" pointer-events="none">⚡</text>`:''}
       <text x="${cx(n)}" y="${n.y+13}" font-family="Orbitron" font-size="7" fill="${textCol}" text-anchor="middle" font-weight="600">${n.label}</text>
       <text x="${cx(n)}" y="${n.y+27}" font-family="'Share Tech Mono'" font-size="5.5" fill="rgba(200,224,240,0.55)" text-anchor="middle">${n.sub}</text>
     </g>`;
@@ -3445,7 +3445,9 @@ function updateNodeScroll() {
   if (!node) return;
   // Calculate pixel position of node in rendered svg
   const svgH = svg.getBoundingClientRect().height;
-  const [,, vw, vh] = T.viewBox.split(' ').map(Number);
+  const vbAttr = svg.getAttribute('viewBox');
+  if (!vbAttr) return;
+  const [,, vw, vh] = vbAttr.split(' ').map(Number);
   const scale = svgH / vh;
   const nodeY = node.y * scale;
   wrap.scrollTop = Math.max(0, nodeY - 60);
