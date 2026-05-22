@@ -2939,7 +2939,7 @@ function tutStep(n){
     <div class="sig-pill"><div class="sig-dot" style="background:#ff4081"></div>HYD</div>
     <div class="sig-pill"><div class="sig-dot" style="background:#8bc34a"></div>EARTH</div>
   </div>
-  <div class="selector-section">
+  <div class="selector-section" id="m7SelectorSection">
     <h2>SELECT TRACE PATH</h2>
     <div class="comp-grid">
       <button class="comp-btn active" style="--accent-col:#ff6b35" onclick="selectTrace('lights14')" id="btn-lights14"><span class="cb-label">LIGHTS 1-4</span><span class="cb-desc">110VAC · Lamp Dimmer</span></button>
@@ -2962,7 +2962,10 @@ function tutStep(n){
     <button class="ctrl-btn" onclick="showInfo()">HOW TO USE</button>
   </div>
   <div class="trace-section">
-    <h2 id="traceTitleBar">TRACE: LIGHTS 1-4 + LAMP DIMMER</h2>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:4px">
+      <h2 id="traceTitleBar" style="margin-bottom:0">TRACE: LIGHTS 1-4 + LAMP DIMMER</h2>
+      <button class="ctrl-btn" onclick="document.getElementById('m7SelectorSection').scrollIntoView({behavior:'smooth',block:'start'})" title="Back to trace selection" style="font-size:9px;padding:5px 10px;white-space:nowrap">PG BW ↓ BACK</button>
+    </div>
     <div style="display:flex;align-items:center;gap:8px;padding:4px 0 6px;flex-wrap:wrap;">
       <button class="ctrl-btn" id="btnScrollUp" onclick="scrollTrace(-1)" style="min-width:44px;" title="Previous node">PG BW  ↓</button>
       <span id="traceNodeCounter" style="font-family:'Share Tech Mono';font-size:10px;color:var(--dim);letter-spacing:1px;">NODE 1 / 1</span>
